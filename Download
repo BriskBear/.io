@@ -1,0 +1,6 @@
+#!/bin/bash
+
+pushd "~/Downloads"
+    wget $1
+popd
+echo "$1 in ~/Downloads"
