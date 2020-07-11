@@ -13,7 +13,7 @@
 
 ## Make the 'nextword' function (Ctrl+Right) stop at word ends
 ## instead of at beginnings.
-# set afterends
+ set afterends
 
 ## When soft line wrapping is enabled, make it wrap lines at blanks
 ## (tabs and spaces) instead of always at the edge of the screen.
@@ -36,7 +36,7 @@
 ## The characters treated as closing brackets when justifying paragraphs.
 ## This may not include any blank characters.  Only closing punctuation,
 ## optionally followed by these closing brackets, can end sentences.
-# set brackets ""')>]}"
+ set brackets ""')>]}"
 
 ## Automatically hard-wrap the current line when it becomes overlong.
 # set breaklonglines
@@ -76,7 +76,7 @@ set locking
 ## The opening and closing brackets that can be found by bracket
 ## searches.  They cannot contain blank characters.  The former set must
 ## come before the latter set, and both must be in the same order.
-# set matchbrackets "(<[{)>]}"
+ set matchbrackets "(<[{)>]}"
 
 ## Enable mouse support, if available for your system.  When enabled,
 ## mouse clicks can be used to place the cursor, set the mark (with a
@@ -113,7 +113,7 @@ set locking
 ## paragraphs.  They cannot contain blank characters.  Only closing
 ## punctuation, optionally followed by closing brackets, can end
 ## sentences.
-# set punct "!.?"
+ set punct "!.?"
 
 ## Do quick status-bar blanking.  Status-bar messages will disappear after
 ## 1 keystroke instead of 26.  Note that "constantshow" overrides this.
