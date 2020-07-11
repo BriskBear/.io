@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sort ~/.io/.aliases > ~/.io/AKA
+mv ~/.io/AKA ~/.io/.aliases -f
