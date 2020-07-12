@@ -1,5 +1,6 @@
 alias aar='sudo add-apt-repository' # add package manager repo, requires ppa 
 alias aptlist='apt list --upgradable' # list apt upgrades
+alias autorm='sudo apt auto-remove -y' # Cleanup removed apps
 alias brave='~/io/gtab brave' # Brave in new term-tab
 alias ..='cd ..' # Up 1
 alias cls='clear && date' # 
@@ -17,3 +18,4 @@ alias sna='sudo nano' # Root Text Edit
 alias steam='/home/lij/.io/gtab steam' # 'Steam in new term-tab' 
 alias update='sudo apt update -y' # Update APT
 alias upgrade='sudo apt upgrade -y' # Upgrade apt
+alias xtab='/home/lij/.io/xtab' # Open command in new XFCE Terminal tab
