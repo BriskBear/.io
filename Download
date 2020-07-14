@@ -1,6 +1,8 @@
 #!/bin/bash
 
+LINK=$1
 pushd "~/Downloads"
-    wget $1
+    wget $LINK >> $(~/.io/split.string / $LINK -1)
+    beep
 popd
-echo "$1 in ~/Downloads"
+echo "$1 in ~/Downloads and $tasty_pickles was your input."
