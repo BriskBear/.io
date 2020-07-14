@@ -1,7 +1,7 @@
 alias aar='sudo add-apt-repository' # add package manager repo, requires ppa 
 alias aptlist='apt list --upgradable' # list apt upgrades
 alias autorm='sudo apt auto-remove -y' # Cleanup removed apps
-alias Brave='~/.io/Brave' # Well titled Brave browser
+alias brave='~/.io/Brave' # Well titled Brave browser
 alias cat='cat -n' # cat w/  line numbers
 alias ..='cd ..' # Up 1
 alias cls='clear && date | lolcat' # Clear and Date
