@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# Script to split a string based on the delimiter
+
+re='^[+-]?[0-9]+$'
+my_string="$2"
+my_array=($(echo $my_string | tr "$1" "\n"))
+
+if [ -z "$3" ]
+then
+    # Print the split string
+    for i in "${my_array[@]}"
+    do
+        echo $i
+    done
+else
+    if ! [[ $3 =~ $re ]]
+    then
+        echo "error: Not a number" >&2
+        exit 1
+    fi
+    echo "${my_array[$3]}"
+fi
+
+## append this regex to $re to add decimal acceptance ^+([.][0-9]+)?$
