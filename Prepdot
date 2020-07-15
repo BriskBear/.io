@@ -1,7 +1,7 @@
 #!/bin/bash
 
-tar -cjvf ~/.defaults.tbz2 ~/.bashrc --remove-files
-sudo tar -cjvf - /etc/nanorc >> ~/.defaults.tbz2 --remove-files
+tar -cjvfP ~/.defaults.tbz2 ~/.bashrc --remove-files
+sudo tar -cjvfP - /etc/nanorc >> ~/.defaults.tbz2 --remove-files
 echo "Default Bashrc and Nanorc Archived"
 cp ~/.io/.bashrc ~/
 sudo cp ~/.io/nanorc /etc/
