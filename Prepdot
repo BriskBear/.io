@@ -3,6 +3,10 @@
 tar -cjvfP ~/.defaults.tbz2 ~/.bashrc --remove-files
 sudo tar -cjvfP - /etc/nanorc >> ~/.defaults.tbz2 --remove-files
 echo "Default Bashrc and Nanorc Archived"
-cp ~/.io/.bashrc ~/
-sudo cp ~/.io/nanorc /etc/
+cp ~/.io/config/.bashrc ~/
+sudo cp ~/.io/config/nanorc /etc/
 echo "Bashrc and Nanorc Loaded from GitIOs"
+
+#####
+#   Next generation will have a separate keyfile { rcfile='path', etc. }
+# thusly it will batch install rcfiles for expandability
