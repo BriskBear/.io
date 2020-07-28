@@ -27,3 +27,6 @@ alias update='sudo apt update -y && apt list --upgradeable' # Update Package Man
 alias upgrade='sudo apt upgrade -y' # Upgrade apt
 alias x='~/.io/.sec/.x' # Secret secrets
 alias xtab='~/.io/xtab' # Open command in new XFCE Terminal tab
+alias archv='/home/lij/.io/Archive' # Archive $files $ArchiveName
+alias tar.list='tar -i -tf' # List files in an appended tbz2 archive
+alias tar.ext='tar -xjvf' # extract tbz2
