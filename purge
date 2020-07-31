@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt purge -y $1 | lolcat
+sudo apt remove --purge -y $1 | lolcat
 sudo apt auto-remove -y | lolcat
 clear
 echo "$1 Purged"
