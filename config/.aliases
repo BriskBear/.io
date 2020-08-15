@@ -33,3 +33,4 @@ alias upgrade='sudo apt upgrade -y' # Upgrade apt
 alias x='~/.io/.sec/.x' # Secret secrets
 alias xtab='~/.io/xtab' # Open command in new XFCE Terminal tab
 alias setCFG='/home/lij/.io/Prepdot' # Update .io Configs
+alias cleanpass='rm ~/Templates/Database.kdbx' # Clear KPDB
