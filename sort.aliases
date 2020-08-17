@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sort ~/.io/.aliases > ~/.io/AKA
-mv ~/.io/AKA ~/.io/.aliases -f
+sort ~/.io/config/.aliases > ~/.io/AKA
+mv ~/.io/AKA ~/.io/config/.aliases -f

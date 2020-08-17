@@ -1,0 +1,27 @@
+#!/bin/bash
+
+files=$1
+name=$2
+option=$3
+filename=(
+    $(date +%Y.%m.%d)$name".tbz2"
+)
+echo beans | lolcat
+
+case $option in
+    "-r" )
+        tar \
+         -cjvf \
+         - $files \
+         >> $filename \
+         --remove-files
+         echo "Archived $files to $filename"|lolcat
+         echo "files removed."|lolcat ;;
+    $null ) 
+        echo "Archiving $files $name"
+        tar \
+         -cjvf \
+         - $files \
+         >> $filename ;;
+    * ) echo "In this early stage only -r -- for Removing files, is recognized"
+esac
