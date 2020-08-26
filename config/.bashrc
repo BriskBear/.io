@@ -120,5 +120,7 @@ alias setAl='source ~/.bashrc'
 source /usr/share/autojump/autojump.sh
 PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 export PATH
-$HOME/.asdf/asdf.sh
-$HOME/.asdf/completions/asdf.bash
+
+// Add asdf to Bash
+# $HOME/asdf/asdf.sh
+# $HOME/asdf/completions/asdf.bash
