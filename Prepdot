@@ -1,11 +1,22 @@
 #!/bin/bash
 
-tar -cjvf ~/.defaults.tbz2 -P ~/.bashrc --remove-files
-sudo tar -cjvf - -P /etc/nanorc >> ~/.defaults.tbz2 --remove-files
+declare -A locations
+
+sudo tar -cjvf - ~/.bashrc >> ~/.defaults.tbz2 --remove-files -P
+sudo tar -cjvf - -P /etc/nano/nanorc >> ~/.defaults.tbz2 --remove-files
 echo "Default Bashrc and Nanorc Archived"
-cp ~/.io/config/.bashrc ~/
-sudo cp ~/.io/config/nanorc /etc/
-echo "Bashrc and Nanorc Loaded from GitIOs"
+
+. $HOME/.io/config/.Locations
+for i in ${!locations[@]}
+do
+	echo "$i to ${locations[$i]}"
+	sudo cp "$HOME/.io/config/$i" ${locations[$i]}
+done
+
+# sudo cp 
+# cp ~/.io/config/.bashrc ~/
+# sudo cp ~/.io/config/nanorc /etc/
+# echo "Bashrc and Nanorc Loaded from GitIOs"
 
 #####
 #   Next generation will have a separate keyfile { rcfile='path', etc. }

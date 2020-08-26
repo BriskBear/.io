@@ -1,0 +1,4 @@
+#!/bin/bash
+
+locations['.bashrc']="$HOME/"
+locations['nanorc']='/etc/nano/'
