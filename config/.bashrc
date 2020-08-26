@@ -121,6 +121,6 @@ source /usr/share/autojump/autojump.sh
 PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 export PATH
 
-// Add asdf to Bash
+# Add asdf to Bash
 # $HOME/asdf/asdf.sh
 # $HOME/asdf/completions/asdf.bash
