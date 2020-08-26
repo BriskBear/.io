@@ -36,3 +36,4 @@ alias upgrade='sudo apt upgrade -y' # Upgrade apt
 alias x='~/.io/.sec/.x' # Secret secrets
 alias xtab='~/.io/xtab' # Open command in new XFCE Terminal tab
 alias ssDisplay='export DISPLAY=:0' # Prep ssh session display
+alias vash='vim ~/.ssh/config' # 
