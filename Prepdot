@@ -13,6 +13,8 @@ do
 	sudo cp "$HOME/.io/config/$i" ${locations[$i]}
 done
 
+sudo apt install -y lolcat autojump
+
 # sudo cp 
 # cp ~/.io/config/.bashrc ~/
 # sudo cp ~/.io/config/nanorc /etc/
