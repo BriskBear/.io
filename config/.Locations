@@ -2,3 +2,4 @@
 
 locations['.bashrc']="$HOME/"
 locations['nanorc']='/etc/nano/'
+locations['vimrc']='/etc/vim/'
