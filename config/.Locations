@@ -1,6 +1,6 @@
 #!/bin/bash
 
 locations['.bashrc']="$HOME/.bashrc"
-locations['nanorc']='/etc/nano/nanorc'
-locations['vimrc']='/etc/vim/vimrc'
+locations['nanorc']='/etc/nanorc'
+locations['vimrc']='/etc/vimrc'
 locations['.vimrci.local']='$HOME/.vimrc.local'
