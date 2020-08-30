@@ -1,0 +1,14 @@
+#!/bin/bash
+
+IN_FILE=$1
+RM="$IN_FILE.md"
+
+echo "# __ $IN_FILE __" >> $RM
+echo "### Description:  " >> $RM
+echo "" >> $RM
+echo "## __Code__" >> $RM
+echo "\`\`\`" >> $RM
+cat $IN_FILE >> $RM
+echo "\`\`\`" >> $RM
+
+vim $RM
