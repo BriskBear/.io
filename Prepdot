@@ -2,10 +2,6 @@
 
 declare -A locations
 
-# sudo tar -cjvf - ~/.bashrc >> ~/.defaults.tbz2 --remove-files -P
-# sudo tar -cjvf - -P /etc/nano/nanorc >> ~/.defaults.tbz2 --remove-files
-# echo "Default Bashrc and Nanorc Archived"
-
 . $HOME/.io/config/.Locations
 for i in ${!locations[@]}
 do
@@ -15,12 +11,7 @@ do
 	sudo cp "$HOME/.io/config/$i" ${locations[$i]}
 done
 
-# sudo apt install -y lolcat autojump
-
-# sudo cp 
-# cp ~/.io/config/.bashrc ~/
-# sudo cp ~/.io/config/nanorc /etc/
-# echo "Bashrc and Nanorc Loaded from GitIOs"
+# sudo apt install -y autojump
 
 #####
 #   Next generation will have a separate keyfile { rcfile='path', etc. }
