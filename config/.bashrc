@@ -59,7 +59,7 @@ fi
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+	PS1='$(tput setaf 2)${debian_chroot:+($debian_chroot)}\u$?\h:\w\$$(tput sgr0) '
 fi
 unset color_prompt force_color_prompt
 
@@ -122,5 +122,5 @@ PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbi
 export PATH
 
 # Add asdf to Bash
-# $HOME/asdf/asdf.sh
-# $HOME/asdf/completions/asdf.bash
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
