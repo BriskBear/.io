@@ -3,7 +3,7 @@
 IN_FILE=$1
 RM="~/.io/usg/$IN_FILE.md"
 
-echo "# $IN_FILE " > $RM
+echo "# $IN_FILE " >> $RM
 echo "### Description:  " >> $RM
 echo "" >> $RM
 echo "## __Code__" >> $RM
