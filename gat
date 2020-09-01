@@ -1,0 +1,8 @@
+#!/bin/bash
+
+UP_GIT=$1
+git add $UP_GIT
+git commit
+git pull 
+sleep 5
+git push
