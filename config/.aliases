@@ -23,7 +23,7 @@ alias purge='~/.io/Arch/Purge' # Package Manager Full Remover
 alias q='exit' # quit
 alias search='~/.io/search' # Query for Files
 alias setCFG='$HOME/.io/Prepdot' # Update .io Configs
-alias setup='~/.io/Arch/setup' # Package manager install; singular or space-separated list.
+alias setup='~/.io/Arch/Setup' # Package manager install; singular or space-separated list.
 alias sna='sudo vim' # Root Text Edit
 alias splt='~/.io/split.string' # Split a string into an array
 alias ssDisplay='export DISPLAY=:0' # Prep ssh session display
