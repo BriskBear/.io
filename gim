@@ -1,0 +1,7 @@
+#!/bin/bash
+
+vim $1
+
+echo Did it work?
+read ANS
+echo "Well $ANS then too, buddy!"
