@@ -5,7 +5,6 @@ declare -i line=$2
 declare -i end=$3
 OUT_FILE=()
 
-.
 if [ ! $end ]
 then
     sed -n $1"p" $1 >> $OUT_FILE
