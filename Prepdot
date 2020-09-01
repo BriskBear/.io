@@ -2,18 +2,21 @@
 
 declare -A locations
 
-sudo tar -cjvf - ~/.bashrc >> ~/.defaults.tbz2 --remove-files -P
-sudo tar -cjvf - -P /etc/nano/nanorc >> ~/.defaults.tbz2 --remove-files
-echo "Default Bashrc and Nanorc Archived"
+#sudo tar -cjvf - ~/.bashrc >> ~/.defaults.tbz2 --remove-files -P
+#sudo tar -cjvf - -P /etc/nano/nanorc >> ~/.defaults.tbz2 --remove-files
+#echo "Default Bashrc and Nanorc Archived"
 
+# A Little Vague this loads the config/.Locations $locations keyfile of configs and paths
 . $HOME/.io/config/.Locations
 for i in ${!locations[@]}
 do
+	echo "Saved-state $i to ~/.defaults.tbz2" | lolcat
+	sudo tar -cjvf - ${locations[$i]} >> ~/.defaults.tbz2 --remove-files -P 
 	echo "$i to ${locations[$i]}"
 	sudo cp "$HOME/.io/config/$i" ${locations[$i]}
 done
 
-sudo apt install -y lolcat autojump
+# sudo apt install -y lolcat autojump neofetch
 
 # sudo cp 
 # cp ~/.io/config/.bashrc ~/
