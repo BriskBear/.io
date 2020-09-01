@@ -1,7 +1,10 @@
 #!/bin/bash
 
-vim $1
+# Subject is the file being edited and uploaded.
+SBJ=$1 
 
-echo Did it work?
-read ANS
-echo "Well $ANS then too, buddy!"
+vim $SBJ
+git add $SBJ
+git commit
+git pull
+git push
