@@ -15,6 +15,7 @@ alias Download='~/.io/Download' # Send pasted URL to Downloads folder
 alias EAL='sudo vim ~/.io/config/.aliases' # Verify user to Edit Aliases
 alias gen.RM='~/.io/gen.README' # Generate MarkDown Readme
 alias get.ports='sudo netstat -tunlp' # Show listening ports
+alias gim='~/.io/gim' # vim a file and then git pull+push 
 alias gtab='~/.io/gtab' # New Gnome-Terminal Tab
 alias keepass='sudo ~/bin/KeePass && gtab keepass2' # Password Vault
 alias lal='ls -alF' # Quick perms list
@@ -30,6 +31,7 @@ alias search='~/.io/search' # Query for Files
 alias setCFG='/home/lij/.io/Prepdot' # Update .io Configs
 alias setup='~/.io/setup' # Package manager install; singular or space-separated list.
 alias sna='sudo vim' # Root Text Edit
+alias sortAl='~/.io/sort.aliases' # Sort Aliases
 alias splt='~/.io/split.string' # Split a string into an array
 alias ssDisplay='export DISPLAY=:0' # Prep ssh session display
 alias steam='~/.io/gtab steam' # 'Steam in new term-tab' 
