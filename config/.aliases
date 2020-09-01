@@ -10,6 +10,7 @@ alias ?='cat ~/.io/.aliases' # Alias Help
 alias ..='cd ..' # Up 1
 alias cleanpass='rm ~/Templates/Database.kdbx' # Clear KPDB
 alias cls='clear && date | lolcat' # Clear and Date
+alias disks='gnome-disks' # Gnome-disks 
 alias Download='~/.io/Download' # Send pasted URL to Downloads folder
 alias EAL='sudo vim ~/.io/config/.aliases' # Verify user to Edit Aliases
 alias gen.RM='~/.io/gen.README' # Generate MarkDown Readme
