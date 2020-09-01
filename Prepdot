@@ -6,7 +6,7 @@ declare -A locations
 for i in ${!locations[@]}
 do
 	echo  "${locations[$i]} SAVED STATE >> ~/.defaults.tbz2"
-	tar -cjvf - ${locations[$i]} >> ~/.defaults.tbz2 --remove-files -P
+	sudo tar -cjvf - ${locations[$i]} >> ~/.defaults.tbz2 --remove-files -P
 	echo "$i to ${locations[$i]}"
 	sudo cp "$HOME/.io/config/$i" ${locations[$i]}
 done
