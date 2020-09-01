@@ -17,6 +17,7 @@ alias gen.RM='~/.io/gen.README' # Generate MarkDown Readme
 alias get.ports='sudo netstat -tunlp' # Show listening ports
 alias gtab='~/.io/gtab' # New Gnome-Terminal Tab
 alias keepass='sudo ~/bin/KeePass && gtab keepass2' # Password Vault
+alias lal='ls -alF' # Quick perms list
 alias la='ls -aF' # All with symbols
 alias mt='/home/lij/bin/marktext-x86_64.AppImage' # MarkText alias
 alias na='~/.io/newAlias' # Create Alias
