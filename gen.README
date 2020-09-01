@@ -3,6 +3,7 @@
 IN_FILE=$1
 RM="~/.io/usg/$IN_FILE.md"
 
+touch $RM
 echo "# $IN_FILE " >> $RM
 echo "### Description:  " >> $RM
 echo "" >> $RM
