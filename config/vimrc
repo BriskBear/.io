@@ -54,6 +54,11 @@ set autowrite		" Automatically save before commands like :next and :make
 set hidden		" Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes)
 set number		" Enable Line Numbers
+set tabstop=4		" Tab indentation in spaces
+set expandtab		" Replace tabs with spaces
+set autoindent		" Autoindentation
+set cursorline		" Underlines the cursor for quick location
+colorscheme desertink
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
