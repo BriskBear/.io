@@ -1,3 +1,4 @@
 #!/bin/bash
 
-gnome-terminal --tab -t Brave -e "brave $1"
+# gnome-terminal --tab -t Brave -e "brave $1"
+ xfce4-terminal --tab -T Brave -e "brave $1"
