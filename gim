@@ -7,4 +7,5 @@ vim $SBJ
 git add $SBJ
 git commit
 git pull
+
 git push
