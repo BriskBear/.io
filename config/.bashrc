@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 alias setAl='source ~/.bashrc'
 /usr/bin/neofetch --color_blocks off
-# source /usr/share/autojump/autojump.sh
+[[ -s /home/lij/.autojump/etc/profile.d/autojump.sh ]] && source /home/lij/.autojump/etc/profile.d/autojump.sh
 PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 export PATH
 
