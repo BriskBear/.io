@@ -38,3 +38,4 @@ alias vash='vim ~/.ssh/config' #
 alias x='~/.io/.sec/.x' # Secret secrets
 alias xtab='~/.io/xtab' # Open command in new XFCE Terminal tab
 alias lal='ls -alF' # Perms List with Icons
+alias gim='/home/lij/.io/gim' # 
