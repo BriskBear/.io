@@ -17,7 +17,7 @@
 
 ## When soft line wrapping is enabled, make it wrap lines at blanks
 ## (tabs and spaces) instead of always at the edge of the screen.
-# set atblanks
+ set atblanks
 
 ## Automatically indent a newly created line to the same number of
 ## tabs and/or spaces as the preceding line -- or as the next line
@@ -25,13 +25,13 @@
  set autoindent
 
 ## Back up files to the current filename plus a tilde.
-# set backup
+ set backup
 
 ## The directory to put unique backup files in.
-# set backupdir ""
+ set backupdir ".naBak"
 
 ## Use bold text instead of reverse video text.
-# set boldtext
+ set boldtext
 
 ## The characters treated as closing brackets when justifying paragraphs.
 ## This may not include any blank characters.  Only closing punctuation,
@@ -146,7 +146,7 @@ set locking
 # set smarthome
 
 ## Enable soft line wrapping (AKA full-line display).
-# set softwrap
+ set softwrap
 
 ## Use this spelling checker instead of the internal one.  This option
 ## does not have a default value.
@@ -185,7 +185,7 @@ set suspend
 ## The characters (besides alphanumeric ones) that should be considered
 ## as parts of words.  This option does not have a default value.  When
 ## set, it overrides option 'set wordbounds'.
-# set wordchars "<_>."
+# set wordchars "#<_>/."
 
 ## Let an unmodified Backspace or Delete erase the marked region (instead
 ## of a single character, and without affecting the cutbuffer).
@@ -247,6 +247,7 @@ include "/usr/share/nano/*.nanorc"
 ## If <Tab> should always produce four spaces when editing a Python file,
 ## independent of the settings of 'tabsize' and 'tabstospaces':
 # extendsyntax python tabgives "    "
+# extendsyntax markdown tabgives "  "
 
 ## If <Tab> should always produce an actual TAB when editing a Makefile:
 # extendsyntax makefile tabgives "	"
@@ -266,35 +267,38 @@ include "/usr/share/nano/*.nanorc"
 
 ## If you would like nano to have keybindings that are more "usual",
 ## such as ^O for Open, ^F for Find, ^H for Help, and ^Q for Quit,
-## then uncomment these:
-#bind ^Q exit all
-#bind ^S savefile main
-#bind ^W writeout main
-#bind ^O insert main
-#bind ^H help all
-#bind ^H exit help
-#bind ^F whereis all
-#bind ^G findnext all
-#bind ^B wherewas all
-#bind ^D findprevious all
-#bind ^R replace main
-#bind M-X flipnewbuffer all
-#bind ^X cut all
-#bind ^C copy main
-#bind ^V paste all
-#bind ^P curpos main
-#bind ^A mark main
+# then uncomment these:
+bind ^Q exit all
+bind ^S savefile main
+bind ^W writeout main
+bind ^O insert main
+bind ^H help all
+bind ^H exit help
+bind ^F whereis all
+bind ^G findnext all
+bind ^B wherewas all
+bind ^D findprevious all
+bind ^R replace main
+bind M-X flipnewbuffer all
+bind ^X cut all
+bind ^C copy main
+bind ^V paste all
+bind ^P curpos main
+bind ^A mark main
 #unbind ^K main
 #unbind ^U all
-#unbind ^N main
-#unbind ^Y all
-#unbind M-J main
-#unbind M-T main
-#bind ^T gotoline main
-#bind ^T gotodir browser
-#bind ^Y speller main
-#bind M-U undo main
-#bind M-R redo main
-#bind ^U undo main
-#bind ^E redo main
-#set multibuffer
+unbind ^N main
+unbind ^Y all
+unbind M-J main
+unbind M-T main
+bind ^T gotoline main
+bind ^T gotodir browser
+bind ^Y speller main
+bind M-U undo main
+bind M-R redo main
+bind ^U undo main
+bind ^E redo main
+set multibuffer
+
+#
+

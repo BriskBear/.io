@@ -3,7 +3,7 @@
 # Subject is the file being edited and uploaded.
 SBJ=$1 
 
-vim $SBJ
+nano +3 $SBJ
 git add $SBJ
 git commit -m "[$SBJ.md](usg/$SBJ.md)"
 git pull
