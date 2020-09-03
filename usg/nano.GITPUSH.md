@@ -1,4 +1,4 @@
-# __ nano.GITPUSH __
+# nano.GITPUSH
 
 ### Usage:
 
