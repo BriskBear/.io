@@ -1,4 +1,4 @@
-# __ git.CLONE __
+# git.CLONE
 ### Description:  
 
 
