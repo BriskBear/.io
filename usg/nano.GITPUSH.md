@@ -4,10 +4,9 @@
 
 > !! This script is aliased in .io/ if using standalone script replace 'gio' with ./nano.GITPUSH
 
-```
-gio <filename>
+` gio <filename> `
   + [ Answer Potential Prompts ]
-```
+
 
 ### Description:  
 
