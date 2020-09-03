@@ -4,5 +4,6 @@ UP_GIT=$1
 git add $UP_GIT
 git commit
 git pull 
+echo "5 seconds to Ctrl-C [Cancel]"
 sleep 5
 git push
