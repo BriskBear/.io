@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mkdir .naBak
+printf ".naBak\n" >> \
+    .gitignore
