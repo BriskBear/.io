@@ -1,0 +1,7 @@
+#!/bin/bash
+
+mkdir .naBak
+printf ".naBak\n" >> \
+    .gitconfig
+
+git add .gitconfig
