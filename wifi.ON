@@ -6,3 +6,4 @@ sudo systemctl start iwd
 
 sleep 6 
 iwctl station wlan0 connect Thulcandra
+ping -c 1 briskbear.rocks
