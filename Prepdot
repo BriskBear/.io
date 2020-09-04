@@ -14,6 +14,8 @@ do
 done
 
 # sudo apt install -y lolcat autojump neofetch
+exec $SHELL
+
 
 #####
 #    $HOME/.io/config/.Locations is a separate keyfile { rcfile='path', etc. }
