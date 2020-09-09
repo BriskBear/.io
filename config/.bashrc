@@ -115,7 +115,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-alias setAl='source ~/.bashrc'
+alias setAl='~/.io/sort.aliases && source ~/.bashrc'
 /usr/bin/neofetch --color_blocks off
 # source /usr/share/autojump/autojump.sh
 PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
