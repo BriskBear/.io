@@ -1,2 +1,2 @@
 # .io
-Linux Dotfiles for my profile and aliases.
+Linux Dotfiles for my ProfileAliases

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+DIR=$1
+Exists=$2
+dne=$3
+if [ -d $DIR ]
+then
+    $Exists
+else
+    $dne
+fi
+

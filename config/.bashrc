@@ -102,6 +102,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.io/config/.aliases ]; then
+    alias setAl='source ~/.bashrc'
     . ~/.io/config/.aliases
 fi
 
@@ -116,8 +117,13 @@ if ! shopt -oq posix; then
   fi
 fi
 alias setAl='~/.io/sort.aliases && source ~/.bashrc'
+
+# NeoFetch
 /usr/bin/neofetch --color_blocks off
-# source /usr/share/autojump/autojump.sh
+
+# AutoJump
+[[ -s /home/lij/.autojump/etc/profile.d/autojump.sh ]] && source /home/lij/.autojump/etc/profile.d/autojump.sh
+
 PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 export PATH
 
