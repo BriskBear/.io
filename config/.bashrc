@@ -118,9 +118,13 @@ fi
 alias setAl='source ~/.bashrc'
 /usr/bin/neofetch --color_blocks off
 source /usr/share/autojump/autojump.sh
-PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/lij/.gem/ruby/2.5.0/bin
 export PATH
 
 # Add asdf to Bash
-# $HOME/asdf/asdf.sh
-# $HOME/asdf/completions/asdf.bash
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+
+#direnv
+eval "$(direnv hook bash)"
