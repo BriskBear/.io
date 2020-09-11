@@ -2,6 +2,6 @@
 
 mkdir .naBak
 printf ".naBak\n" >> \
-    .gitconfig
+    .gitignore
 
-git add .gitconfig
+git add .gitignore
