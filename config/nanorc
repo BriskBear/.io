@@ -57,7 +57,7 @@
 ## Set the target width for automatic hard-wrapping and for justifying
 ## paragraphs.  If the specified value is 0 or less, the wrapping point
 ## will be the terminal's width minus this number.
- set fill -4
+ set fill -2
 
 ## Remember the used search/replace strings for the next session.
 set historylog
@@ -89,7 +89,7 @@ set locking
 # set multibuffer
 
 ## Don't convert files from DOS/Mac format.
-# set noconvert
+ set noconvert
 
 ## Don't display the helpful shortcut lists at the bottom of the screen.
 # set nohelp
@@ -104,7 +104,7 @@ set locking
 # set operatingdir ""
 
 ## Remember the cursor position in each file for the next editing session.
-# set positionlog
+ set positionlog
 
 ## Preserve the XON and XOFF keys (^Q and ^S).
 # set preserve
@@ -127,7 +127,7 @@ set locking
 # set rawsequences
 
 ## Fix Backspace/Delete confusion problem.
-# set rebinddelete
+ set rebinddelete
 
 ## Do regular-expression searches by default.
 ## Regular expressions are of the extended type (ERE).
@@ -156,7 +156,7 @@ set locking
 set suspend
 
 ## Use this tab size instead of the default; it must be greater than 0.
- set tabsize 4
+ set tabsize 2
 
 ## Convert typed tabs to spaces.
  set tabstospaces
@@ -180,7 +180,7 @@ set suspend
 
 ## Detect word boundaries differently by treating punctuation
 ## characters as parts of words.
-# set wordbounds
+ set wordbounds
 
 ## The characters (besides alphanumeric ones) that should be considered
 ## as parts of words.  This option does not have a default value.  When
@@ -197,7 +197,7 @@ set suspend
  set statuscolor black,green
  set errorcolor black,red
  set selectedcolor black,cyan
- set stripecolor ,yellow
+ set stripecolor yellow
  set numbercolor black,green
  set keycolor cyan
  set functioncolor green
