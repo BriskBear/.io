@@ -2,9 +2,9 @@
 
 declare -A locations
 
-
 # A Little Vague this loads the config/.Locations $locations keyfile of configs and paths
 . $HOME/.io/config/.Locations
+
 for i in ${!locations[@]}
 do
 	echo  "${locations[$i]} SAVED STATE >> ~/.defaults.tbz2"
@@ -15,7 +15,6 @@ done
 
 # sudo apt install -y lolcat autojump neofetch
 exec $SHELL
-
 
 #####
 #    $HOME/.io/config/.Locations is a separate keyfile { rcfile='path', etc. }
