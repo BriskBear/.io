@@ -7,7 +7,8 @@ Generates an ssh public key from the first parameter input _[SSH-PrivateKey]_
  ` ssh.Public ~/.ssh/id_rsa `
   "Public Key Calculated"
 
-  _You can find your public key in ` ~/.ssh/<private_key_name>.pub_ `
+  _You can find your public key in:_  
+  ` ~/.ssh/<private_key_name>.pub `
 
 ## __Code__
 ```
