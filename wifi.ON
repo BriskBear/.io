@@ -1,9 +1,11 @@
 #!/bin/bash
 
+echo Starting Network and DHCP daemons.
 sudo systemctl start systemd-networkd
 sudo systemctl start systemd-resolved
 sudo systemctl start iwd
 
-sleep 6 
-iwctl station wlan0 connect Thulcandra
-ping -c 1 briskbear.rocks
+echo Letting them wake up......
+sleep 6
+iwctl station wlan0 connect
+ping -c 1 briskbear.rocks && echo "Connected!" || printf "Try again,\n maybe use 'iwctl' to specify a different network.\n"
