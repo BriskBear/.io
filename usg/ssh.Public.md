@@ -1,4 +1,4 @@
-# __ ssh.Public __
+# __ssh.Public__
 ### Description:  
 
 Generates an ssh public key from the first parameter input _[SSH-PrivateKey]_
