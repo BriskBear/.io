@@ -3,7 +3,9 @@
 IN_FILE=$1
 RM="usg/$IN_FILE.md"
 
-echo "# __ $IN_FILE __" >> $RM
+echo "# __" >> $RM
+echo "$IN_FILE" >> $RM
+echo "__" >> $RM
 echo "### Description:  " >> $RM
 printf "\n\n\n" >> $RM
 echo "## __Code__" >> $RM
