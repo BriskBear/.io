@@ -13,4 +13,4 @@ echo "\`\`\`" >> $RM
 cat $IN_FILE >> $RM
 echo "\`\`\`" >> $RM
 
-nano +4 $RM
+nano +6 $RM
