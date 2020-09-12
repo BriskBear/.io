@@ -1,13 +1,14 @@
-# __ ssh.Public __
+# __ssh.Public__
 ### Description:  
 
 Generates an ssh public key from the first parameter input _[SSH-PrivateKey]_
 ### Usage:
 
- ` ssh.Public ~/.ssh/id_rsa `
+ ` ssh.Public ~/.ssh/id_rsa `  
   "Public Key Calculated"
 
-  _You can find your public key in ` ~/.ssh/<private_key_name>.pub_ `
+  _You can find your public key in:_  
+  ` ~/.ssh/<private_key_name>.pub `
 
 ## __Code__
 ```
