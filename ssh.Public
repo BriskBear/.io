@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ssh-keygen -y -f $1 > "$HOME/.ssh/$1.pub"
+echo "Public Key Calculated"

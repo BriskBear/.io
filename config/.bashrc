@@ -116,8 +116,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# Git
+alias setAl='~/.io/sort.aliases && source ~/.bashrc'
 
 # NeoFetch
 /usr/bin/neofetch --color_blocks off
