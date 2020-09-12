@@ -5,7 +5,8 @@ Shortcut for clone from github.com/ simply input repo and folder:
 ` git.CLONE BriskBear/.io /tmp/.io `
 
 This clones the master branch of this repo into /tmp  
-> Not practical unless you are loop-calling some .io/blanks or want to force yourself to update .io on boot  _with /tmp configured as such..._
+> Not practical unless you are loop-calling some .io/blanks or want to force yourself to update .io on boot  
+_with /tmp configured as such..._
 
 ## __Code__
 ```
