@@ -104,7 +104,7 @@ set locking
 # set operatingdir ""
 
 ## Remember the cursor position in each file for the next editing session.
- set positionlog
+# set positionlog
 
 ## Preserve the XON and XOFF keys (^Q and ^S).
 # set preserve

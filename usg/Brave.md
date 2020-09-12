@@ -1,23 +1,8 @@
-# __
-Brave
-__
+# __Brave__
 ### Description:  
 
-Start a brave-browser session in a new terminal tab
-
-## __Code__
-```
-#!/bin/bash
-
-# gnome-terminal --tab -t Brave -e "brave $1"
- xfce4-terminal --tab -T Brave -e "brave $1"
-```
-# __
-Brave
-__
-### Description:  
-
-
+__Opens__ Brave-browser in a new terminal tab  
+_set to xfce4-terminal for ArchLinux_
 
 ## __Code__
 ```
