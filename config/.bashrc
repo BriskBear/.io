@@ -57,9 +57,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1=$(cat $HOME/.io/config/PS1)
 else
-	PS1='$(tput setaf 2)${debian_chroot:+($debian_chroot)}\u$?\h:\w\$$(tput sgr0) '
+  	PS1=$(cat $HOME/.io/config/PS1)
 fi
 unset color_prompt force_color_prompt
 
@@ -123,7 +123,7 @@ alias setAl='~/.io/sort.aliases && source ~/.bashrc'
 
 # AutoJump
 #[[ -s /home/lij/.autojump/etc/profile.d/autojump.sh ]] && source /home/lij/.autojump/etc/profile.d/autojump.sh
-PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/var/lib/flatpak/exports/share:/home/lij/.local/share/flatpak/exports/share
 export PATH
 
 # Add asdf to Bash

@@ -1,28 +1,47 @@
 #!/bin/bash
+#
+#BLACK
+#BLUE
+#RUST
+#CYAN
+#DARK_GRAY
+#GREEN
+#LIGHT_BLUE
+#LIGHT_CYAN
+#LIGHT_GRAY
+#LIGHT_GREEN
+#LIGHT_PURPLE
+#PINK
+#PURPLE
+#RED
+#WHITE
+#YELLOW
+#NC
 
-Black='\033[0;30m'
-Blue='\033[0;34m'
-Rust='\033[0;33m'
-Cyan='\033[0;36m'
-Dark_Gray='\033[1;30m'
-Green='\033[032;m'
-Light_Blue='\033[1;34m'
-Light_Cyan='\033[1;36m'
-Light_Gray='\033[0;37m'
-Light_Green='\033[1;32m'
-Light_Purple='\033[1;35m'
-Pink='\033[1;31m'
-Purple='\033[0;35m'
-Red='\033[0;31m'
-White='\033[1;37m'
-Yellow='\033[1;33m'
-NC='\033[0m'
+export BLACK='\033[0;30m'
+export BLUE='\033[0;34m'
+export RUST='\033[0;33m'
+export CYAN='\033[0;36m'
+export DARK_GRAY='\033[1;30m'
+export GREEN='\033[032;m'
+export LIGHT_BLUE='\033[1;34m'
+export LIGHT_CYAN='\033[1;36m'
+export LIGHT_GRAY='\033[0;37m'
+export LIGHT_GREEN='\033[1;32m'
+export LIGHT_PURPLE='\033[1;35m'
+export PINK='\033[1;31m'
+export PURPLE='\033[0;35m'
+export RED='\033[0;31m'
+export WHITE='\033[1;37m'
+export YELLOW='\033[1;33m'
+export NC='\033[0m'
 
 alias echo='echo -e'
+echo $GREEN"COLOR?"$NC
 
 function color {
 #    case
-#     
+#
 #    esac
     echo "${Yellow} USAGE:\n     'echo \${Red}${Red}Red Text${Yellow}\${NC}' ${NC}"
     echo "${Yellow}     Use \${NC} to change back to default or shell will stay that color!${NC}"
@@ -62,3 +81,4 @@ function color {
 
 ## Continued from above example
 #echo -e "I ${RED}love${NC} Stack Overflow"
+

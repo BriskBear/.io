@@ -1,0 +1,14 @@
+#!/bin/bash
+
+FILE=$1
+
+if [ -f $FILE ]
+then
+  echo "Confirmed: $FILE"
+elif [ ! -f $FILE ]
+then 
+  echo "No such file: $FILE"
+  exit
+fi
+
+#echo continued...
