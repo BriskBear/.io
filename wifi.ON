@@ -1,8 +1,14 @@
-#!/bin/bash
+#!/bin/sh
 
+source $HOME/.io/color
+
+echo Starting Network and DHCP daemons.
 sudo systemctl start systemd-networkd
 sudo systemctl start systemd-resolved
 sudo systemctl start iwd
 
-sleep 6 
-iwctl station wlan0 connect Thulcandra
+echo Letting them wake up......
+#sleep 6
+iwctl station wlan0 connect
+p=$(ping -c 1 briskbear.rocks)
+[[ ! $p ]] && printf "${RED}Try again,\n maybe use 'iwctl' to specify a different network.${NC}\n" || printf "${GREEN}Connected!${NC}\n"

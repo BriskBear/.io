@@ -1,0 +1,5 @@
+#!/bin/bash 
+
+. $HOME/.io/color
+
+printf $GREEN"color?"$NC"\n"
