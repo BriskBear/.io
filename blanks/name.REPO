@@ -1,3 +1,0 @@
-#!/bin/bash
-
-GIT_NAME=$(git config --get remote.origin.url | rev | cut -f1 -d '/' | rev | cut -f2 -d '.')
