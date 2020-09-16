@@ -11,6 +11,7 @@ do
 	sudo cp "$HOME/.io/config/$i" ${locations[$i]}
 done
 
+$HOME/.io/set.BLANKS
 # sudo apt install -y autojump
 
 #####

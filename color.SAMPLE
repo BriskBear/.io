@@ -5,5 +5,5 @@ do
     tput setaf $c
     tput setaf $c |
      cat -v
-    echo =$c
+    echo "boogers=$c"
 done

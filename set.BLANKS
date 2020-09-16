@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -r /tmp/blks /tmp/ps1 &>/tmp/.0
+rm -r /tmp/blks /tmp/ps1 &>>/tmp/.0
 cp -r $HOME/.io/.blanks/ /tmp/blks
 cp $HOME/.io/config/PS1.5 /tmp/ps1
 
