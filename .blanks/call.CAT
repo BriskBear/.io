@@ -12,4 +12,6 @@ fi
 
 tput setaf $COLOR
 printf $1
-tput setaf 2
+
+tput sgr0
+unset DATE COLOR
