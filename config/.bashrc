@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
-HISTFILESIZE=20000
+HISTSIZE=100000
+HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -57,9 +57,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1=$($HOME/.io/config/PS1)
+    PS1=$(cat $HOME/.io/config/PS1)
 else
-    PS1=$($HOME/.io/config/PS1)
+  	PS1=$(cat $HOME/.io/config/PS1)
 fi
 unset color_prompt force_color_prompt
 
@@ -102,6 +102,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.io/config/.aliases ]; then
+    alias setAl='source ~/.bashrc'
     . ~/.io/config/.aliases
 fi
 
@@ -115,16 +116,16 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-alias setAl='source ~/.bashrc'
+alias setAl='~/.io/sort.aliases && source ~/.bashrc'
+
+# NeoFetch
 /usr/bin/neofetch --color_blocks off
-source /usr/share/autojump/autojump.sh
-PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/lij/.gem/ruby/2.5.0/bin
+
+# AutoJump
+#[[ -s /home/lij/.autojump/etc/profile.d/autojump.sh ]] && source /home/lij/.autojump/etc/profile.d/autojump.sh
+PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/var/lib/flatpak/exports/share:/home/lij/.local/share/flatpak/exports/share
 export PATH
 
 # Add asdf to Bash
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
-
-
-#direnv
-eval "$(direnv hook bash)"

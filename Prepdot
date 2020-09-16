@@ -13,10 +13,13 @@ do
 	sudo cp "$HOME/.io/config/$i" ${locations[$i]}
 done
 
+# Copy blanks to ramdisk for loopcalling
+$HOME/.io/set.BLANKS
+
 # sudo apt install -y lolcat autojump neofetch
 cp ~/.io/config/PS1.5 /tmp/ps1
 exec $SHELL
 
 #####
-#    $HOME/.io/config/.Locations is a separate keyfile { rcfile='path', etc. }
-# thusly it will batch install rcfiles for expandability.
+#   Next generation will have a separate keyfile { rcfile='path', etc. }
+# thusly it will batch install rcfiles for expandability
