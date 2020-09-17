@@ -5,9 +5,14 @@ ERR=$1
 #echo $ERR
 if [ $ERR -gt "0" ]
 then
-    tput setaf 2
-    printf "[$(tput setaf 196)$ERR$(tput setaf 2)]"
+    printf "$(tput setaf 1)$ERR"
+    tput sgr0
 else
-    tput setaf 2
-    printf "[]"
+    printf $(tput setaf 3)
+    printf "E"
+    printf $(tput setaf 2)
+    printf "|"
+    printf $(tput setaf 4)
+    printf "3"
+    tput sgr0
 fi

@@ -3,4 +3,4 @@
 DATE=$(date +%N)
 tput setaf ${DATE: -2}
 printf $1
-tput setaf 2
+tput sgr0

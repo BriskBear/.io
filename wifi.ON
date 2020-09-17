@@ -1,14 +1,37 @@
-#!/bin/sh
+#!/bin/bash
 
 source $HOME/.io/color
 
+# Tell the good folks what you're doing.
 echo Starting Network and DHCP daemons.
-sudo systemctl start systemd-networkd
-sudo systemctl start systemd-resolved
-sudo systemctl start iwd
 
+# Begin actually starting the services.
+sudo systemctl start systemd-networkd # Basic Networking daemon
+sudo systemctl start systemd-resolved # DHCP IP acquisition daemon
+sudo systemctl start iwd # Easy to use CLI Network adapter daemon (for iwctl interface l8ter)
+
+if [ ! $WiNet ]
+then
+    echo "WiNet envar not set, enter Network Name (SSID) or y to see available networks"
+    read $WiNet
+fi
+
+# Tell user why nothing is happening
 echo Letting them wake up......
-#sleep 6
-iwctl station wlan0 connect
+
+sleep 6 # ^1 Footnote 1 for the intelligently impared. ( me sometimes )
+
+iwctl station wlan0 connect $WiNet
+
 p=$(ping -c 1 briskbear.rocks)
-[[ ! $p ]] && printf "${RED}Try again,\n maybe use 'iwctl' to specify a different network.${NC}\n" || printf "${GREEN}Connected!${NC}\n"
+
+if [[ ! $p ]]
+then
+    printf "${RED}Try again,\n maybe use 'iwctl' to specify a different network.${NC}\n"
+else
+    printf "${GREEN}Connected!${NC}\n"
+fi
+
+#^1   Footnote 1 ( see abv. ) : I did not choose 6 seconds to sleep, because I like it I chose it \
+#  because it seemed like the minimum for consistent iwctl success messages. Under some circumstances, \
+#  shortening - removing entirely may be beneficial.

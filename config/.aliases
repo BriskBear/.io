@@ -13,7 +13,6 @@ alias archv='$HOME/.io/Archive' # Archive $files $ArchiveName
 alias autorm='sudo apt auto-remove -y' # Cleanup removed apps
 alias brackets='$HOME/.io/gtab brackets' # run in new tab
 alias brave='$HOME/.io/Brave' # Well titled Brave browser
-alias cat='cat -n' # cat w/  line numbers
 alias cleanpass='rm $HOME/Templates/Database.kdbx' # Clear KPDB
 alias cls='clear && date | lolcat' # Clear and Date
 alias disks='gnome-disks' # Yeah What?!
