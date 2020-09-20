@@ -14,8 +14,12 @@ sudo systemctl start iwd # Easy to use CLI Network adapter daemon (for iwctl int
 
 if [ ! $WiNet ]
 then
-    echo "WiNet envar not set, enter Network Name (SSID) or y to see available networks"
-    read $WiNet
+    WiNet=$1
+    if [ ! $WiNet ]
+    then
+        printf "WiNet envar not set, enter Network Name (SSID) or y to see available networks:"
+        read WiNet
+    fi
 fi
 
 # Tell user why nothing is happening
@@ -23,7 +27,7 @@ echo Letting them wake up......
 
 sleep 6 # ^1 Footnote 1 for the intelligently impared. ( me sometimes )
 
-iwctl station wlan0 connect $WiNet
+printf "iwctl station wlan0 connect $WiNet\n"
 
 p=$(ping -c 1 briskbear.rocks)
 

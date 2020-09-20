@@ -9,10 +9,10 @@ then
     tput sgr0
 else
     printf $(tput setaf 3)
-    printf "E"
+    printf "]"
     printf $(tput setaf 2)
     printf "|"
     printf $(tput setaf 4)
-    printf "3"
+    printf "["
     tput sgr0
 fi

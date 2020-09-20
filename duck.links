@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Argument search term
+user_string=$1
+
+links duckduckgo.com/$user_string
+
+# This needs modification to parse user spaces to %20 for uri`s i think i can use cut?

@@ -12,6 +12,8 @@ do
 done
 
 $HOME/.io/set.BLANKS
+$HOME/.io/set.RUBY
+
 # sudo apt install -y autojump
 
 #####
