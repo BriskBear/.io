@@ -1,18 +1,26 @@
 #!/bin/bash
 
 declare -A locations
+declare -A RAMDisks
 
 . $HOME/.io/config/.Locations
-for i in ${!locations[@]}
+. $HOME/.io/config/.RAMDisks
+
+for l in ${!locations[@]}
 do
-	echo  "${locations[$i]} SAVED STATE >> ~/.defaults.tbz2"
-	sudo tar -cjvf - ${locations[$i]} >> ~/.defaults.tbz2 --remove-files -P
-	echo "$i to ${locations[$i]}"
-	sudo cp "$HOME/.io/config/$i" ${locations[$i]}
+	echo  "${locations[$l]} SAVED STATE >> ~/.defaults.tbz2"
+	sudo tar -cjvf - ${locations[$l]} >> ~/.defaults.tbz2 --remove-files -P
+	echo "$l to ${locations[$l]}"
+	sudo cp "$HOME/.io/config/$l" ${locations[$l]}
 done
 
+#for r in ${!RAMDisks[@]}
+#do
+#  ~/.io/blanks/set.RAMDISK ""
+#done
 $HOME/.io/set.BLANKS
 $HOME/.io/set.RUBY
+$HOME/.io/set.FONTS
 
 # sudo apt install -y autojump
 

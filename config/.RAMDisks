@@ -1,0 +1,5 @@
+#!/bin/bash
+
+RAMDisks['.bashrc']="$HOME/.bashrc"
+RAMDisks['nanorc']='/etc/nanorc'
+RAMDisks['vimrc']='/etc/vimrc'
