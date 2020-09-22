@@ -59,13 +59,20 @@ then
     fi
 fi
 
-if [ "$color_prompt" = yes ]
+#if [ "$color_prompt" = yes ]
+#then
+#    PS1=$(cat $HOME/.io/config/PS1)
+#else
+#  	PS1=$(cat $HOME/.io/config/PS1)
+#fi
+#unset color_prompt force_color_prompt
+
+if [ -f /tmp/ps1 ]
 then
-    PS1=$(cat $HOME/.io/config/PS1)
+    source /tmp/ps1
 else
-  	PS1=$(cat $HOME/.io/config/PS1)
+    PS1='\u[#?]\h\w:$ '
 fi
-unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in

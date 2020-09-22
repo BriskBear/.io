@@ -46,5 +46,6 @@ alias tar.ext='tar -xjvf' # extract tbz2
 alias tar.list='tar -i -tf' # List files in an appended tbz2 archive
 alias update='sudo pacman -Syu' # Update Package Manager
 alias vash='vim $HOME/.ssh/config' # 
+alias vis='systemctl start sddm' # 
 alias x='$HOME/.io/.sec/.x' # Secret secrets
 alias xtab='$HOME/.io/xtab' # Open command in new XFCE Terminal tab

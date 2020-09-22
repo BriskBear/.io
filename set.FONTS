@@ -10,7 +10,7 @@ cp -r "$STATIC_DIR" "/tmp/$TMP"
 
 if [ ! -d "$LINK" ]
 then
-    ln -s "/tmp/$TMP" "$LINK"
+    sudo ln -s "/tmp/$TMP" "$LINK"
 fi
 
 echo "$INFORM_NAME set to RAMDisk"
