@@ -1,4 +1,4 @@
-# __ Purge __
+# __Purge__
 ### Description:  
 
 Purge calls aptitude to remove an application. It then purges all related config files and cleans-up dpkg with auto-remove.
