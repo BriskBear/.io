@@ -33,6 +33,7 @@ alias nash='sudo nano +3 $HOME/.ssh/config' # Configure SSH
 alias neofetch='clear && neofetch --color_blocks off' # 
 alias purge='$HOME/.io/purge' # Package Manager Full Remover
 alias q='exit' # quit
+alias sa='alias | grep' # Search aliases
 alias search='$HOME/.io/search' # Query for Files
 alias setCFG='$HOME/.io/Prepdot' # Update .io Configs
 alias setup='$HOME/.io/setup' # Package manager install; singular or space-separated list.
