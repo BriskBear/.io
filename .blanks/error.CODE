@@ -11,7 +11,7 @@ then
     printf "$(tput setaf 2)]"
 else
     printf "$(tput setaf 2)"
-    printf "[]"
+    printf "]|["
 fi
 
 printf "$(tput sgr0)"
