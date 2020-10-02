@@ -1,6 +1,6 @@
 #!/bin/bash
 
 sudo apt install -y $1 | lolcat
-test -f "$(which $1)" && echo "$1 Installed /n $(which $1)"||echo "$1 Install Failed"
+test -f "$(which $1)" && printf "$1 Installed \n $(which $1)\n"||printf "$1 ${RED}Install Failed${NC}\n"
 
 
