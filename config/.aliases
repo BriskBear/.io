@@ -1,5 +1,5 @@
 alias aar='sudo add-apt-repository' # add package manager repo, requires ppa 
-alias alias='~.io/alias' # All aliases + Descriptions in less / just aliases matching argument
+alias aliases='~/.io/alias' # All aliases + Descriptions in less / just aliases matching argument
 alias aptlist='apt list --upgradable' # list apt upgrades
 alias archv='$HOME/.io/Archive' # Archive $files $ArchiveName
 alias autorm='sudo apt auto-remove -y' # Cleanup removed apps
