@@ -1,0 +1,18 @@
+[submodule "ArchLin"]
+	path = ArchLin
+	url = https://github.com/briskbear/.io
+[submodule "Spare"]
+	path = Spare
+	url = https://github.com/briskbear/.io
+[submodule "Ubuntu"]
+	path = Ubuntu
+	url = https://github.com/briskbear/.io
+[submodule "archBoot"]
+	path = archBoot
+	url = https://github.com/briskbear/.io
+[submodule "master"]
+	path = master
+	url = https://github.com/briskbear/.io
+[submodule "ubuntu_nocat"]
+	path = ubuntu_nocat
+	url = https://github.com/briskbear/.io
