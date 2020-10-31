@@ -1,0 +1,20 @@
+#!/bin/bash
+
+NEW_SU="$1"
+MESSAGES=(\
+  "User $NEW_SU created!\n" \
+  "$NEW_SU added to sudo groups:\n   adm cdrom sudo dip plugdev lxd\n" \
+)
+ERR="/tmp/.0"
+
+# Create the user to be given SU powers
+sudo adduser "$NEW_SU" |& tee "$ERR"
+printf "${MESSAGES[0]}"
+
+# Add the necessary groups for SU powers
+sudo usermod -a -G \
+  adm,cdrom,sudo,dip,plugdev,lxd \
+  "$NEW_SU" \
+  &>> $ERR
+printf "${MESSAGES[1]}"
+

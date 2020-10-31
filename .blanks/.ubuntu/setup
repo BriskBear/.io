@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Add some color!
+source $HOME/.io/color
+
+# Query if the package is installed yet
+status=$(source $HOME/.io/blanks/installed $1)
+
+[[ $status -gt 0 ]] && \
+   ( printf "${LIGHT_GREEN}$1 Installed${NC} \n ${CYAN}$(which $1)${NC}\n" )|| \
+   ( printf "${RUST}$1 not detected\n Installing...${NC}\n";sudo apt install -y $1 #| lolcat )
+
+[[ $status -gt 0 ]] && \
+    exit 1|| \
+    status=$(source $HOME/.io/blanks/installed $1)
+    [[ $status -gt 0 ]] && \
+      ( printf "${LIGHT_GREEN}$1 Installed${NC} \n ${CYAN}$(which $1)${NC}\n" )|| \
+      ( printf "$1 ${PINK}Install Failed${NC}\n")
+
+

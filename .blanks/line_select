@@ -1,0 +1,15 @@
+#!/bin/bash
+
+RED='\033[0;31m'
+NC='\033[0m'
+FILE="$1"
+LINE_SELECT="$2"
+#____________________VARIABLE DEFINITION
+
+if [ -f "$FILE" ]; then
+    sed -n \
+     $LINE_SELECT"p" \
+     $FILE
+else
+    echo -e "${RED} $FILE dne or is not a regular file. ${NC}"
+fi

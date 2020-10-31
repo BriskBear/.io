@@ -1,0 +1,4 @@
+#!/bin/bash
+
+RC="$1"
+[[ $( ls $HOME/.config | grep "$RC" ) ]] && printf 'true'"\n" || printf 'false'"\n"

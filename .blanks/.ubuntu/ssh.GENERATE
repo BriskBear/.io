@@ -1,0 +1,9 @@
+#!/bin/bash
+
+mkdir -vm 700 .ssh
+touch .ssh/644.pub
+touch .ssh/authorized_keys
+sudo chmod -v 640 .ssh/authorized_keys
+mkdir -vm 700 .ssh/.pk
+touch .ssh/.pk/600.pem
+sudo chmod -v 755 /home/elijah

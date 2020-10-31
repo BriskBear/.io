@@ -1,0 +1,64 @@
+#!/bin/bash
+
+Black='\033[0;30m'
+Blue='\033[0;34m'
+Rust='\033[0;33m'
+Cyan='\033[0;36m'
+Dark_Gray='\033[1;30m'
+Green='\033[032;m'
+Light_Blue='\033[1;34m'
+Light_Cyan='\033[1;36m'
+Light_Gray='\033[0;37m'
+Light_Green='\033[1;32m'
+Light_Purple='\033[1;35m'
+Pink='\033[1;31m'
+Purple='\033[0;35m'
+Red='\033[0;31m'
+White='\033[1;37m'
+Yellow='\033[1;33m'
+NC='\033[0m'
+
+# alias echo='echo -e'
+
+function color {
+#    case
+#     
+#    esac
+    echo "${Yellow} USAGE:\n     'echo \${Red}${Red}Red Text${Yellow}\${NC}' ${NC}"
+    echo "${Yellow}     Use \${NC} to change back to default or shell will stay that color!${NC}"
+}
+
+#### MASTER TABLE DO NOT EDIT SAVE TO UPDATE###
+#Black        0;30     Dark Gray     1;30
+#Red          0;31     Light Red     1;31
+#Green        0;32     Light Green   1;32
+#Brown/Orange 0;33     Yellow        1;33
+#Blue         0;34     Light Blue    1;34
+#Purple       0;35     Light Purple  1;35
+#Cyan         0;36     Light Cyan    1;36
+#Light Gray   0;37     White         1;37
+
+# Based upon the following premise as direct quotations of :
+#---------------------------------------------------------
+# As Referenced on Aug 1, 2020 15:41 UTC
+# https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
+
+# answered May 10 '11 at 9:11
+# Tobias
+# 24.2k11 gold badge1616 silver badges23
+
+##    .---------- constant part!
+##    vvvv vvvv-- the code from above
+#RED='\033[0;31m'
+#NC='\033[0m' # No Color
+#printf "I ${RED}love${NC} Stack Overflow\n"
+
+# edited Jan 17 '19 at 1:44
+# Daniel Compton
+# 9,75933 gold badges3131 silver badges5353 bronze badges
+
+# From @james-lim's comment, if you are using the echo command,
+# be sure to use the -e flag to allow backslash escapes.
+
+## Continued from above example
+#echo -e "I ${RED}love${NC} Stack Overflow"

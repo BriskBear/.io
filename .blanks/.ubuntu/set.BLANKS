@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Add Color to Output
+source $HOME/.io/.blanks/color
+
+# Remove existing RAMDisk
+rm -r /tmp/blks /tmp/ps1 &>>/tmp/.0
+
+# .io/.blanks to RAMDisk
+cp -r $HOME/.io/.blanks/ /tmp/blks
+# PS1 to RAMDisk
+cp $HOME/.io/config/PS1.5 /tmp/ps1
+
+# Downloads folder to RAMDisk
+mkdir -v /tmp/dwn &>> /tmp/.0
+
+# Create the .io/blanks link if it does not exist
+if [ ! -d $HOME/.io/blanks ]
+then
+    ln -s /tmp/blks $HOME/.io/blanks
+fi
+
+# Create the $HOME/Downloads link, if it does not exits
+if [ -d $HOME/Downloads ]
+then
+    rm -vfr $HOME/Downloads &>> /tmp/.0
+    ln -s /tmp/dwn $HOME/Downloads &>> /tmp/.0
+else
+    ln -s /tmp/dwn $HOME/Downloads &>> /tmp/.0
+fi
+
+printf "${LIGHT_CYAN}blanks${NC} set to RAMDisk\n"

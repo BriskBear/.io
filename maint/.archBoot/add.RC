@@ -1,0 +1,6 @@
+#!/bin/bash
+
+new_PATH=$1
+new_RC=$($HOME/.io/blanks/file_from_path $new_PATH)
+
+echo locations["$new_RC"]="$new_PATH" >> $HOME/config/.Locations

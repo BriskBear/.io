@@ -1,0 +1,1 @@
+git config -l | grep url |rev| cut -f1 -d / |rev
