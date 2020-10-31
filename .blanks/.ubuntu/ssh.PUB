@@ -1,0 +1,6 @@
+#!/bin/bash
+
+PRIVATE="$1"
+
+touch "$HOME/.ssh/$PRIVATE"'.pub'
+ssh-keygen -y -f "$HOME/.ssh/.pk/$PRIVATE" > "$HOME/.ssh/$PRIVATE"'.pub'

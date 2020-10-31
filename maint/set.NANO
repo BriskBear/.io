@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Add some color!
+. $HOME/.io/.blanks/color
+
+# Set Variables and Messages
+package="nano"
+cfgname=$(ls -A "$HOME/.io/config/$package"| egrep '^[a-Z].+')
+VER=$(nano --ver|grep ver|cut -f5 -d " "|cut -f1 -d '.')
+ERR='/tmp/.0'
+MSG=( \
+  [found]="Nano usrcfg already exists\n" \
+  [mk]="Creating $package\n" \
+)
+# Run package-specific set-script
+source ~/.io/config/$package/.spec
+
+# Ensure User-specific configuration directory is in place
+[[ -d "$HOME/.config/nano" ]] && printf "${MSG[found]}" || (printf "${MSG[mk]}" && mkdir -vp "$HOME/.config/$package" &>> "$ERR")
+
+# Remove any pre-existing config file and set the new one
+[[ -f "$HOME/.config/$package/$cfgname" ]] && \
+  (rm -vr \
+     "$HOME/.config/$package/$cfgname" \
+     &>> $ERR && \
+   ln -vs \
+     $HOME/.io/config/$package/$VER \
+     $HOME/.config/$package/$cfgname \
+     &>> $ERR) \
+ || ln -vs $HOME/.io/config/$package/$VER $HOME/.config/$package/$cfgname &>> $ERR
+#cp -r ~/.io/config/nano
+
+printf " $HOME/"'.config/'"$package"'/'"$cfgname"' set for '"${LIGHT_BLUE}$VER"
+printf '.*'"${NC}\n"
+
+printf $VER
+unset package cfgname VER ERR MSG

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+PROGRAM="$1"
+ARGS="$2"
+
+#if [ $PROGRAM = "brave" ]
+#then
+#    sudo xinit /usr/bin/brave "--no-sandbox" -- :1
+#elif [ ! $ARGS ]
+#then
+#    sudo xinit "$PROGRAM" -- :1
+#else
+#    sudo xinit "$PROGRAM" "$ARGS" -- :1
+#fi
+
+case "$PROGRAM" in
+  brave)
+        sudo xinit /usr/bin/brave "--no-sandbox" --:1
+  ;;
+  *)
+    if [ ! $ARGS ]
+    then
+        sudo xinit "$PROGRAM" -- :1
+    else
+        sudo xinit "$PROGRAM" "$ARGS" -- :1
+    fi
+  ;;
+esac
+
+unset PROGRAM ARGS

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Collect Information
+printf "What app is the plugin for? (nano):"
+read APP
+CONFIG="$APP"'/'"$APP"'rc'
+#printf "Is $CONFIG correct? (Enter for Yes, or write the correct path to config) :"
+#read CONFIRM
+
+# Update if path differs from default
+#printf "Before if $CONFIG\n"
+if [ $CONFIRM ]
+then
+    CONFIG="$CONFIRM"
+fi
+#printf "After if $CONFIG\n"
+
+DIRS=$(ls "$HOME/.io/config/$APP")
+rc_PATH=$(echo $DIRS|egrep -o [A-z]+.+)
+echo $DIRS
+echo $rc_PATH
+
+
+printf "locations[\"$CONFIG\"]=\"$APP""$APP"'rc'"\"\n"

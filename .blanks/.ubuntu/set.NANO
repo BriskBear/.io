@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Add color to Output
+source $HOME/.io/color
+
+# Create Backup Directory (Temporary Deleted on Reboot, copy elsewhere to save)
+mkdir /tmp/.naBak &>>/tmp/.0
+
+# Store nano version [number only]
+VER=$(nano --ver|grep ver|cut -f5 -d " "|cut -f1 -d '.')
+
+# Check that $VER is set correctly (Testing)
+#echo $VER
+
+# Run package-specific set-script
+source ~/.io/config/$package/.spec
+
+cp -r ~/.io/config/nano 
+printf "/etc/nanorc set for nano $VER"
+printf ".*\n"

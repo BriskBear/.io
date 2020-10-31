@@ -1,0 +1,18 @@
+#!/bin/bash
+
+ERR=$1
+
+#echo $ERR
+if [ $ERR -gt "0" ]
+then
+    printf "$(tput setaf 1)$ERR"
+    tput sgr0
+else
+    printf $(tput setaf 3)
+    printf "]"
+    printf $(tput setaf 2)
+    printf "|"
+    printf $(tput setaf 4)
+    printf "["
+    tput sgr0
+fi

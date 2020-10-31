@@ -1,0 +1,31 @@
+#!/bin/bash
+
+declare -a READMEs
+contents_NAME="$HOME/.io/README.md"
+
+if [ -f $contents_NAME ]
+then
+    mv $contents_NAME $HOME/.io/logs/old.READme.md
+fi
+
+for d in $(ls $HOME/.io/usg)
+do
+  READMEs+=("$d")
+done
+
+printf "# .io  \n" >> $contents_NAME
+printf "_Linux Dotfiles for my ProfileAliases_  \n\n" >> $contents_NAME
+
+printf "__READmes.md__  \n\n" >> $contents_NAME
+
+for r in ${READMEs[@]}
+do
+#  printf "  + $r  \n"
+  printf "  + [$r](usg/$r 'usg/$r')  \n" >> $contents_NAME
+done
+
+#  + [Brave*](usg/Brave.md "New-tab Brave")
+#  + [git.CLONE*](usg/git.CLONE.md "Shortcut clone, modular for GCC")
+#  + [nano.GITPUSH*](usg/nano.GITPUSH.md "edit a file then pull-push")
+#  + [purge*](usg/purge.md "remove a package")
+#  + [ssh.Public*](usg/ssh.Public.md "Generate .pub from .pem")

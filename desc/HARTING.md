@@ -1,0 +1,10 @@
+
+<p style="margin-right:7em;"><img src="Capture.png" width="300"></p>
+
+The Harting font is a font with a full character set that mimics a typewriter with a few crooked keys which also has a ribbon that is running out of ink. The characters are monospaced, as on a typewriter, and at low resolutions (300 dpi or lower) the smaller sizes of the fonts will appear merely crooked or a little jaggy; larger sizes or greater resolutions will approach the look of a typewriter that needs a new ribbon, as well.
+
+Harting is copyright 1992 by David Rakowski, All Rights Reserved, Alle Rechte Vorbehalten. It is not distributed as freeware or shareware, but as AreaCodWare: if you use or like or are turned on by this font, you should make a tax-deductible contribution to Columbia University based on your area code. For instance, if you live in Vermont, your area code is 802 and your AreaCodeWare fee is $8.02; if you live in Manhattan and your area code is 212, then your AreaCodeWare fee is $2.12; Los Angeles users, your fee is a penny higher because your area code is 213. If you do not have a phone, then the AreaCodeWare fee is $9.20 (a penny above the highest possible area code); if your office and home are in two different area codes, then your AreaCodeWare fee is the lower of the two. Your AreaCodeWare check should be made out to Columbia University and sent to Cynthia Lemiesz, Music Department, 703 Dodge Hall, Columbia University, New York, NY 10027. Your check is a tax-deductible contribution to Columbia Composers and helps pay for the performance of music composed by students at Columbia University. With your check, please enclose a note that says, "My area code is the best part of me; without it, my socks would have little meaning, and the ozone hole would be mere wallpaper. I really like Marie Osmond (just kidding)."
+
+The Harting font (named for Julie Harting for no apparent reason) comes to you from Insect Bytes, a place and space in time that considers fonts to be things and that considers the weather to be an integral part of the total experience.
+
+

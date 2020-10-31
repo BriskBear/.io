@@ -1,0 +1,25 @@
+#!/bin/bash
+
+INFORM_NAME='ioFonts'
+LINK='/usr/share/fonts/io'
+STATIC_DIR="$HOME/.io/fonts"
+TMP='.fnt'
+
+rm -r "/tmp/$TMP" &>>/tmp/.0
+cp -r "$STATIC_DIR" "/tmp/$TMP"
+
+#if [ ! -d "$LINK" ]
+#then
+#    sudo ln -s "/tmp/$TMP" "$LINK"
+#fi
+#
+#echo "$INFORM_NAME set to RAMDisk"
+
+FONTS=$(ls -a /tmp/.fnt/)
+nodot=$(echo ${FONTS[@]/'.'})
+nodotdot=$(echo ${nodot[@]/'..'})
+#echo $nodotdot
+for f in ${nodotdot[@]}
+do 
+    sudo ln -s /tmp/.fnt/$f /usr/share/fonts/$f
+done

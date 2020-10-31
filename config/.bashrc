@@ -56,11 +56,18 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1=$(cat $HOME/.io/config/PS1)
+if [ -f /tmp/ps1 ]
+then
+    source /tmp/ps1
 else
-  	PS1=$(cat $HOME/.io/config/PS1)
+    PS1='\u[$?]\h:\w$ '
 fi
+
+#if [ "$color_prompt" = yes ]; then
+#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#else
+#    PS1='$(tput setaf 2)${debian_chroot:+($debian_chroot)}\u$?\h:\w\$$(tput sgr0) '
+#fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -116,16 +123,17 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-alias setAl='~/.io/sort.aliases && source ~/.bashrc'
+
+# Git
 
 # NeoFetch
 /usr/bin/neofetch --color_blocks off
 
 # AutoJump
 #[[ -s /home/lij/.autojump/etc/profile.d/autojump.sh ]] && source /home/lij/.autojump/etc/profile.d/autojump.sh
-PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/var/lib/flatpak/exports/share:/home/lij/.local/share/flatpak/exports/share
+#PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 export PATH
 
 # Add asdf to Bash
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+#. $HOME/.asdf/asdf.sh
+#. $HOME/.asdf/completions/asdf.bash

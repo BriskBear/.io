@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sort ~/.io/config/.aliases > /tmp/AKA
+mv /tmp/AKA ~/.io/config/.aliases -f

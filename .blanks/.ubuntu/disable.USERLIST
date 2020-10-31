@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sudo -i 
+xhost +SI:localuser:gdm
+su gdm -l -s /bin/bash
+export DISPLAY=:0
+gsettings set org.gnome.login-screen disable-user-list true

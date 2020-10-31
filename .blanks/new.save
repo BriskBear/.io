@@ -1,0 +1,20 @@
+#!/bin/bash
+
+declare file=$1
+declare -i line=$2
+declare -i end=$3
+
+if [ ! $end ]
+then
+    sed -n $1"p" # >> $OUT_FILE
+elif [ $end ]
+then
+    index=$line
+    while [ $index -le $end ]
+    do
+        sed -n $index"p" # >> $OUT_FILE
+        index=$[ $index + 1 ]
+    done
+else
+    echo -e "${\033[0;31m}Strange end argument niether exists nor does not...${\033[0m}"
+fi
