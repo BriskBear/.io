@@ -1,3 +1,0 @@
-#!/bin/bash
-
-xfce4-terminal --tab -T $1 -e $1

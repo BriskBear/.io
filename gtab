@@ -1,3 +1,0 @@
-#!/bin/bash
-
-gnome-terminal --tab -t $1 -- $1
