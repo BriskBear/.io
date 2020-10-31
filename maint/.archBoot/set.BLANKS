@@ -1,0 +1,16 @@
+#!/bin/bash
+
+rm -r /tmp/blks /tmp/ps1 &>>/tmp/.0
+cp -rT $HOME/.io/.blanks/ /tmp/blks
+cp -rT $HOME/.io/config/PS1.5 /tmp/ps1
+mkdir  /tmp/dwn /tmp/.naBak
+
+if [ ! -d $HOME/.io/blanks ]
+then
+    ln -s /tmp/blks $HOME/.io/blanks
+fi
+
+echo "Blanks set to RAMDisk"
+
+##
+# needs similar to Prepdot

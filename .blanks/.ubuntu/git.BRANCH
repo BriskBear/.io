@@ -1,0 +1,4 @@
+#!/bin/bash
+
+git checkout -b $1
+# Creates and checksout a new branch by the name of $1

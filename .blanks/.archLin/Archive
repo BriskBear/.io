@@ -1,0 +1,7 @@
+#!/bin/bash
+
+to_Archive=($(ls -A --quoting-style=c $HOME/.io/Archive))
+for a in ${to_Archive[@]}
+do
+    echo $a
+done

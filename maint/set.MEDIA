@@ -1,0 +1,25 @@
+#!/bin/bash
+# link all available drives in /media/<username> and create a 'media' link in home folder.
+DRIV=$(ls /mnt)
+
+[[ ! -d "/media/$USER" ]] && \
+  sudo mkdir -v "/media/$USER/" &>> /tmp/.0 || \
+  printf "$USER exists in /media\n"
+
+function mk_link(dir) {
+    sudo ln -vs "/mnt/$dir" "/media/$USER/$dir" &>> /tmp/.0 && \
+    printf " media/$dir created\n" || \
+    printf "media/$dir ERRORED\n"
+}
+
+for d in ${DRIV[@]}
+do
+    [[ -d "/media/$USER/$d" ]] && \
+        ( sudo rm -v "/media/$USER/$d" &>> /tmp/.0 && mk_link $d ) || \
+        mk_link $d
+done
+
+sudo chown $USER "/media/$USER"
+ln -s /media/$USER ~/media
+
+unset DRIV dir d

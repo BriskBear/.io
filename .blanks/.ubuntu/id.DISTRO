@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DISTRO=$(cat /etc/*-release | egrep ^ID=+ | cut -f2 -d = )
+
+case $DISTRO in
+    arch)
+        echo "Arch Linux"
+    ;;
+    ubuntu)
+        echo "Ubuntu"
+    ;;
+    *)
+        echo "Unsupported Sorry... $DISTRO"
+    ;;
+esac
+
+export DISTRO

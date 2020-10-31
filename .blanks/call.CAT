@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DATE=$(date +%N)
+COLOR=$(echo $RANDOM|cut -c-1)
+#if [ ! $COLOR ]
+#then
+#    COLOR=256
+#elif [ $COLOR -gt 256 ]
+#then
+#    COLOR=1
+#fi
+#
+tput setaf $COLOR
+printf $1
+
+tput sgr0
+unset DATE COLOR

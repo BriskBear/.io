@@ -1,0 +1,19 @@
+#!/bin/bash
+
+declare -A locations
+
+. $HOME/.io/config/.Locations
+for i in ${!locations[@]}
+do
+	echo  "${locations[$i]} SAVED STATE >> ~/.defaults.tbz2"
+	sudo tar -cjvf - ${locations[$i]} >> ~/.defaults.tbz2 --remove-files -P
+	echo "$i to ${locations[$i]}"
+	sudo cp "$HOME/.io/config/$i" ${locations[$i]}
+done
+
+# sudo apt install -y autojump
+exec $SHELL
+
+#####
+#   Next generation will have a separate keyfile { rcfile='path', etc. }
+# thusly it will batch install rcfiles for expandability

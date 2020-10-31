@@ -1,0 +1,1 @@
+for i in .io Arch; do git clone https://github.com/briskbear/Arch /tmp/Arch; done

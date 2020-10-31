@@ -1,0 +1,16 @@
+#!/bin/bash
+
+INFORM_NAME="ioFonts"
+LINK='/usr/share/fonts/io'
+STATIC_DIR="$HOME/.io/fonts"
+TMP='.fnt'
+
+rm -r "/tmp/$TMP" &>>/tmp/.0
+cp -r "$STATIC_DIR" "/tmp/$TMP"
+
+if [ ! -d "$LINK" ]
+then
+    ln -s "/tmp/$TMP" "$LINK"
+fi
+
+echo "$INFORM_NAME set to RAMDisk"

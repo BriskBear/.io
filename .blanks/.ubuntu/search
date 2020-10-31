@@ -1,0 +1,16 @@
+#!/bin/bash
+
+function search () {
+    TERM=( "$@" )
+    OUTPUT=$(echo "~/${TERM[0]}" | cut -f1 -d ' ')
+    sudo find $OUTPUT |
+     grep "${TERM[1]}"
+     echo $OUTPUT
+     echo ${TERM[@]}
+}
+
+search "$1" &&\
+echo searched || search ${1[@]}
+###
+# echo "~/$1" | cut -f1 -d ' ' 
+# find / | grep "$1" >> $(echo "~/$1" | cut -f1 -d ' ')

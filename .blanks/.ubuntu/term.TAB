@@ -1,0 +1,7 @@
+#!/bin/bash
+
+CMD="$1"
+ERR="/tmp/.0"
+[[ $(source $HOME/.io/blanks/installed gnome-terminal) -gt 0 ]] && \
+  (exo-open --launch TerminalEmulator --tab -t "gnome- $CMD" -e "$CMD" &>> "$ERR" &) || \
+  ( exo-open --launch TerminalEmulator --tab -T "xfce4- $CMD" -e "$CMD" &>> "$ERR" &)

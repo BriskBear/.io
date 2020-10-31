@@ -1,0 +1,41 @@
+#!/bin/bash
+
+declare -A locations
+declare -a enabled_configs
+
+#enabled_configs=('blanks' 'nano' 'vim')
+
+#echo ${enabled_configs[@]}
+
+# A Little Vague this loads the config/.Locations $locations keyfile of configs and paths
+source $HOME/.io/config/.Locations
+
+for i in ${!locations[@]}
+do
+	printf  "${locations[$i]} SAVED STATE >> ~/.defaults.tbz2\n" >> /tmp/.0
+	tar -cjf - ${locations[$i]} >> ~/.defaults.tbz2 --remove-files -P
+	printf "$i to ${locations[$i]}\n" >> /tmp/.0
+	cp "$HOME/.io/config/$i" ${locations[$i]}
+done
+
+# Copy blanks to ramdisk for loopcalling
+for c in ${enabled_configs[@]}
+do
+    if [[ $($c --ver &>> /tmp/.0) ]]
+    then
+        printf "${c^^}"' configured.'"\n" >> /tmp/.0
+    else
+        printf "${RUST}Skipped${NC}"' configuring '"${LIGHT_PURPLE}$c${NC}\n" >> /tmp/.0
+    fi
+done
+
+$HOME/.io/set.BLANKS
+#$HOME/.io/set.NANO
+
+cp ~/.io/config/PS1.5 /tmp/ps1
+#exec $SHELL
+
+#####
+#   Next generation will have a separate keyfile { rcfile='path', etc. }
+# thusly it will batch install rcfiles for expandability
+#http://www.faqs.org/docs/Linux-HOWTO/Bash-Prompt-HOWTO.html

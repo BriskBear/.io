@@ -1,0 +1,13 @@
+#!/bin/bash
+
+HERE=$(pwd)
+LINK=$1
+NAME=$(
+    echo $LINK |rev| cut -f1 -d / |rev
+)
+cd "/home/$(whoami)/Downloads/"
+wget $LINK
+# wget $LINK > "/home/$(whoami)/Downloads/"$NAME
+cd $HERE
+beep
+# echo "$1 in ~/Downloads and $tasty_pickles was your input."

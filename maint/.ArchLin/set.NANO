@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Create Backup Directory (Temporary Deleted on Reboot, copy elsewhere to save)
+mkdir /tmp/.naBak &>>/tmp/.0
+
+# Store nano version [number only]
+VER=$(nano --ver|grep ver|cut -f5 -d " ")
+
+# Check that $VER is set correctly (Testing)
+#echo $VER
+
+if [ -f /etc/nanorc ]
+then
+    mkdir /tmp/rc &>>/tmp/.0
+    sudo mv /etc/nanorc /tmp/rc/
+    printf \
+    "Existing nanorc moved to /tmp/rc/ .\n Move elsewhere, before poweroff, if you wish to save it!!\n"
+fi
+
+sudo ln -s $HOME/.io/config/nano/$VER /etc/nanorc
+printf "/etc/nanorc set for nano $VER\n"
