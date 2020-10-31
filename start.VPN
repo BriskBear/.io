@@ -1,6 +1,0 @@
-#!/bin/bash
-
-source ./color
-read -ersn7 -p "Press ${Yellow}Any${NC} Key to Continue..."
-
-echo "pickles"
