@@ -1,0 +1,48 @@
+#!/bin/bash
+
+declare -A MSG
+
+## Add some color to those prompts!
+source "$HOME/.io/.blanks/color"
+MSG=( \
+  [SET_BLANKS]="${LIGHT_CYAN}"Blanks"${NC} set to ${RUST}RAMDisk${NC}\n" \
+  [SET_PS1]="${YELLOW}PS1${NC} set to ${RUST}RAMDisk${NC}\n" \
+  [SET_DOWNLOADS]="${LIGHT_BLUE}Downloads${NC} set to ${RUST}RAMDisk${NC}\n" \
+ )
+
+## cleanup ramdisk incase blanks exist
+rm -r \
+  /tmp/blks \
+  /tmp/ps1 \
+  /tmp/dwn \
+  &>> /tmp/.0
+
+## copy blank scripts to ramdisk
+cp -vrT \
+  $HOME/.io/.blanks/ \
+  /tmp/blks \
+  &>> /tmp/.0
+
+## copy ps1 to ramdisk
+cp -vrT \
+  $HOME/.io/config/PSv/PS1.5 \
+  /tmp/ps1 \
+  &>> /tmp/.0
+
+## create ramdisk downloads folder
+mkdir -v \
+  /tmp/dwn \
+  &>> /tmp/.0
+
+if [ ! -d $HOME/.io/blanks ]
+then
+    ln -vs /tmp/blks $HOME/.io/blanks &>> /tmp/.0
+fi
+
+for m in "${!MSG[@]}"
+do
+    printf "${MSG[$m]}"
+done
+
+##
+# needs similar to Prepdot

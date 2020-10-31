@@ -1,0 +1,29 @@
+#!/bin/bash
+
+EXEC='$1'
+SHEBANG='$2'
+
+null_EXEC='Enter a name for the executable file: '
+null_SHEBANG='#!/bin/bash'
+
+if [ ! $EXEC ]
+then
+    printf $null_EXEC
+    read EXEC
+fi
+
+if [ ! -d .naBak ]
+then
+    mkdir .naBak
+fi
+
+if [ ! $SHEBANG ]
+then
+    SHEBANG="$null_SHEBANG"
+fi
+
+printf "$SHEBANG\n\n" >> $EXEC
+
+nano +3 $EXEC
+
+sudo chmod u+x $EXEC

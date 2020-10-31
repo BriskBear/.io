@@ -1,0 +1,19 @@
+#!/bin/bash
+
+in_file=$1
+declare -i line=$2
+declare -i end=$3
+
+if [[ $end -gt 0 ]]
+then
+    index=$line
+    while [ $index -le $end ]
+    do
+        sed -n $index'p' $in_file # >> $OUT_FILE
+        index=$[ $index + 1 ]
+    done
+else
+    sed -n $line'p' $in_file # >> $OUT_FILE
+fi
+
+unset in_file line end

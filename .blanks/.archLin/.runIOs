@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Add some color!
+source colors
+ERR='/tmp/.0'
+MSG=( \
+  [no_blanks]=" ERR: .blanks not detected\n" \
+)
+[[ -d $HOME/.io/.blanks ]] && sudo chmod -v u+x $HOME/.io/.blanks/* &>> $ERR || printf
+

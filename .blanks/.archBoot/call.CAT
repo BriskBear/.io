@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DATE=$(date +%N)
+tput setaf $(( $RANDOM % 6 + 1 ))
+printf $1
+tput sgr0

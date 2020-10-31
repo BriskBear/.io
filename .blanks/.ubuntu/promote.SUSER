@@ -1,0 +1,24 @@
+#!/bin/bash
+
+ERR="/tmp/.0"
+NEW_SU="$1"
+MESSAGES=( \
+  "$NEW_SU to become superuser, ctrl-c to cancel.\n" \
+  "No user selected.\n Type the name of a user to promote to superuser: " \
+  "$NEW_SU added to sudo groups:\n   adm cdrom sudo dip plugdev lxd\n" \
+)
+
+# Confirm the user who will become super
+[[ $NEW_SU ]] && \
+  (printf "${MESSAGES[0]}"; read CONTINUE) || \
+  (printf "${MESSAGES[1]}"; read NEW_SU)
+
+# Add the necessary groups for SU powers
+sudo usermod -a -G \
+  adm,cdrom,sudo,dip,plugdev,lxd \
+  "$NEW_SU" \
+  &>> $ERR
+printf "${MESSAGES[2]}"
+
+# Cleanup
+unset ERR NEW_SU MESSAGES

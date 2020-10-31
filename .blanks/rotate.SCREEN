@@ -1,0 +1,7 @@
+#!/bin/bash
+
+case $() in
+  2)  # Currently top is rotated left, but it should be normal (0)
+        xrandr -o 0
+        xfconf-query -c pointers -p /
+esac

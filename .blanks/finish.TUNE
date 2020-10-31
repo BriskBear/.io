@@ -1,0 +1,1 @@
+beep -f 440 -l 100 && beep -f 660 -l 100 && beep -f 880 -l 100 && beep -f 550 -l 100 && beep -f 220 -l 100

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#gnome-terminal --tab -t Brave -e "brave $1"
+[[ $(source $HOME/.io/blanks/installed gnome-terminal) -gt 0 ]] && \
+  (exo-open --launch TerminalEmulator --tab -t Brave -e "brave-browser $1" &>> /tmp/.0 &) || \
+  ( exo-open --launch TerminalEmulator --tab -T Brave -e "brave-browser $1" &>> /tmp/.0 &)
