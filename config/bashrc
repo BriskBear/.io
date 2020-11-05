@@ -157,6 +157,7 @@ do
     d=$( echo $k|rev|cut -f1 -d /|rev )
     printf "added $d\n"
 done
+unset ssh_keys
 
 # NeoFetch
 /usr/bin/neofetch --color_blocks off
