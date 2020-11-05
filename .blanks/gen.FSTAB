@@ -1,0 +1,7 @@
+
+#!/bin/bash
+
+#[[ /mnt/etc ]] && printf "/mnt/etc exists" || mkdir -p /mnt/etc
+#genfstab -U -p /mnt >> /mnt/etc/fstab
+
+sudo genfstab -U -P / > /etc/fstab

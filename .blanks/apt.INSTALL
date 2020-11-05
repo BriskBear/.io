@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Keys need declared before definition
+declare -a queue
+
+# Prep for logging, declare constants
+LOG="$HOME/.io/logs/apt_install"
+keyLOG="$HOME/.io/logs/queue"
+MSG=( \
+    [start]="# apt.INSTALL : " \
+    [stop]="# " \
+)
+
+# Populate the apt queue
+source /tmp/queue
+
+function with_cat() {
+  if [[ $1 ]]
+  then
+      # Install all items in the queue
+      for p in ${queue[@]}
+      do
+          sudo apt install -y $p | tee -a $LOG |lolcat
+      done
+  else
+      # Install all items in the queue
+      for p in ${queue[@]}
+      do
+          sudo apt install -y $p | tee -a $LOG
+      done
+  fi
+}
+
+# Check for lolcat
+case "$(lolcat?)" in
+  lolcat)
+    with_cat true
+    ;;
+  sadcat)
+    # Install lolcat
+    gem install lolcat
+    with_cat true
+    ;;
+  deadcat)
+    with_cat
+    ;;
+esac
+
+# Log and Cleanup
+printf ${MSG[start]}$(date)"\n" >> $keyLOG
+cat /tmp/queue >> $keyLOG && \
+ rm -vf /tmp/queue &>> $LOG
+printf ${MSG[stop]}$(date)"\n" >> $keyLOG
+unset queue

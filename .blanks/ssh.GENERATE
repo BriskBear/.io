@@ -1,0 +1,10 @@
+#!/bin/bash
+
+LOG='/tmp/.0'
+[[ $1 ]] && U_NAME="$1" || printf "Enter username for the new key: " && read U_NAME
+mkdir -vm 700 -p $HOME/.ssh/.pk &>> $LOG
+
+[[ $(which ssh-keygen) ]] || Setup openssh
+ssh-keygen -q -b 4096 -O user $U_NAME -t RSA
+
+unset U_NAME LOG

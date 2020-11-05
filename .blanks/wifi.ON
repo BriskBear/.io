@@ -1,8 +1,47 @@
 #!/bin/bash
 
-sudo systemctl start systemd-networkd
-sudo systemctl start systemd-resolved
-sudo systemctl start iwd
+# source $HOME/.io/color
+GREEN="$(tput setaf 2)"
+RED="$(tput setaf 1)"
+NC="$(tput sgr0)"
+# Tell the good folks what you're doing.
+echo Starting Network and DHCP daemons.
 
-sleep 6 
-iwctl station wlan0 connect Thulcandra
+# sudo first
+sudo echo lolcat|lolcat
+
+# Begin actually starting the services.
+sudo systemctl restart systemd-networkd & # Basic Networking daemon
+sudo systemctl restart systemd-resolved & # DHCP IP acquisition daemon
+sudo systemctl restart dhcpcd & # DNS discovery
+sudo systemctl restart iwd & # Easy to use CLI Network adapter daemon (for iwctl interface l8ter)
+
+if [ ! $WiNet ]
+then
+    WiNet=$1
+    if [ ! $WiNet ]
+    then
+        printf "WiNet envar not set, enter Network Name (SSID) or y to see available networks:"
+        read WiNet
+    fi
+fi
+
+# Tell user why nothing is happening
+echo Letting them wake up......
+
+sleep 5 # ^1 Footnote 1 for the intelligently impared. ( me sometimes )
+
+iwctl station wlan0 connect $WiNet
+
+p=$(ping -c 1 briskbear.rocks)
+
+if [[ ! $p ]]
+then
+    printf "${RED}Try again,\n maybe use 'iwctl' to specify a different network.${NC}\n"
+else
+    printf "${GREEN}Connected!${NC}\n"
+fi
+
+#^1   Footnote 1 ( see abv. ) : I did not choose 6 seconds to sleep, because I like it I chose it \
+#  because it seemed like the minimum for consistent iwctl success messages. Under some circumstances, \
+#  shortening - removing entirely may be beneficial.

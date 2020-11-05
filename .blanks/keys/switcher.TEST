@@ -1,0 +1,4 @@
+#!/bin/bash
+
+switchKEY[arch]="printf ${LIGHT_GREEN}Arch${NC}\n"
+switchKEY[ubuntu]="printf ${LIGHT_PURPLE}Ubuntu${NC}\n"
