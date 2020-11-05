@@ -59,6 +59,9 @@ then
     fi
 fi
 
+# Git BASH
+source $HOME/.io/blanks/git-sh-prompt
+
 #if [ "$color_prompt" = yes ]
 #then
 #    PS1=$(cat $HOME/.io/config/PS1)
