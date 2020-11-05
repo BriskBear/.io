@@ -11,7 +11,7 @@ rm -vr /tmp/blks /tmp/ps1 &>> $LOG
 cp -vr $HOME/.io/.blanks/ /tmp/blks &>> $LOG
 
 # PS1 to RAMDisk
-cp -v $HOME/.io/config/PSV/1.5 /tmp/ps1 &>> $LOG
+cp -v $HOME/.io/config/PSV/1.6 /tmp/ps1 &>> $LOG
 
 # Downloads folder to RAMDisk
 mkdir -v /tmp/dwn &>> $LOG
