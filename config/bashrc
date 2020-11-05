@@ -148,9 +148,15 @@ figlet -f slant -w 100 "$USER"'@'"$HOSTNAME"
 printf "${NC}"
 
 # Start the SSH-Agent
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-  eval `ssh-agent -s`
-fi
+[ -z "$SSH_AUTH_SOCK" ]&& eval $(ssh-agent -s)
+declare -a ssh_keys
+source ~/.config/io/ssh.KEYS
+for k in "${ssh_keys[@]}"
+do
+    ssh-add "$k"
+    d=$( echo $k|rev|cut -f1 -d /|rev )
+    printf "added $d\n"
+done
 
 # NeoFetch
 /usr/bin/neofetch --color_blocks off

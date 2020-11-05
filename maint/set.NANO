@@ -5,19 +5,21 @@
 
 # Set Variables and Messages
 package="nano"
-cfgname=$(ls -A "$HOME/.io/config/$package"| egrep '^[a-Z].+')
-[[ ! $cfgname ]] && cfgname=$(ls -A "$HOME/.io/config/$package"| egrep '^[A-z].+')
-VER=$(nano --ver|grep ver|cut -f5 -d " ")
 LOG='/tmp/.0'
-MSG=( \
-  [found]="Nano usrcfg already exists\n" \
+declare -A MSG=( \
+  [fd]="Nano usrcfg already exists\n" \
   [mk]="Creating $package\n" \
 )
-# Run package-specific set-script
+VER=$(nano --ver|grep ver|cut -f5 -d " ")
+cfgname=$(ls -A "$HOME/.io/config/$package"| egrep '^[a-Z].+' 2>> $LOG )
+[[ $cfgname ]]|| cfgname=$(ls -A "$HOME/.io/config/$package"| egrep '^[A-z].+' 2>> $LOG)
+
+## Run package-specific set-script
 source ~/.io/config/$package/.spec
 
-# Ensure User-specific configuration directory is in place
-[[ -d "$HOME/.config/nano" ]] && printf "${MSG[found]}" || (printf "${MSG[mk]}" && mkdir -vp "$HOME/.config/$package" &>> "$LOG")
+## Ensure User-specific configuration directory is in place
+[[ -d "$HOME/.config/nano" ]]&& printf "${MSG[fd]}" \
+|| ( printf "${MSG[mk]}" && mkdir -vp "$HOME/.config/$package" &>> "$LOG" )
 
 # Remove any pre-existing config file and set the new one
 [[ -f "$HOME/.config/$package/$cfgname" ]] && \
@@ -30,7 +32,7 @@ source ~/.io/config/$package/.spec
      &>> $LOG) \
  || ln -vs $HOME/.io/config/$package/$VER $HOME/.config/$package/$cfgname &>> $LOG
 
-printf " $HOME/"'.config/'"$package"'/'"$cfgname"' set for '"${LIGHT_BLUE}$VER${NC}\n"
+printf " $HOME/"'.config/'"$package"'/'"${LIGHT_CYAN}$cfgname${NC}"' set for '"${LIGHT_BLUE}$VER${NC}\n"
 
 export VER
 unset package cfgname LOG MSG
