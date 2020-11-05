@@ -59,8 +59,11 @@ then
     fi
 fi
 
-# Git BASH
+## Git BASH
+# Load
 source $HOME/.io/blanks/git-sh-prompt
+# Config
+GIT_PS1_SHOWDIRTYSTATE='true'
 
 #if [ "$color_prompt" = yes ]
 #then
@@ -144,6 +147,11 @@ printf "${LIGHT_GREEN}"
 figlet -f slant -w 100 "$USER"'@'"$HOSTNAME"
 printf "${NC}"
 
+# Start the SSH-Agent
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval `ssh-agent -s`
+fi
+
 # NeoFetch
 /usr/bin/neofetch --color_blocks off
 
@@ -173,3 +181,7 @@ then
 fi
 
 export PATH
+
+# For some stupid git reason, adding git-sh-prompt made xterm default to /
+#  So this stupid thing is here to start us back in $HOME
+cd
