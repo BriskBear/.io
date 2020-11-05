@@ -1,3 +1,4 @@
 #!/bin/bash
 
-xfce4-terminal --tab -T Brave -e "brave $1"
+BIN=$(ls /usr/bin/ | grep  brave)
+xfce4-terminal --tab -T Brave -e "$BIN $1"

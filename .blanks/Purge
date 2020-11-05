@@ -1,3 +1,12 @@
 #!/bin/bash
 
-sudo pacman -Rcn --noconfirm $1 $2 $3 $4 $5 $6 $7 $8 #| lolcat
+# sudo pacman -Rcn --noconfirm $1 #| lolcat
+# Define constants
+LOG="$HOME/.io/logs/Setup"
+key_dir="$HOME/.io/blanks/keys"
+
+# Build the queue
+add.QUEUE "$@"
+
+# Switch chooses the correct installer to read the queue
+$(switch $key_dir/Purge)

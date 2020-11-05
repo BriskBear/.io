@@ -1,33 +1,34 @@
 #!/bin/bash
 
 # Add Color to Output
-source $HOME/.io/.blanks/color
+. $HOME/.io/.blanks/color
 
+LOG='/tmp/.0'
 # Remove existing RAMDisk
-rm -r /tmp/blks /tmp/ps1 &>>/tmp/.0
+rm -vr /tmp/blks /tmp/ps1 &>> $LOG
 
 # .io/.blanks to RAMDisk
-cp -r $HOME/.io/.blanks/ /tmp/blks
+cp -vr $HOME/.io/.blanks/ /tmp/blks &>> $LOG
 
 # PS1 to RAMDisk
-cp $HOME/.io/config/PS1.5 /tmp/ps1
+cp -v $HOME/.io/config/PSV/1.5 /tmp/ps1 &>> $LOG
 
 # Downloads folder to RAMDisk
-mkdir -v /tmp/dwn &>> /tmp/.0
+mkdir -v /tmp/dwn &>> $LOG
 
 # Create the .io/blanks link if it does not exist
 if [ ! -d $HOME/.io/blanks ]
 then
-    ln -s /tmp/blks $HOME/.io/blanks
+    ln -vs /tmp/blks $HOME/.io/blanks &>> $LOG
 fi
 
 # Create the $HOME/Downloads link, if it does not exits
 if [ -d $HOME/Downloads ]
 then
-    rm -vfr $HOME/Downloads &>> /tmp/.0
-    ln -s /tmp/dwn $HOME/Downloads &>> /tmp/.0
+    rm -vfr $HOME/Downloads &>> $LOG
+    ln -s /tmp/dwn $HOME/Downloads &>> $LOG
 else
-    ln -s /tmp/dwn $HOME/Downloads &>> /tmp/.0
+    ln -s /tmp/dwn $HOME/Downloads &>> $LOG
 fi
 
-printf "${LIGHT_CYAN}blanks${NC} set to RAMDisk\n"
+printf "${LIGHT_CYAN}blanks${NC} set to RAMDisk\n" |tee -a $LOG

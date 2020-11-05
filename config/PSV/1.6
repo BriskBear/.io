@@ -1,0 +1,19 @@
+#!/bin/bash
+
+PS1='\u' # Username
+PS1+='\[$($HOME/.io/blanks/error.CODE $?)\]' # Green bars or red errorcode
+PS1+='\[$($HOME/.io/blanks/call.CAT \h)\]' # Randomly color changing hostname
+
+if [ "$(id -u)" -eq 0 ]
+then
+    PS1+='\[$(tput setaf 2)\]:\w# \[$( tput sgr0 )\]' # root print dir red and #
+else
+    PS1+='\[$(tput setaf 2)\]' # Output color to Green
+    PS1+=':' # Separate Hostname from working directory with ':'
+    PS1+='\w'$ ' # Working directory and classic $ to end the PS1
+    PS1+='\[$( tput sgr0 )\]' # Color back to "normal"
+
+fi
+
+PS1+='      \033[6D' Annoying formatting trick.
+PS1+=''

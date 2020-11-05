@@ -1,16 +1,17 @@
 #!/bin/bash
 
+LOG='/tmp/.0'
 INFORM_NAME='RUBY'
 LINK='$HOME/.io/ruby'
 STATIC_DIR="$HOME/.io/.ruby"
 TMP='.rb'
 
-rm -r "/tmp/$TMP" &>>/tmp/.0
-cp -r "$STATIC_DIR" "/tmp/$TMP"
+rm -r "/tmp/$TMP" &>> $LOG
+cp -vfr "$STATIC_DIR" "/tmp/$TMP" &>> $LOG
 
 if [ ! -d "$LINK" ]
 then
-    sudo ln -s "/tmp/$TMP" "$LINK"
+    ln -vs "/tmp/$TMP" "$LINK" &>> $LOG
 fi
 
-echo "$INFORM_NAME set to RAMDisk"
+printf "${PINK}$INFORM_NAME${NC} set to RAMDisk\n"

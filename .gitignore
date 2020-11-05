@@ -1,2 +1,5 @@
 .naBak
 blanks
+blanks/**
+logs
+logs/**

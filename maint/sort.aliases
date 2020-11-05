@@ -1,4 +1,0 @@
-#!/bin/bash
-
-sort ~/.io/config/.aliases > ~/.io/AKA
-mv ~/.io/AKA ~/.io/config/.aliases -f

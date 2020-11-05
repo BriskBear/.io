@@ -132,15 +132,32 @@ then
     . /etc/bash_completion
   fi
 fi
-alias setAl='~/.io/sort.aliases && source ~/.bashrc'
+alias setAl='sort.aliases && source ~/.bashrc'
+
+# Figlet
+
+source $HOME/.io/.blanks/color
+printf "${LIGHT_GREEN}"
+figlet -f slant -w 100 "$USER"'@'"$HOSTNAME"
+printf "${NC}"
 
 # NeoFetch
 /usr/bin/neofetch --color_blocks off
 
 # AutoJump
-#[[ -s /home/lij/.autojump/etc/profile.d/autojump.sh ]] && source /home/lij/.autojump/etc/profile.d/autojump.sh
-PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/var/lib/flatpak/exports/share:/home/lij/.local/share/flatpak/exports/share
-export PATH
+[[ -s /home/lij/.autojump/etc/profile.d/autojump.sh ]] && source /home/lij/.autojump/etc/profile.d/autojump.sh
+
+# Path environment variable for spawning executables
+  PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+  [[ -f $HOME/.io/.blanks/path+ ]] \
+    && source $HOME/.io/.blanks/path+ \
+    || printf "You may need to manually add PATH entries\n"
+## End Path Mod
+
+PATH+=":/var/lib/flatpak/exports/share"
+PATH+=":$HOME/.local/share/flatpak/exports/share"
+PATH+=":$HOME/.io/blanks"
 
 # Add asdf to Bash
 . $HOME/.asdf/asdf.sh
@@ -151,3 +168,5 @@ if [ -f $HOME/.io/config/envar ]
 then
     . ~/.io/config/envar
 fi
+
+export PATH

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat /etc/*-release | grep PRETTY | cut -f2 -d =

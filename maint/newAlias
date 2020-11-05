@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo "alias $1='$2' # $3" >> ~/.io/config/.aliases
-echo "alias $1 ceated"
