@@ -147,10 +147,11 @@ printf "${LIGHT_GREEN}"
 figlet -f slant -w 100 "$USER"'@'"$HOSTNAME"
 printf "${NC}"
 
-# Start the SSH-Agent
+## Start the SSH-Agent: Uncomment \ on 153 and all of 154 to enable default ~/.ssh/id_rsa
 [ -z "$SSH_AUTH_SOCK" ]&& eval $(ssh-agent -s)
 declare -a ssh_keys
-source ~/.config/io/ssh.KEYS
+[[ -s ~/.config/io/ssh.KEYS ]]&& source ~/.config/io/ssh.KEYS #\
+#  || ln -s ~/.config/io/ssh.KEYS.sample ~/.config/io/ssh.KEYS
 for k in "${ssh_keys[@]}"
 do
     ssh-add "$k"
