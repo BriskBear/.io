@@ -5,10 +5,8 @@ ERR=$1
 #echo $ERR
 if [ $ERR -gt "0" ]
 then
-    printf "$(tput setaf 2)["
     printf "$(tput setaf 196)"
     printf "$ERR"
-    printf "$(tput setaf 2)]"
 else
     printf "$(tput setaf 2)"
     printf "]|["

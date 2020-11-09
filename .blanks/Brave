@@ -1,4 +1,4 @@
 #!/bin/bash
 
-BIN=$(ls /usr/bin/ | grep  brave)
+BIN=$(ls /usr/bin/ | grep brave-browser-)
 xfce4-terminal --tab -T Brave -e "$BIN $1"
