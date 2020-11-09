@@ -17,10 +17,7 @@ cp -v $HOME/.io/config/PSV/1.6 /tmp/ps1 &>> $LOG
 mkdir -v /tmp/dwn &>> $LOG
 
 # Create the .io/blanks link if it does not exist
-if [ ! -d $HOME/.io/blanks ]
-then
-    ln -vs /tmp/blks $HOME/.io/blanks &>> $LOG
-fi
+[[ -s $HOME/.io/blanks ]]&&  echo "blanks exists" || ln -vs /tmp/blks $HOME/.io/blanks &>> $LOG
 
 # Create the $HOME/Downloads link, if it does not exits
 if [ -d $HOME/Downloads ]
