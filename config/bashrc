@@ -177,8 +177,13 @@ unset ssh_keys
     || printf "You may need to manually add PATH entries\n"
 ## End Path Mod
 
-# Add asdf to Bash (only if installed in default $HOME/.asdf )
-[[ -s $HOME/.asdf/asdf.sh ]]&& . $HOME/.asdf/asdf.sh && . $HOME/.asdf/completions/asdf.bash
+#PATH+=":/var/lib/flatpak/exports/share"
+#PATH+=":$HOME/.local/share/flatpak/exports/share"
+#PATH+=":$HOME/.io/blanks"
+
+# Add asdf to Bash
+[[ -d ~/.asdf ]]&& (. $HOME/.asdf/asdf.sh && . $HOME/.asdf/completions/asdf.bash) \
+  || echo "asdf not installed"
 
 # Add .io/config/envar`s
 if [ -f $HOME/.io/config/envar ]
