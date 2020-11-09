@@ -89,6 +89,9 @@ xterm*|rxvt*)
     ;;
 esac
 
+[[ -s $HOME/.io/blanks/bash-git-prompt/gitprompt.sh ]]&& GIT_PROMPT_ONLY_IN_REPO=1 \
+  && . $HOME/.io/blanks/bash-git-prompt
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]
 then
@@ -144,7 +147,7 @@ alias setAl='sort.aliases && source ~/.bashrc'
 
 source $HOME/.io/.blanks/color
 printf "${LIGHT_GREEN}"
-figlet -f slant -w 100 "$USER"'@'"$HOSTNAME"
+figlet -f slant -w 130 "$USER"'@'"$HOSTNAME"
 printf "${NC}"
 
 ## Start the SSH-Agent: Uncomment \ on 153 and all of 154 to enable default ~/.ssh/id_rsa
@@ -174,13 +177,8 @@ unset ssh_keys
     || printf "You may need to manually add PATH entries\n"
 ## End Path Mod
 
-PATH+=":/var/lib/flatpak/exports/share"
-PATH+=":$HOME/.local/share/flatpak/exports/share"
-PATH+=":$HOME/.io/blanks"
-
-# Add asdf to Bash
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+# Add asdf to Bash (only if installed in default $HOME/.asdf )
+[[ -s $HOME/.asdf/asdf.sh ]]&& . $HOME/.asdf/asdf.sh && . $HOME/.asdf/completions/asdf.bash
 
 # Add .io/config/envar`s
 if [ -f $HOME/.io/config/envar ]
