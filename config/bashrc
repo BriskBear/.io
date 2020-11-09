@@ -179,8 +179,8 @@ PATH+=":$HOME/.local/share/flatpak/exports/share"
 PATH+=":$HOME/.io/blanks"
 
 # Add asdf to Bash
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+[[ -d ~/.asdf ]]&& (. $HOME/.asdf/asdf.sh && . $HOME/.asdf/completions/asdf.bash) \
+  || echo "asdf not installed"
 
 # Add .io/config/envar`s
 if [ -f $HOME/.io/config/envar ]
