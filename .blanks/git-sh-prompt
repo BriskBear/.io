@@ -197,7 +197,7 @@ __git_ps1_show_upstream ()
 		"0	0") # equal to upstream
 			p='' ;;
 		"0	"*) # ahead of upstream
-			p="${GREEN}"$'\u27a3'"${NC}" ;;
+			p=$'\u27a3' ;;
 		*"	0") # behind upstream
 			p="${RUST}"$'\u261a'"${NC}" ;;
 		*)	    # diverged from upstream
