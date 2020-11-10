@@ -194,7 +194,8 @@ unset ssh_keys
 #PATH+=":$HOME/.io/blanks"
 
 # Add asdf to Bash
-[[ -d ~/.asdf ]]&& (. $HOME/.asdf/asdf.sh && . $HOME/.asdf/completions/asdf.bash) \
+[[ -d $HOME/.asdf ]]&& \
+  source $HOME/.asdf/asdf.sh && source $HOME/.asdf/completions/asdf.bash \
   || echo "asdf not installed"
 
 # Add .io/config/envar`s

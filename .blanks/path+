@@ -1,3 +1,4 @@
+#!/bin/bash
 
 PATH+=":/var/lib/flatpak/exports/share"
 PATH+=":$HOME/.local/share/flatpak/exports/share"
