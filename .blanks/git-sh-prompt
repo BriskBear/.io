@@ -195,13 +195,13 @@ __git_ps1_show_upstream ()
 		"") # no upstream
 			p="" ;;
 		"0	0") # equal to upstream
-			p='' ;;
+			p="$'\u'" ;;
 		"0	"*) # ahead of upstream
-			p=$'\u27a3' ;;
+			p="$'\u27a3'" ;;
 		*"	0") # behind upstream
-			p="${RUST}"$'\u261a'"${NC}" ;;
+			p="$'\u261a'" ;;
 		*)	    # diverged from upstream
-			p="${YELLOW}"$'\u21cb'"${NC}" ;;
+			p="$'\u21cb'" ;;
 		esac
 	else
 		case "$count" in
