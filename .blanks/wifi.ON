@@ -8,7 +8,7 @@ NC="$(tput sgr0)"
 echo Starting Network and DHCP daemons.
 
 # sudo first
-sudo echo lolcat|lolcat
+sudo echo ""
 
 # Begin actually starting the services.
 sudo systemctl restart systemd-networkd & # Basic Networking daemon
