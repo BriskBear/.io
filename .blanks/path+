@@ -2,3 +2,4 @@
 PATH+=":/var/lib/flatpak/exports/share"
 PATH+=":$HOME/.local/share/flatpak/exports/share"
 PATH+=":$HOME/.io/blanks"
+PATH+=":/snap/bin"
