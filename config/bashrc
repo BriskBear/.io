@@ -101,8 +101,10 @@ xterm*|rxvt*)
     ;;
 esac
 
-[[ -s $HOME/.io/blanks/bash-git-prompt/gitprompt.sh ]]&& GIT_PROMPT_ONLY_IN_REPO=1 \
-  && . $HOME/.io/blanks/bash-git-prompt
+[[ -s $HOME/.io/blanks/bash-git-prompt/gitprompt.sh ]]&& \
+  GIT_PROMPT_ONLY_IN_REPO=1 && \
+  git_ps1_colorize_gitstring=1 && \
+  . $HOME/.io/blanks/bash-git-prompt
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]
