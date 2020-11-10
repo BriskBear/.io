@@ -195,11 +195,11 @@ __git_ps1_show_upstream ()
 		"") # no upstream
 			p="" ;;
 		"0	0") # equal to upstream
-			p=$'\u2252' ;;
+			p='' ;;
 		"0	"*) # ahead of upstream
-			p=$'\u2b9a' ;;
+			p=$'\u27a3' ;;
 		*"	0") # behind upstream
-			p=$'\u2b98' ;;
+			p=$'\u261a' ;;
 		*)	    # diverged from upstream
 			p=$'\u21cb' ;;
 		esac
@@ -210,9 +210,9 @@ __git_ps1_show_upstream ()
 		"0	0") # equal to upstream
 			p=" u=" ;;
 		"0	"*) # ahead of upstream
-			p=$'\u2b9a'"${count#0	}" ;;
+			p=$'\u27a3'"${count#0	}" ;;
 		*"	0") # behind upstream
-			p=$'\u2b98'"${count%	0}" ;;
+			p=$'\u261a'"${count%	0}" ;;
 		*)	    # diverged from upstream
 			p=$'\u2b9a'"${count#*	}"$'\u2b98'"${count%	*}" ;;
 		esac
