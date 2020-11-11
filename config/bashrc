@@ -64,7 +64,8 @@ fi
 source $HOME/.io/blanks/git-sh-prompt
 # Config
 GIT_PS1_SHOWDIRTYSTATE='true'
-GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWUPSTREAM='verbose'
+GIT_PS1_SHOWCOLORHINTS='true'
 
 #[[ -f "$HOME/git/bash-git-prompt/gitprompt.sh" ]] && \
 #  ( export GIT_PROMPT_ONLY_IN_REPO=1 && source "~/.bash-git-prompt/gitprompt.sh" ) || \

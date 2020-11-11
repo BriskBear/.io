@@ -1,4 +1,4 @@
 #!/bin/bash
 
-switchKEY[arch]="printf pacman.INSTALL"
-switchKEY[ubuntu]="printf apt.INSTALL"
+switchKEY[arch]="printf /tmp/blks/Arch/pacman.INSTALL"
+switchKEY[ubuntu]="printf /tmp/blks/Ubuntu/apt.INSTALL"
