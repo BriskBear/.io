@@ -1,4 +1,4 @@
 #!/bin/bash
 
-switchKEY[arch]="printf pacman.PURGE"
-switchKEY[ubuntu]="printf apt.PURGE"
+switchKEY[arch]="printf /tmp/blks/Arch/pacman.PURGE"
+switchKEY[ubuntu]="printf /tmp/blks/Ubuntu/apt.PURGE"

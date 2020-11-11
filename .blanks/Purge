@@ -2,7 +2,7 @@
 
 # sudo pacman -Rcn --noconfirm $1 #| lolcat
 # Define constants
-LOG="$HOME/.io/logs/Setup"
+LOG="$HOME/.io/logs/Purge"
 key_dir="$HOME/.io/blanks/keys"
 
 # Build the queue
