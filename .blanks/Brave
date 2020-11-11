@@ -1,5 +1,6 @@
 #!/bin/bash
 
 BIN=$(which brave)
-[[ $BIN ]]&& xfce4-terminal --tab -T Brave -e "$BIN $1" || \
-  printf "Brave not found\n"
+[[ $BIN ]]|| BIN=$(which brave-browser)
+xfce4-terminal --tab -T Brave -e "$BIN $1"
+#  printf "Brave not found\n"
