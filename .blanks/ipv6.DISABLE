@@ -7,8 +7,8 @@ MESSAGE=( \
 )
 
 for m in ${MESSAGE[@]}
-do 
-    sudo $(echo $m >> /etc/sysctl.conf)
+do
+    echo $m | sudo tee -a /etc/sysctl.conf > /dev/null
 done
 sudo sysctl -p
-ip a
+ip a |grep inet
