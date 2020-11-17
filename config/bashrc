@@ -162,7 +162,7 @@ alias setAl='sort.aliases && source ~/.bashrc'
 
 source $HOME/.io/.blanks/color
 printf "${LIGHT_GREEN}"
-figlet -f slant -w 130 "$USER"'@'"$HOSTNAME"
+figlet -f smslant -w 130 "$USER"'@'"$HOSTNAME"
 printf "${NC}"
 
 ## Start the SSH-Agent: Uncomment \ on 153 and all of 154 to enable default ~/.ssh/id_rsa
