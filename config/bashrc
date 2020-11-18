@@ -178,9 +178,6 @@ do
 done
 unset ssh_keys
 
-# NeoFetch
-/usr/bin/neofetch --color_blocks off
-
 # AutoJump
 [[ -s /home/lij/.autojump/etc/profile.d/autojump.sh ]] && source /home/lij/.autojump/etc/profile.d/autojump.sh
 
@@ -191,6 +188,9 @@ unset ssh_keys
     && source $HOME/.io/.blanks/path+ \
     || printf "You may need to manually add PATH entries\n"
 ## End Path Mod
+
+# NeoFetch
+/usr/bin/neofetch --color_blocks off
 
 # Add asdf to Bash
 [[ -d $HOME/.asdf ]]&& \
