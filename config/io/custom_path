@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# PATH+=":$HOME/git/surfacepro3_rotate"
+PATH+=":$HOME/git/jetbrains-toolbox"
+PATH+=":$HOME/git/_script"
