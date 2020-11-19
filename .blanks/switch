@@ -16,6 +16,10 @@ case "$OS" in
     ${switchKEY[arch]}
 #   printf "${LIGHT_CYAN}Arch${NC}\n"
     ;;
+  \"Arch\ Linux\ ARM\")
+    ${switchKEY[arch]}
+#   printf "${LIGHT_CYAN}Arch${NC}\n"
+    ;;
   \"Ubuntu\ *)
     ${switchKEY[ubuntu]}
 #    printf "${RUST}Ubuntu${NC}\n"
