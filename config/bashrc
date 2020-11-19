@@ -174,7 +174,6 @@ for k in "${ssh_keys[@]}"
 do
     ssh-add "$k"
     d=$( echo $k|rev|cut -f1 -d /|rev )
-    printf "added $d\n"
 done
 unset ssh_keys
 
