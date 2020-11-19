@@ -39,6 +39,7 @@ alias nanorc?='ls ~/.io/config/nano/nanorc | grep nanorc' # Is there a vimrc fil
 alias nash='nano $HOME/.ssh/config' # Configure SSH
 alias purge='Purge' # Package Manager Full Remover
 alias q='exit' # quit
+alias REP='RAILS_ENV=production' # 
 alias search='$HOME/.io/search' # Query for Files
 # alias setAl='source ~/.bashrc' # Reloads Aliases (PS1) [Defined in .bashrc Hence #]
 alias setCFG='$HOME/.io/maint/io.CONFIG' # Update .io Configs
@@ -54,7 +55,7 @@ alias tal='tree -aQFlL' # Tree + Hidden for x layers:: tal <x> [<path>]
 alias tar.ext='tar -xjvf' # extract tbz2
 alias tar.list='tar -i -tf' # List files in an appended tbz2 archive
 alias ta='tree -aQlF' # Tree + hidden
-alias Teams='killall teams && killall teams && teams' # Reload MS teams, why twice? ask Gates.
+alias Teams='while [ $? -lt 1 ];do killall teams &>> /tmp/.0 ;done; teams' # Reload MS teams, why twice? ask Gates.
 alias update='sudo apt update -y && apt list --upgradeable' # | lolcat # Update Package Manager
 alias upgrade='sudo apt upgrade -y' # | lolcat # Upgrade apt
 alias vash='vim $HOME/.ssh/config' # Open .ssh/config in Vim Text Editor

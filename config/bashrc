@@ -162,7 +162,7 @@ alias setAl='sort.aliases && source ~/.bashrc'
 
 source $HOME/.io/.blanks/color
 printf "${LIGHT_GREEN}"
-figlet -f slant -w 130 "$USER"'@'"$HOSTNAME"
+figlet -f smslant -w 130 "$USER"'@'"$HOSTNAME"
 printf "${NC}"
 
 ## Start the SSH-Agent: Uncomment \ on 153 and all of 154 to enable default ~/.ssh/id_rsa
@@ -174,15 +174,11 @@ for k in "${ssh_keys[@]}"
 do
     ssh-add "$k"
     d=$( echo $k|rev|cut -f1 -d /|rev )
-    printf "added $d\n"
 done
 unset ssh_keys
 
-# NeoFetch
-/usr/bin/neofetch --color_blocks off
-
 # AutoJump
-[[ -s /home/lij/.autojump/etc/profile.d/autojump.sh ]] && source /home/lij/.autojump/etc/profile.d/autojump.sh
+[[ -s /usr/share/autojump ]] && source /usr/share/autojump/autojump.sh
 
 # Path environment variable for spawning executables
   PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -191,6 +187,9 @@ unset ssh_keys
     && source $HOME/.io/.blanks/path+ \
     || printf "You may need to manually add PATH entries\n"
 ## End Path Mod
+
+# NeoFetch
+/usr/bin/neofetch --color_blocks off
 
 # Add asdf to Bash
 [[ -d $HOME/.asdf ]]&& \
