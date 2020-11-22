@@ -20,13 +20,13 @@ function with_cat() {
       # Install all items in the queue
       for p in ${queue[@]}
       do
-          sudo pacman -Rcn --noconfirm $p | tee -a $LOG |lolcat
+          sudo pacman -Rcsn --noconfirm $p | tee -a $LOG |lolcat
       done
   else
       # Install all items in the queue
       for p in ${queue[@]}
       do
-          sudo pacman -Rcn --noconfirm $p | tee -a $LOG
+          sudo pacman -Rcsn --noconfirm $p | tee -a $LOG
       done
   fi
 }
