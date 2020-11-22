@@ -9,7 +9,7 @@ alias GPT='printf "Pulled at: " && stat -c %y .git/FETCH_HEAD' # Time of Most re
 alias GPset='git push --set-upstream origin master' # Git Push Setup Repo
 alias REP='RAILS_ENV=production' # 
 alias SVC='sudo systemctl' # Service Control
-alias Teams='while [ $? -lt 1 ];do killall teams &>> /tmp/.0 ;done; teams' # Reload MS teams, why twice? ask Gates.
+alias Teams='while [ $? -lt 1 ];do killall teams &>> /tmp/.0 ;done; teams' # Reload MS teams
 alias aar='sudo add-apt-repository' # add package manager repo, requires ppa 
 alias aliases='~/.io/alias' # All aliases + Descriptions in less / just aliases matching argument
 alias aptlist='apt list --upgradable' # list apt upgrades
@@ -69,8 +69,12 @@ alias tar.ext='tar -xjvf' # extract tbz2
 alias tar.list='tar -i -tf' # List files in an appended tbz2 archive
 alias treefl='tree -FL' # Tree, show folders, select levels
 alias update='Update' | lolcat # Update Package Manager
+alias ta='tree -aQlF' # Tree + hidden
+alias update='Update' # | lolcat # Update Package Manager
 alias upgrade='sudo apt upgrade -y' # | lolcat # Upgrade apt
 alias vash='vim $HOME/.ssh/config' # Open .ssh/config in Vim Text Editor
 alias vimrc?='ls ~/.io/config/vimrc/vimrc | grep vimrc' # Is there a vimrc file in the proper config directory?
 alias x='$HOME/.io/.sec/.x' # Secret secrets
+alias +x='chmod -v +x' # Whoops
 alias xtab='$HOME/.io/blanks/xtab' # Open command in new XFCE Terminal tab
+
