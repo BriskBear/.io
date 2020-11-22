@@ -1,1 +1,1 @@
-sudo apt update -y && apt list --upgradeable && sudo apt upgrade -y
+sudo apt update -y && apt list --upgradeable && sudo apt upgrade -y | lolcat
