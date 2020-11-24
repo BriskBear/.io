@@ -206,4 +206,4 @@ export PATH
 
 # For some stupid git reason, adding git-sh-prompt made xterm default to /
 #  So this stupid thing is here to start us back in $HOME
-cd
+#cd
