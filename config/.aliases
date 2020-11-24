@@ -45,6 +45,7 @@ alias nanorc?='ls ~/.io/config/nano/nanorc | grep nanorc' # Is there a vimrc fil
 alias nash='nano $HOME/.ssh/config' # Configure SSH
 alias purge='Purge' # Package Manager Full Remover
 alias q='exit' # quit
+alias rspec='bundle exec rspec' # 
 alias search='$HOME/.io/search' # Query for Files
 alias setCFG='$HOME/.io/maint/io.CONFIG' # Update .io Configs
 alias setup='Setup' # Package manager install; singular or space-separated list.
