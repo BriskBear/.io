@@ -1,4 +1,0 @@
-#!/bin/bash
-
-switchKEY[arch]=""
-switchKEY[ubuntu]=""

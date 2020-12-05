@@ -1,0 +1,4 @@
+#!/bin/bash
+
+switchKEY[arch]="printf /tmp/blks/Arch/pacman.QUERY"
+switchKEY[ubuntu]="printf /tmp/blks/Ubuntu/apt.QUERY"
