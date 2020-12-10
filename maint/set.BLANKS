@@ -18,15 +18,7 @@ cp -v $HOME/.io/config/PSV/1.7 /tmp/ps1 &>> $LOG
 mkdir -v /tmp/dwn &>> $LOG
 
 # Create the .io/blanks link if it does not exist
-[[ -s $HOME/.io/blanks ]]&& echo "blanks exists" || ln -vs /tmp/blks $HOME/.io/blanks &>> $LOG
-
-# Create the $HOME/Downloads link, if it does not exits
-#if [ -d $HOME/Downloads ]
-#then
-#    rm -vfr $HOME/Downloads &>> $LOG
-#    ln -s /tmp/dwn $HOME/Downloads &>> $LOG
-#else
-#    ln -s /tmp/dwn $HOME/Downloads &>> $LOG
-#fi
-
-printf "${LIGHT_CYAN}blanks${NC} set to RAMDisk\n" |tee -a $LOG
+[[ -s $HOME/.io/blanks ]]&& printf "${LIGHT_CYAN}blanks${NC} exist\n" \
+  || ( ln -vs /tmp/blks $HOME/.io/blanks &>> $LOG && \
+       printf "${LIGHT_CYAN}blanks${NC} set to RAMDisk\n" |tee -a $LOG
+     )
