@@ -51,7 +51,6 @@ alias purge='Purge' # Package Manager Full Remover
 alias q='exit' # quit
 alias railssb='rails s -b 0.0.0.0' # rails server access anywhere
 alias rspec='bundle exec rspec' # 
-alias search='$HOME/.io/search' # Query for Files
 alias setCFG='$HOME/.io/maint/io.CONFIG' # Update .io Configs
 alias setup='Setup' # Package manager install; singular or space-separated list.
 alias sna='sudo nano' # Root Text Edit

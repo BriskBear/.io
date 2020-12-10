@@ -10,7 +10,7 @@ declare -A MSG=( \
   [fd]="Nano usrcfg already exists\n" \
   [mk]="Creating $package\n" \
 )
-VER=$(nano --ver|grep ver|cut -f5 -d " ")
+VER=$($package --ver|grep ver|cut -f5 -d " ")
 cfgname=$(ls -A "$HOME/.io/config/$package"| egrep '^[a-Z].+' 2>> $LOG )
 [[ $cfgname ]]|| cfgname=$(ls -A "$HOME/.io/config/$package"| egrep '^[A-z].+' 2>> $LOG)
 
@@ -18,8 +18,8 @@ cfgname=$(ls -A "$HOME/.io/config/$package"| egrep '^[a-Z].+' 2>> $LOG )
 source ~/.io/config/$package/.spec
 
 ## Ensure User-specific configuration directory is in place
-[[ -d "$HOME/.config/nano" ]]&& printf "${MSG[fd]}" \
-|| ( printf "${MSG[mk]}" && mkdir -vp "$HOME/.config/$package" &>> "$LOG" )
+[[ -d "$HOME/.config/$package" ]]&& printf "${MSG[fd]}" \
+  || ( printf "${MSG[mk]}" && mkdir -vp "$HOME/.config/$package" &>> "$LOG" )
 
 # Remove any pre-existing config file and set the new one
 [[ -f "$HOME/.config/$package/$cfgname" ]] && \
