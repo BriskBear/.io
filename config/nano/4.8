@@ -153,7 +153,7 @@ set locking
 # set speller "aspell -x -c"
 
 ## Allow nano to be suspended.
-set suspend
+ set suspend
 
 ## Use this tab size instead of the default; it must be greater than 0.
  set tabsize 2
@@ -189,7 +189,10 @@ set suspend
 
 ## Let an unmodified Backspace or Delete erase the marked region (instead
 ## of a single character, and without affecting the cutbuffer).
-# set zap
+ set zap
+
+## Set a line-length warning to column <num>
+ set guidestripe 90
 
 ## Paint the interface elements of nano.  These are examples;
 ## by default there are no colors, except for errorcolor.
@@ -197,7 +200,7 @@ set suspend
  set statuscolor green,black
  set errorcolor white,red
  set selectedcolor black,cyan
- set stripecolor black,green
+ set stripecolor green,black
  set numbercolor green,black
  set keycolor cyan
  set functioncolor green
