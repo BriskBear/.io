@@ -1,4 +1,12 @@
 #!/bin/bash
 
-echo "alias $1='$2' # $3" >> ~/.io/config/.aliases
-echo "alias $1 ceated"
+case "$@" in
+  *-l*)
+    printf "alias $1='$2' # '$3'\n" >> $HOME/.config/io/local_aliases
+    printf "alias $1 ceated, locally\n"
+  ;;
+  *)
+    printf "alias $1='$2' # $3\n" >> ~/.io/config/.aliases
+    printf "alias $1 ceated\n"
+  ;;
+esac
