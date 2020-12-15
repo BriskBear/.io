@@ -204,6 +204,7 @@ then
     . ~/.io/config/envar
 fi
 
+eval "$(direnv hook bash)"
 export PATH
 
 # For some stupid git reason, adding git-sh-prompt made xterm default to /
