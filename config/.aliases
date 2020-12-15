@@ -12,6 +12,7 @@ alias Download='$HOME/.io/Download' # Send pasted URL to Downloads folder
 alias EAL='nano $HOME/.io/config/.aliases' # Verify user to Edit Aliases
 alias gaa='git add --all && git status' # Thats pretty verbose
 alias gb='git branch' # Git Branch
+alias gc='git clone' # Clone a new repo!
 alias gcam='git commit -a -m' # commit all supply message on CLI
 alias gcan='git commit -a' # Git commit all NANO the commit msg
 alias gcc='git.CLONE' # Git clone practice for gitclone copy to copy multiple dirs
