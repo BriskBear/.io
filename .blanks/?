@@ -3,7 +3,8 @@
 if [ $1 ]
 then
     QRY="$1"
-    grep -n " $QRY" ~/.io/config/.aliases --color=auto
+    grep -n " $QRY" ~/.io/config/.aliases --color=auto || \
+      grep -n " $QRY" ~/.config/io/local_aliases --color=auto
     exit
 fi
 
