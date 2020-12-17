@@ -2,8 +2,13 @@
 
 case "$@" in
   *-l*)
-    printf "alias $1='$2' # '$3'\n" >> $HOME/.config/io/local_aliases
-    printf "alias $1 ceated, locally\n"
+    declare -a args
+    for a in "${@/'-l'}"
+    do
+        [[ $a ]] && args+=("$a")
+    done
+    printf "alias ${args[0]}=\'${args[1]}\' # \'${args[2]}\'\n" >> $HOME/.config/io/local_aliases
+    printf "alias ${args[0]} ceated, locally\n"
   ;;
   *)
     printf "alias $1='$2' # $3\n" >> ~/.io/config/.aliases
