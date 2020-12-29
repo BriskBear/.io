@@ -14,3 +14,6 @@ Let's face it, at this point I don't have any real followers yet, so no one has 
 Moving forward it will just be "how .io works" but .io used to be in different branches for different distros and it was getting a lot to maintain and too busy, and it still barely did anything!
 
 now it uses direnv and detects your OS and plugs the right verbs! 
+
+## ToDo:  
+[Blanks => Binaries](https://www.simplified.guide/bash/compile-script "Compile Bash Script")
