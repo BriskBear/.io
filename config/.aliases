@@ -1,4 +1,3 @@
-
 alias aar='sudo add-apt-repository' # add package manager repo, requires ppa 
 alias aliases='~/.io/alias' # All aliases + Descriptions in less / just aliases matching argument
 alias aptlist='apt list --upgradable' # list apt upgrades
@@ -41,8 +40,7 @@ alias la='ls -ahF' # All with symbols
 alias ll='ls -ahlF' # Perms List with Icons
 alias marktext='/usr/bin/marktext.AppImage' # MarkText Notes
 alias nabak='mkdir .naBak' # set nano
-alias na='newAlias' # Create a 'New Alias'
-alias nano='nano -N' # Don't Convert mac/Dos 
+alias na='newAlias' # Create Alias
 alias nanorc?='ls ~/.io/config/nano/nanorc | grep nanorc' # Is there a vimrc file in the proper config directory?
 alias nash='nano $HOME/.ssh/config' # Configure SSH
 alias nla='newAlias -l' # Create a 'New Local Alias'
@@ -51,7 +49,10 @@ alias purge='Purge' # Package Manager Full Remover
 alias q='exit' # quit
 alias railssb='rails s -b 0.0.0.0' # rails server access anywhere
 alias REP='RAILS_ENV=production' # 
+alias REP='RAILS_ENV=production' # 
 alias rspec='bundle exec rspec' # 
+alias rspec='bundle exec rspec' # 
+alias search='$HOME/.io/search' # Query for Files
 # alias setAl='source ~/.bashrc' # Reloads Aliases (PS1) [Defined in .bashrc Hence #]
 alias setCFG='$HOME/.io/maint/io.CONFIG' # Update .io Configs
 alias setup='Setup' # Package manager install; singular or space-separated list.
@@ -59,7 +60,6 @@ alias sna='sudo nano' # Root Text Edit
 alias splt='$HOME/.io/split.string' # Split a string into an array
 alias ssDisplay='export DISPLAY=:0' # Prep ssh session display
 alias steam='$HOME/.io/blanks/xtab steam' # 'Steam in new term-tab' 
-# alias steam='$HOME/.io/gtab steam' # 'Steam in new term-tab' 
 alias sudo='sudo  ' # sudo enable .io/config/.aliases
 alias SVC='sudo systemctl' # Service Control
 alias tal='tree -aQFlL' # Tree + Hidden for x layers:: tal <x> [<path>]
@@ -68,7 +68,9 @@ alias tar.list='tar -i -tf' # List files in an appended tbz2 archive
 alias ta='tree -aQlF' # Tree + hidden
 alias ta='tree -aQlF' # Tree + hidden
 alias Teams='while [ $? -lt 1 ];do killall teams &>> /tmp/.0 ;done; teams' # Reload MS teams
+alias Teams='while [ $? -lt 1 ];do killall teams &>> /tmp/.0 ;done; teams' # Reload MS teams, why twice? ask Gates.
 alias treefl='tree -FL' # Tree, show folders, select levels
+alias update='sudo apt update -y && apt list --upgradeable' # | lolcat # Update Package Manager
 alias update='Update' # | lolcat # Update Package Manager
 alias update='Update' | lolcat # Update Package Manager
 alias upgrade='sudo apt upgrade -y' # | lolcat # Upgrade apt
