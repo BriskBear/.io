@@ -1,1 +1,1 @@
-[[ $(which yay) ]]&& yay -Syu --noconfirm || sudo pacman -Syu --noconfirm
+[[ $(which yay) ]]&& yay -Syu --noconfirm || sudo pacman -Syu --noconfirm | lolcat
