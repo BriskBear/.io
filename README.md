@@ -16,4 +16,4 @@ Moving forward it will just be "how .io works" but .io used to be in different b
 now it uses direnv and detects your OS and plugs the right verbs! 
 
 ## ToDo:  
-[Blanks => Binaries](https://www.simplified.guide/bash/compile-script "Compile Bash Script")
+[Blanks => Binaries](https://www.simplified.guide/bash/compile-script "Compile Bash Script"): This process needs to include VERBOSE `blanks` documentation.
