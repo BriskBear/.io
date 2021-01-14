@@ -2,6 +2,7 @@
 
 ERR=$1
 
+printf $USER
 #echo $ERR
 if [ $ERR -gt "0" ]
 then
