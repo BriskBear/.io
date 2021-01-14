@@ -1,5 +1,6 @@
 #!/bin/bash
 
- PATH+=":$HOME/git/surfacepro3_rotate"
+PATH+=":$HOME/git/surfacepro3_rotate"
 PATH+=":$HOME/git/jetbrains-toolbox"
 PATH+=":$HOME/git/_script"
+PATH+=":$HOME/.gem/ruby/2.7.0/bin"
