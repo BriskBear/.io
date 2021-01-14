@@ -9,5 +9,6 @@ PS1+='\w' # Working directory and classic $ to end the PS1
 PS1+=$'\u266b' # Notes!
 PS1+='\[$( tput sgr0 )\]' # Color back to "normal"
 PS1+='$(__git_ps1 " (%s)") ' # git branch and status
+PS1+='       \033[6D' # name length
 
 # Note if you remove git bash lines, I recommend adding a space after $
