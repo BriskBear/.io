@@ -1,10 +1,12 @@
 #!/bin/bash
 
-IN_FILE=$1
-RM="~/.io/usg/$IN_FILE.md"
+IN_FILE="$1"
+RM="$IN_FILE.md"
 
 touch $RM
-echo "# $IN_FILE " >> $RM
+echo "# $IN_FILE  " >> $RM
+echo "### Usage:  " >> $RM
+echo "" >> $RM
 echo "### Description:  " >> $RM
 echo "" >> $RM
 echo "## __Code__" >> $RM
@@ -12,4 +14,4 @@ echo "\`\`\`" >> $RM
 cat $IN_FILE >> $RM
 echo "\`\`\`" >> $RM
 
-# vim $RM
+vi $RM
