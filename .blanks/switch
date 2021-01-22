@@ -12,14 +12,14 @@ OS=$(source OS)
 source "$key_file"
 #printf "${MSG[RNG]}"
 case "$OS" in
-  "Arch\ Linux\")
+  \"Arch\ Linux*)
     ${switchKEY[arch]}
 #   printf "${LIGHT_CYAN}Arch${NC}\n"
     ;;
-  "Arch\ Linux\ ARM\")
-    ${switchKEY[arch]}
-#   printf "${LIGHT_CYAN}Arch${NC}\n"
-    ;;
+#  \"Arch\ Linux\ ARM*)
+#    ${switchKEY[arch]}
+#   printf "${LIGHT_CYAN}Arch ARM${NC}\n"
+#    ;;
   \"Ubuntu*)
     ${switchKEY[ubuntu]}
 #    printf "${RUST}Ubuntu${NC}\n"

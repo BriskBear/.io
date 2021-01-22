@@ -9,7 +9,7 @@ case $- in
 esac
 
 # setCFG
-$HOME/.io/maint/io.CONFIG
+#$HOME/.io/maint/io.CONFIG
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -140,16 +140,16 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.io/config/.aliases ]
+if [ -f $HOME/.io/config/.aliases ]
 then
     alias setAl='source ~/.bashrc && sort.aliases'
-    source ~/.io/config/.aliases
+    source $HOME/.io/config/.aliases
 fi
 
 # Source local_aliases if the exist
-if [ -f ~/.config/io/local_aliases ]
+if [ -f $HOME/.config/io/local_aliases ]
 then
-    source ~/.config/io/local_aliases ]
+    source $HOME/.config/io/local_aliases ]
 fi
 
 # enable programmable completion features (you don't need to enable
