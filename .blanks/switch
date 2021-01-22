@@ -20,7 +20,7 @@ case "$OS" in
     ${switchKEY[arch]}
 #   printf "${LIGHT_CYAN}Arch${NC}\n"
     ;;
-  "Ubuntu\ *")
+  \"Ubuntu*)
     ${switchKEY[ubuntu]}
 #    printf "${RUST}Ubuntu${NC}\n"
     ;;
