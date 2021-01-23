@@ -188,6 +188,7 @@ unset ssh_keys
 # AutoJump
 [[ -s /usr/share/autojump ]] && source /usr/share/autojump/autojump.sh || \
   source /usr/share/autojump/autojump.bash
+[[ -s /usr/share/autojump/autojump.bash ]] && source /usr/share/autojump/autojump.bash
 
 # Path environment variable for spawning executables
   PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
