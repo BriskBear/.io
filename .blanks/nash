@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+DOTRC = "~/.ssh/config.d/"
+configs = `ls #{DOTRC} 2>> /tmp/.0`.split("\n").map!{|i| i.chomp}
+
+unless configs == []
+  configs.each.with_index(1) do |this, idx|
+    print "[#{idx}] - #{this}\n"
+  end
+
+  puts 'Choose a config to edit'
+  edit = gets.chomp
+  num = edit.to_i - 1 
+  (num < 0) ? (`xtab "nano #{DOTRC}#{configs.find{|i| i =~ /.*#{edit}.*/ }}"`) : (`xtab "nano #{DOTRC}#{configs[num]}"`)
+else 
+  puts DOTRC+' not found.'
+end 
