@@ -17,6 +17,7 @@ alias gcam='git commit -a -m' # commit all supply message on CLI
 alias gcan='git commit -a' # Git commit all NANO the commit msg
 alias gcc='git.CLONE' # Git clone practice for gitclone copy to copy multiple dirs
 alias gc='git clone' # Clone a new repo!
+alias gcu='git reset HEAD~' # Git Commit Undo
 alias gen.RM='$HOME/.io/gen.README' # Generate Markdown readme for a script
 alias get.ports='sudo netstat -tunlp' # Show listening ports
 alias gfa='for remote in `git branch -r`; do git branch --track ${remote#origin/} $remote; done &>> /tmp/.0' # Get all branches, so you can choose on cli
