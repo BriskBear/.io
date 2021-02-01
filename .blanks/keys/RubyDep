@@ -1,4 +1,5 @@
 #!/bin/bash
 
-switchKEY[arch]="$(/tmp/blks/Arch/depends.RUBY)"
-switchKEY[ubuntu]="printf\ sudo\ apt\ install\ -y\ autoconf\ bison\ build-essential\ libssl-dev\ libyaml-dev\ libreadline6-dev\ zlib1g-dev\ libncurses5-dev\ libffi-dev\ libgdbm6\ libgdbm-dev\ libdb-dev"
+switchKEY[arch]="printf /tmp/blks/Arch/depends.RUBY"
+switchKEY[ubuntu]="printf /tmp/blks/Ubuntu/depends.RUBY"
+
