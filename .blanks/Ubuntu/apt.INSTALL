@@ -20,7 +20,7 @@ function with_cat() {
       # Install all items in the queue
       for p in ${queue[@]}
       do
-          sudo apt install -y $p | tee -a $LOG |lolcat
+          sudo apt install -y $p | tee -a $LOG |lolcat -a
       done
   else
       # Install all items in the queue
