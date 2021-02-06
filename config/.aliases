@@ -38,6 +38,7 @@ alias guntrack='git update-index --assume-unchanged' # Untrack a local file for 
 alias help="help  " # "don\'t forget to use 'help', and "<cmd> --help" if you need bash commands!"
 alias hs='history | grep -n' # Search recent commands 
 alias installed?='Query' # ask if packages are installed
+alias io='. $HOME/.io/maint/io' # Meta io, get help, configure
 alias ipl="printf \"Local IP: $(ip a | grep 10.245 | cut -f6 -d ' ') \n\"" # Local IP address
 alias jqs='jq .scripts package.json' # 
 alias keepass='/usr/bin/keepass' # Password Vault
