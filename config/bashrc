@@ -174,21 +174,22 @@ figlet -f smslant -w 130 "$USER"'@'"$HOSTNAME"
 printf "${NC}"
 
 ## Start the SSH-Agent: Uncomment \ on 153 and all of 154 to enable default ~/.ssh/id_rsa
-[ -z "$SSH_AUTH_SOCK" ]&& eval $(ssh-agent -s)
-declare -a ssh_keys
-[[ -s ~/.config/io/ssh.KEYS ]]&& source ~/.config/io/ssh.KEYS #\
-#  || ln -s ~/.config/io/ssh.KEYS.sample ~/.config/io/ssh.KEYS
-for k in "${ssh_keys[@]}"
-do
-    ssh-add "$k"
-    d=$( echo $k|rev|cut -f1 -d /|rev )
-done
-unset ssh_keys
+if [[ $(which ssh-agent 2>> /dev/null) ]]
+then
+  [ -z "$SSH_AUTH_SOCK" ]&& eval $(ssh-agent -s)
+  declare -a ssh_keys
+  [[ -s ~/.config/io/ssh.KEYS ]]&& source ~/.config/io/ssh.KEYS #\
+  #  || ln -s ~/.config/io/ssh.KEYS.sample ~/.config/io/ssh.KEYS
+  for k in "${ssh_keys[@]}"
+  do
+      ssh-add "$k"
+      d=$( echo $k|rev|cut -f1 -d /|rev )
+  done
+  unset ssh_keys
+fi
 
 # AutoJump
-[[ -s /usr/share/autojump ]] && source /usr/share/autojump/autojump.sh || \
-  source /usr/share/autojump/autojump.bash
-[[ -s /usr/share/autojump/autojump.bash ]] && source /usr/share/autojump/autojump.bash
+[[ $(which autojump 2>> /dev/null) ]] && source /usr/share/autojump/autojump.sh
 
 # Path environment variable for spawning executables
   PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -199,7 +200,7 @@ unset ssh_keys
 ## End Path Mod
 
 # NeoFetch
-/usr/bin/neofetch --color_blocks off
+[[ $(which neofetch 2> /dev/null) ]]&& /usr/bin/neofetch --color_blocks off
 
 # Add asdf to Bash
 [[ -d $HOME/.asdf ]]&& \
@@ -212,7 +213,7 @@ then
     . ~/.io/config/envar
 fi
 
-eval "$(direnv hook bash)"
+[[ $(which direnv 2>> /dev/null) ]]&& eval "$(direnv hook bash)"
 export PATH
 
 # For some stupid git reason, adding git-sh-prompt made xterm default to /
