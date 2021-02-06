@@ -13,7 +13,7 @@ then
     read EXEC
 fi
 
-# Use bash shebang if excutable type is not given
+# Use bash shebang if interpreter is not given
 if [ ! $2 ]
 then
     SHEBANG="$null_SHEBANG"

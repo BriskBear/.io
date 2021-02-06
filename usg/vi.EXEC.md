@@ -1,15 +1,18 @@
-# nano.EXEC  
+# vi.EXEC  
 ### Usage:  
 
-
+`vi.EXEC [file_name] [interpreter]`  
 
 #### Example(s):  
 
-
+`vi.EXEC calculator.rb ruby`  
 
 ### Description:  
+
+Jump right into a script, with an auto-shebang. This also immediately adds executable.
+
  Prompt for a filename if none given
- Use bash shebang if excutable type is not given
+ Use bash shebang if interpreter is not given
  Create the file with shebang
  Edit the file with line-break after the shebang
  Make the file Executable
@@ -37,7 +40,7 @@ fi
 
 printf "$SHEBANG\n\n" >> $EXEC
 
-nano +3 $EXEC
+vi +3 $EXEC
 
 chmod u+x $EXEC
 ```
