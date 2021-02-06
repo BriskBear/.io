@@ -5,7 +5,8 @@ RM="$IN_FILE.md"
 
 touch $RM
 printf "# $IN_FILE  \n" >> $RM
-printf "### Usage:  \n\n" >> $RM
+printf "### Usage:  \n\n\n\n" >> $RM
+printf "#### Example(s):  \n\n\n\n" >> $RM
 printf "### Description:  \n" >> $RM
 cat "$1"|grep -v "\#!"|grep ^# |cut -f2 -d '#' >> $RM
 printf "\n## __Code__  \n" >> $RM
@@ -14,4 +15,4 @@ cat "$1"|grep ^'#!' >> $RM
 cat "$1"|grep -v ^'#' >> $RM
 printf "\`\`\`\n" >> $RM
 
-vi $RM
+vi +4 $RM
