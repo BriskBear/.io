@@ -1,17 +1,40 @@
 #!/bin/bash
 
-OPTIND=1 # Reset getopts
+io_help() {
+  cat $HOME/.io/usg/main_help
+}
 
-while getopts "h?c" opt; do
-  case "$opt" in
-    h|\?)
-      printf "${LIGHT_CYAN}Help${NC}\n"
+io_configure() {
+  $HOME/.io/maint/io.CONFIG
+  source $HOME/.bashrc
+}
+
+[[ $# -eq 0 ]]&& io_help
+
+#case "$opt" in
+#  c)
+#    $HOME/.io/maint/io.CONFIG
+#    PS1='Configure'
+#    source $HOME/.bashrc
+#    ;;
+#  *)
+#    io_help
+#    ;;
+#esac
+
+while [[ "$#" -gt 0 ]]
+do
+  case $1 in
+    -c|--config|--configure)
+      io_configure
       ;;
-    c)
-      printf "${LIGHT_GREEN}Config${NC}\n"
-      $HOME/.io/maint/io.CONFIG
-      PS1='Configure'
-      source $HOME/.bashrc
+    -h|--help|\?)
+      io_help
+      ;;
+    *)
+      printf "${PINK}Unknown option: $1${NC}\n"
+      io_help
       ;;
   esac
+  shift
 done
