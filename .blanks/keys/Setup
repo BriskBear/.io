@@ -1,4 +1,5 @@
 #!/bin/bash
 
 switchKEY[arch]="printf /tmp/blks/Arch/pacman.INSTALL"
+switchKEY[debian]="printf /tmp/blks/Ubuntu/apt.INSTALL"
 switchKEY[ubuntu]="printf /tmp/blks/Ubuntu/apt.INSTALL"
