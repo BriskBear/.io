@@ -1,0 +1,10 @@
+#!/bin/bash 
+
+sudo pacman -Sy --needed --noconfirm base-devel git
+cd /opt
+sudo git clone https://aur.archlinux.org/yay.git
+sudo chown -R $USER:users ./yay
+cd yay
+makepkg -si --noconfirm | lolcat -a
+sudo ln -s /opt/yay/src/yay-*/yay /usr/bin/yay
+printf "${LIGHT_GREEN}yay AUR Helper installed!${NC}\n"
