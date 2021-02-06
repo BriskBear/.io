@@ -1,29 +1,29 @@
 #!/bin/bash
 
-EXEC='$1'
-SHEBANG='$2'
+EXEC="$1"
+SHEBANG="#!/usr/bin/env $2"
 
 null_EXEC='Enter a name for the executable file: '
 null_SHEBANG='#!/bin/bash'
 
+# Prompt for a filename if none given
 if [ ! $EXEC ]
 then
     printf $null_EXEC
     read EXEC
 fi
 
-if [ ! -d .naBak ]
-then
-    mkdir .naBak
-fi
-
-if [ ! $SHEBANG ]
+# Use bash shebang if excutable type is not given
+if [ ! $2 ]
 then
     SHEBANG="$null_SHEBANG"
 fi
 
+# Create the file with shebang
 printf "$SHEBANG\n\n" >> $EXEC
 
+# Edit the file with line-break after the shebang
 nano +3 $EXEC
 
-sudo chmod u+x $EXEC
+# Make the file Executable
+chmod u+x $EXEC
