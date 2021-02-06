@@ -1,11 +1,11 @@
 # nano.EXEC  
 ### Usage:  
 
-`nano.EXEC [file_name] [interpreter]`  
 
-#### Example:
 
-`nano.EXEC calculator.rb ruby`  
+#### Example(s):  
+
+
 
 ### Description:  
  Prompt for a filename if none given
