@@ -24,6 +24,9 @@ case "$OS" in
     ${switchKEY[ubuntu]}
 #    printf "${RUST}Ubuntu${NC}\n"
     ;;
+  \"Debian*)
+    ${switchKEY[debian]}
+    ;;
   *)
     printf "${MSG[RNG]}${LIGHT_BLUE}Something Else?${NC}\n"
     ;;
