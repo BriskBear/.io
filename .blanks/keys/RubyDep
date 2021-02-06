@@ -1,5 +1,6 @@
 #!/bin/bash
 
 switchKEY[arch]="printf /tmp/blks/Arch/depends.RUBY"
+switchKEY[debian]="printf /tmp/blks/Ubuntu/depends.RUBY"
 switchKEY[ubuntu]="printf /tmp/blks/Ubuntu/depends.RUBY"
 

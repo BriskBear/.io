@@ -1,0 +1,17 @@
+#!/bin/bash
+
+OPTIND=1 # Reset getopts
+
+while getopts "h?c" opt; do
+  case "$opt" in
+    h|\?)
+      printf "${LIGHT_CYAN}Help${NC}\n"
+      ;;
+    c)
+      printf "${LIGHT_GREEN}Config${NC}\n"
+      $HOME/.io/maint/io.CONFIG
+      PS1='Configure'
+      source $HOME/.bashrc
+      ;;
+  esac
+done
