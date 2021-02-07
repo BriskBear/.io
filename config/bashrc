@@ -204,8 +204,7 @@ fi
 
 # Add asdf to Bash
 [[ -d $HOME/.asdf ]]&& \
-  source $HOME/.asdf/asdf.sh && source $HOME/.asdf/completions/asdf.bash \
-  || echo "asdf not installed"
+  source $HOME/.asdf/asdf.sh && source $HOME/.asdf/completions/asdf.bash
 
 # Add .io/config/envar`s
 if [ -f $HOME/.io/config/envar ]
