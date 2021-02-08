@@ -167,7 +167,7 @@ then
 fi
 
 # Create disks file for neofetch to read all mounted disks
-e=$(lsblk -o MOUNTPOINT|grep -v MOUNTPOINT|grep -v SWAP|grep -v ^$)
+e=$(lsblk -o MOUNTPOINT|grep -v MOUNTPOINT|grep -v snap|grep -v SWAP|grep -v ^$)
 rm /tmp/dskmnt &> /tmp/.0
 for i in ${e[@]}
 do

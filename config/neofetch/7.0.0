@@ -22,17 +22,17 @@ print_info() {
     info "GPU" gpu
     info "Memory" memory
 
-    # info "GPU Driver" gpu_driver  # Linux/macOS only
-    # info "CPU Usage" cpu_usage
-    # info "Disk" disk
+     info "GPU Driver" gpu_driver  # Linux/macOS only
+     info "CPU Usage" cpu_usage
+     info "Disk" disk
     # info "Battery" battery
-    # info "Font" font
+     info "Font" font
     # info "Song" song
     # [[ "$player" ]] && prin "Music Player" "$player"
-    # info "Local IP" local_ip
+     info "Local IP" local_ip
     # info "Public IP" public_ip
-    # info "Users" users
-    # info "Locale" locale  # This only works on glibc systems.
+     info "Users" users
+     info "Locale" locale  # This only works on glibc systems.
 
     info cols
 }
@@ -45,7 +45,7 @@ print_info() {
 # Default:  'off'
 # Values:   'on', 'off'
 # Flag:     --title_fqdn
-title_fqdn="off"
+title_fqdn="on"
 
 
 # Kernel
@@ -101,7 +101,7 @@ os_arch="on"
 # on:   '2 days, 10 hours, 3 mins'
 # tiny: '2d 10h 3m'
 # off:  '2 days, 10 hours, 3 minutes'
-uptime_shorthand="on"
+uptime_shorthand="tiny"
 
 
 # Memory
@@ -116,7 +116,7 @@ uptime_shorthand="on"
 # Example:
 # on:   '1801MiB / 7881MiB (22%)'
 # off:  '1801MiB / 7881MiB'
-memory_percent="off"
+memory_percent="on"
 
 
 # Packages
@@ -183,7 +183,7 @@ speed_type="bios_limit"
 # Example:
 # on:    'i7-6500U (4) @ 3.1GHz'
 # off:   'i7-6500U (4) @ 3.100GHz'
-speed_shorthand="off"
+speed_shorthand="on"
 
 # Enable/Disable CPU brand in output.
 #
@@ -237,7 +237,7 @@ cpu_cores="logical"
 # C:   'Intel i7-6500U (4) @ 3.1GHz [27.2°C]'
 # F:   'Intel i7-6500U (4) @ 3.1GHz [82.0°F]'
 # off: 'Intel i7-6500U (4) @ 3.1GHz'
-cpu_temp="off"
+cpu_temp="on"
 
 
 # GPU
@@ -286,7 +286,7 @@ gpu_type="all"
 # Example:
 # on:  '1920x1080 @ 60Hz'
 # off: '1920x1080'
-refresh_rate="off"
+refresh_rate="on"
 
 
 # Gtk Theme / Icons / Font
@@ -375,7 +375,7 @@ de_version="off"
 # disk_show=('/'):
 #      'Disk (/): 74G / 118G (66%)'
 #
-disk_show=('/')
+disk_show=($(cat /tmp/dskmnt))
 
 # Disk subtitle.
 # What to append to the Disk subtitle.
