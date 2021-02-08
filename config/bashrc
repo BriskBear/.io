@@ -166,12 +166,24 @@ then
   fi
 fi
 
+# Create disks file for neofetch to read all mounted disks
+e=$(lsblk -o MOUNTPOINT|grep -v MOUNTPOINT|grep -v SWAP|grep -v ^$)
+rm /tmp/dskmnt &> /tmp/.0
+for i in ${e[@]}
+do
+  printf "$i " >> /tmp/dskmnt
+done
+
+# NeoFetch
+[[ $(which neofetch 2> /dev/null) ]]&& /usr/bin/neofetch --color_blocks off &> /tmp/neofile & disown;
+
 # Figlet
 
 source $HOME/.io/.blanks/color
-printf "${LIGHT_GREEN}"
-figlet -f smslant -w 130 "$USER"'@'"$HOSTNAME"
-printf "${NC}"
+
+figlet -f smslant -w 130 "$USER"'@'"$HOSTNAME"| lolcat -a
+
+cat /tmp/neofile
 
 ## Start the SSH-Agent: Uncomment \ on 153 and all of 154 to enable default ~/.ssh/id_rsa
 if [[ $(which ssh-agent 2>> /dev/null) ]]
@@ -182,14 +194,14 @@ then
   #  || ln -s ~/.config/io/ssh.KEYS.sample ~/.config/io/ssh.KEYS
   for k in "${ssh_keys[@]}"
   do
-      ssh-add "$k"
+      ssh-add "$k" &>>/tmp/sshadd
       d=$( echo $k|rev|cut -f1 -d /|rev )
   done
   unset ssh_keys
 fi
 
 # AutoJump
-[[ $(which autojump 2>> /dev/null) ]] && source /usr/share/autojump/autojump.sh
+[[ $(which autojump 2>> /dev/null) ]] && source /usr/share/autojump/autojump.bash
 
 # Path environment variable for spawning executables
   PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -198,9 +210,6 @@ fi
     && source $HOME/.io/.blanks/path+ \
     || printf "You may need to manually add PATH entries\n"
 ## End Path Mod
-
-# NeoFetch
-[[ $(which neofetch 2> /dev/null) ]]&& /usr/bin/neofetch --color_blocks off
 
 # Add asdf to Bash
 [[ -d $HOME/.asdf ]]&& \
@@ -218,3 +227,5 @@ export PATH
 # For some stupid git reason, adding git-sh-prompt made xterm default to /
 #  So this stupid thing is here to start us back in $HOME
 #cd
+
+
