@@ -6,7 +6,7 @@ mkdir -vm 700 -p $HOME/.ssh/.pk &>> $LOG
 
 chmod 740 $HOME/.ssh/.pk
 [[ $(which ssh-keygen) ]] || Setup openssh
-ssh-keygen -q -b 4096 -O "$U_NAME" -t RSA -f $HOME/.ssh/.pk/$(date +%Y-%m-%d_$U_NAME)
+ssh-keygen -q -b 4096 -O "$U_NAME" -t RSA -f $HOME/.ssh/.pk/$(date +%Y-%m-%d_"$U_NAME")
 mv -v $HOME/.ssh/.pk/*.pub $HOME/.ssh/
 chmod 700 $HOME/.ssh/.pk
 chmod 600 $HOME/.ssh/.pk/*
