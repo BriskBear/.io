@@ -1,7 +1,9 @@
 #!/bin/bash
 
-private=$1 # Full path to private key
-p_name=$(echo $private|rev|cut -f2 -d .|cut -f1 -d /|rev) # Remove path and Filetype
+private="$1" # Full path to private key
+p_name=$(echo "$private"|rev|cut -f1 -d '.'|cut -f1 -d '/'|rev) # Remove path and Filetype
 
-ssh-keygen -y -f $private > "$HOME/.ssh/$p_name.pub"
-#echo "Public Key Calculated"
+[[ "$#" -gt 0 ]]&& \
+  ( ssh-keygen -y -f $private > "$HOME/.ssh/$p_name.pub" && \
+    printf "${LIGHT_GREEN}Public Key Calculated${NC}\n" ) || \
+  ( printf "${PINK} Please include path to source secret key${NC}\n" && exit 1 )

@@ -85,3 +85,5 @@ alias x='$HOME/.io/.sec/.x' # Secret secrets
 alias +x='chmod -v +x' # Whoops
 alias xtab='$HOME/.io/blanks/xtab' # Open command in new XFCE Terminal tab
 alias xwin='xfce4-terminal' # New xfce4 Terminal Window
+alias dira='direnv allow' # Activate local .direnv file
+alias EALL='nano $HOME/.config/io/local_aliases' # Configure Local Aliases
