@@ -3,15 +3,15 @@ DATE=$(date +%y%m%d)
 HERE=$(pwd)
 if [ ! -d "$HERE/.archive" ]; then
     echo "Initialize Archive"
-    mkdir $HERE/.archive
+    mkdir $HERE"/.archive"
 fi
 if [ -f $HERE"/.archive/"$DATE"archive.tar.bz2" ]; then
     echo "Archive Exists"
     tar -xPf $HERE"/.archive/"$DATE"archive.tar.bz2" -C $HERE"/.archive/"$DATE"archive.tar"
     tar -uvf $HERE"/.archive/"$DATE"archive.tar" $HERE"/.archive/"
-    tar -cJvf $HERE"/.archive/"$DATE"archive.tar.bz2" $HERE"/.archive/"$DATE"archive.tar" --remove-files
+    tar -cjvf $HERE"/.archive/"$DATE"archive.tar.bz2" $HERE"/.archive/"$DATE"archive.tar" --remove-files
 fi
 if [ ! -f $HERE"/.archive/"$DATE"archive.tar.bz2" ]; then
-    tar -cPJvf $HERE"/.archive/"$DATE"archive.tar.bz2" *
+    tar -cPjvf $HERE"/.archive/"$DATE"archive.tar.bz2" *
     echo $HERE"/.archive/"$DATE"archive.tar.bz2 created"
 fi

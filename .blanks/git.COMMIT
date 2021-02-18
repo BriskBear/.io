@@ -4,31 +4,12 @@ declare \
  authorization='N'
 declare \
  rm_file='$null'
+declare \
+ message="$@"
 
-git add *
-git commit
-git pull
+git add --all
+git commit -m "$message"
+git pull --rebase
 git status
-
-echo "Push? : (y/n)"
-read authorization
-
-if [ $authorization -eq 'y' ]
-then
-    echo "Pushed!"
-else
-    echo "Refrained from Pushing."
-fi
-
-authorization='N'
-echo "Removals must be handled manually would you like to remove from project?"
-read $authorization
-if [ $authorization -eq 'y' ]
-then
-    echo "Which to remove?"
-    git status
-    echo "Which to remove?"
-    read FILE
-    echo "rm $FILE"
-fi
+git push
 
