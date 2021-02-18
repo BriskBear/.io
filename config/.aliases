@@ -92,3 +92,4 @@ alias gra='git remote add origin' # Add remote (origin) <remote_url>
 alias gir='git.INIT' # Initialize and add origin remote <url_required>
 alias gra='git remote add origin' # Add Remote <url_required>
 alias gt='/tmp/blks/git.TAG' # Git tag <ver> [message]
+alias ta='tmux a -t' # Tmux attach target <target>
