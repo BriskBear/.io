@@ -13,30 +13,30 @@ print_info() {
     info "Kernel" kernel
     info "Uptime" uptime
     info "Packages" packages
-#    info "Shell" shell
-#    info "Resolution" resolution
+    info "Shell" shell
+    info "Resolution" resolution
     info "DE" de
-#    info "WM" wm
-#    info "WM Theme" wm_theme
-#    info "Theme" theme
+    info "WM" wm
+    info "WM Theme" wm_theme
+    info "Theme" theme
     info "Icons" icons
-#    info "Terminal" term
-#    info "Terminal Font" term_font
+    info "Terminal" term
+    info "Terminal Font" term_font
     info "CPU" cpu
-#    info "GPU" gpu
+    info "GPU" gpu
     info "Memory" memory
 
-    # info "GPU Driver" gpu_driver  # Linux/macOS only
+     info "GPU Driver" gpu_driver  # Linux/macOS only
      info "CPU Usage" cpu_usage
      info "Disk" disk
     # info "Battery" battery
     # info "Font" font
     # info "Song" song
-    # info "Local IP" local_ip
-    # info "Public IP" public_ip
-    # info "Users" users
-    # info "Install Date" install_date
-    # info "Locale" locale  # This only works on glibc systems.
+     info "Local IP" local_ip
+     info "Public IP" public_ip
+     info "Users" users
+     info "Install Date" install_date
+     info "Locale" locale  # This only works on glibc systems.
 
     info line_break
     info cols
@@ -148,7 +148,7 @@ speed_type="bios_limit"
 # Example:
 # on:    'i7-6500U (4) @ 3.1GHz'
 # off:   'i7-6500U (4) @ 3.100GHz'
-speed_shorthand="off"
+speed_shorthand="on"
 
 # Enable/Disable CPU brand in output.
 #
@@ -202,7 +202,7 @@ cpu_cores="logical"
 # C:   'Intel i7-6500U (4) @ 3.1GHz [27.2°C]'
 # F:   'Intel i7-6500U (4) @ 3.1GHz [82.0°F]'
 # off: 'Intel i7-6500U (4) @ 3.1GHz'
-cpu_temp="off"
+cpu_temp="on"
 
 
 # GPU
@@ -322,7 +322,7 @@ public_ip_host="http://ident.me"
 # disk_show=('/'):
 #      'Disk (/): 74G / 118G (66%)'
 #
-disk_show=('/')
+disk_show=($(cat /tmp/dskmnt))
 
 # Disk subtitle.
 # What to append to the Disk subtitle.
@@ -342,7 +342,7 @@ disk_show=('/')
 # dir:    'Disk (/): 74G / 118G (66%)'
 #         'Disk (Local Disk): 74G / 118G (66%)'
 #         'Disk (Videos): 74G / 118G (66%)'
-disk_subtitle="mount"
+disk_subtitle="dir"
 
 
 # Song
