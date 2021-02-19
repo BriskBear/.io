@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG='/tmp/.0'
+LOG='/dev/null'
 INFORM_NAME='RUBY'
 LINK='$HOME/.io/ruby'
 STATIC_DIR="$HOME/.io/.ruby"

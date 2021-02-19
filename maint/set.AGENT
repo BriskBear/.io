@@ -1,4 +1,3 @@
 #!/bin/bash
 
-LOG='/tmp/.0'
-[[ -d $HOME/.config/io ]]|| ( cp -vr $HOME/.io/config/io/ $HOME/.config/ &>> $LOG )
+[[ -d $HOME/.config/io ]]|| ( cp -vr $HOME/.io/config/io/ $HOME/.config/ >> /dev/null )
