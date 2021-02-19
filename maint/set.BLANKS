@@ -3,7 +3,7 @@
 # Add Color to Output
 . $HOME/.io/.blanks/color
 
-LOG='/tmp/.0'
+LOG='/dev/null'
 
 # Remove existing RAMDisk
 rm -vr /tmp/blks /tmp/ps1 &>> $LOG

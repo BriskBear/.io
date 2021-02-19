@@ -5,7 +5,7 @@ LINK='/usr/share/fonts/io'
 STATIC_DIR="$HOME/.io/fonts"
 TMP='.fnt'
 
-rm -r "/tmp/$TMP" &>>/tmp/.0
+rm -r "/tmp/$TMP" &>>/dev/null
 cp -r "$STATIC_DIR" "/tmp/$TMP"
 
 if [ ! -d "$LINK" ]

@@ -3,11 +3,11 @@
 DRIV=$(ls /mnt)
 
 [[ ! -d "/media/$USER" ]] && \
-  sudo mkdir -v "/media/$USER/" &>> /tmp/.0 || \
+  sudo mkdir -v "/media/$USER/" &>> /dev/null || \
   printf "$USER exists in /media\n"
 
 function mk_link(dir) {
-    sudo ln -vs "/mnt/$dir" "/media/$USER/$dir" &>> /tmp/.0 && \
+    sudo ln -vs "/mnt/$dir" "/media/$USER/$dir" &>> /dev/null && \
     printf " media/$dir created\n" || \
     printf "media/$dir ERRORED\n"
 }
@@ -15,7 +15,7 @@ function mk_link(dir) {
 for d in ${DRIV[@]}
 do
     [[ -d "/media/$USER/$d" ]] && \
-        ( sudo rm -v "/media/$USER/$d" &>> /tmp/.0 && mk_link $d ) || \
+        ( sudo rm -v "/media/$USER/$d" &>> /dev/null && mk_link $d ) || \
         mk_link $d
 done
 

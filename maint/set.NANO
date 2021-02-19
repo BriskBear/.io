@@ -5,7 +5,7 @@
 
 # Set Variables and Messages
 package="nano"
-LOG='/tmp/.0'
+LOG='/dev/null'
 declare -A MSG=( \
   [fd]="Nano usrcfg already exists\n" \
   [mk]="Creating $package\n" \
