@@ -1,4 +1,3 @@
 # TMUX CONFIG
 
 set -g mouse on
-set -t elijah remain-on-exit on
