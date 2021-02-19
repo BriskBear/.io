@@ -16,6 +16,24 @@ hidden io directory
 `cd && .io/maint/io.CONFIG && . .bashrc` Go to home directory, run the configure script, 
 activate .io by sourcing .bashrc
 
+# Learn .io
+
+Yeah, documentation. So I even created this great gen.README blank to make this easier, but
+updating and introducing new convenience has really been the focus. Heh. For now use `?` 
+to read aliases, I'm slowly working on `io -h` but that comes with documenting blanks. The 
+scripts in .io/blanks are the meat and potatoes. _Hopefully_ you'll agree these are named 
+well, but I am open to suggestions. To get you going, the coolest thing about .io is the 
+package manager commands:  
+  - `setup, purge, Query, update`  
+    - These call my signature switcher, which calls `OS` to detect which distro you're using
+    then uses the keyfile (.io/blanks/keys/_relevant_) to call the appropriate package 
+    manager to install your program. (ie. Ubuntu/Debian=>apt, Archlinux=>(yay)/pacman)  
+    - I've yet to add REL(etc.) just yet but it will be simple by the framework (Honestly only 
+    covered _my_ needs yet right?)  
+  - `ssh.INIT` this sets up .ssh/ folders with usable permissions and generates a fresh key
+  for you off the bat. I cannot tell you how much time I've wasted trying to get these assigned
+  correctly over the years, but you get to spend seconds doing it right the first time.  
+
 ## Unimerge  
 _The moment I've all been waiting for_
 
