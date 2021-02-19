@@ -9,7 +9,7 @@ null_SHEBANG='#!/bin/bash'
 # Prompt for a filename if none given
 if [ ! $EXEC ]
 then
-    printf $null_EXEC
+    printf "$null_EXEC"
     read EXEC
 fi
 
