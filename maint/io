@@ -9,6 +9,23 @@ io_configure() {
   source $HOME/.bashrc
 }
 
+back_to_basics() {
+  cleanup=(
+   "blks"
+   "dskmnt"
+   "neofile"
+   "ps1"
+  )
+  rm $HOME/Downloads; mkdir $HOME/Downloads && mv /tmp/dwn/* $HOME/Downloads/
+  for d in ${cleanup[@]}
+  do
+    rm -rv /tmp/$d
+  done
+  cp $HOME/.io/.default_profile.tbz2 $HOME/
+  rm $HOME/.bashrc $HOME/.profile
+  cd && tar -xjvf .default_profile.tbz2
+}
+
 [[ $# -eq 0 ]]&& io_help
 
 #case "$opt" in
@@ -30,6 +47,9 @@ do
       ;;
     -h|--help|\?)
       io_help
+      ;;
+    -u|--unload)
+      back_to_basics
       ;;
     *)
       printf "${PINK}Unknown option: $1${NC}\n"
