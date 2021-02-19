@@ -11,8 +11,8 @@ _That's just not set up yet. Soon-coming!_
 
 # Installation
 
-`git clone https://github.com/briskbear/.io ~/.io` Clone the repo to your home directory 
-> hidden io directory  
+`git clone https://github.com/briskbear/.io ~/.io` Clone the repo to your home directory >
+hidden io directory  
 `cd && .io/maint/io.CONFIG && . .bashrc` Go to home directory, run the configure script, 
 activate .io by sourcing .bashrc
 
