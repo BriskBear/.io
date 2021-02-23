@@ -11,7 +11,7 @@ unless configs == []
   puts 'Choose a config to edit'
   edit = gets.chomp
   num = edit.to_i - 1 
-  (num < 0) ? (`tmux new-session "nano #{DOTRC}#{configs.find{|i| i =~ /.*#{edit}.*/ }}"`) : (`tmux new-session "nano #{DOTRC}#{configs[num]}"`)
+  (num < 0) ? (`unset TMUX && tmux new-session "nano #{DOTRC}#{configs.find{|i| i =~ /.*#{edit}.*/ }}"`) : (`unset TMUX && tmux new-session "nano #{DOTRC}#{configs[num]}"`)
 else 
   puts DOTRC+' not found.'
 end 
