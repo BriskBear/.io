@@ -95,3 +95,4 @@ alias gt='/tmp/blks/git.TAG' # Git tag <ver> [message]
 alias ta='tmux a -t' # Tmux attach target <target>
 alias ts='tmux new-session -s' # New tmux session
 alias txl='tmux ls' # List active tmux sessions
+alias tl='tmux ls' # List tmux sessions
