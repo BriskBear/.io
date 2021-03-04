@@ -96,3 +96,4 @@ alias ta='tmux a -t' # Tmux attach target <target>
 alias ts='tmux new-session -s' # New tmux session
 alias txl='tmux ls' # List active tmux sessions
 alias RED='RAILS_ENV=DEVELOPMENT' # Rails Development
+alias pac='sudo pacman' # Invoke pacman with no arguments; so you can specify breifly
