@@ -26,7 +26,7 @@ alias gim='/home/lij/.io/gim' # Edit in Vim and then commit
 alias gio='$HOME/.io/nano.GITPUSH' # Edit in nano then push 
 alias gioc='git add ~/.io/config/.*' # Add hidden configs in .io/config
 alias gitre='git rebase && git push' # Rebase & push
-alias gits='git status' # Status of the local git project
+alias gits='gpt && git status' # Status of the local git project
 alias gp='git pull' # Little is pull big is push
 alias GP='git push' # Big is push little is pull
 alias GPset='git push --set-upstream origin master' # Git Push Setup Repo
@@ -95,5 +95,14 @@ alias gt='/tmp/blks/git.TAG' # Git tag <ver> [message]
 alias ta='tmux a -t' # Tmux attach target <target>
 alias ts='tmux new-session -s' # New tmux session
 alias txl='tmux ls' # List active tmux sessions
-alias RED='RAILS_ENV=DEVELOPMENT' # Rails Development
+alias RED='RAILS_ENV=development' # Rails Development
 alias pac='sudo pacman' # Invoke pacman with no arguments; so you can specify breifly
+alias docker='sudo docker' # docker always sudo
+alias ctmux='nano ~/.config/tmux/tmux.conf' # 
+alias td='tmux detach' # detach
+alias screen='screen -U' # always utf-8
+alias du='sudo du -hs ./*' # list current directory and sizes
+alias tsp='tmux splitw' # split window <arg>
+alias xdt='vi.EXEC' # Create executable with your editor
+alias tna='tmux.NANO' # Open 1 or many buffers in nano (even nested tmux)
+alias docc='docker-compose' # Invoke docker-compose

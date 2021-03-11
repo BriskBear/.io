@@ -6,7 +6,7 @@ printf $USER
 #echo $ERR
 if [ $ERR -gt "0" ]
 then
-    printf "$(tput setaf 196)"
+    printf "$(tput setaf 1)"
     printf "$ERR"
 else
     printf "$(tput setaf 2)"

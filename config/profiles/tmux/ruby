@@ -1,0 +1,8 @@
+#!/bin/bash
+
+tmux rename-window 'rails'
+tmux splitw -b -p 50 bin/webpack-dev-server
+tmux splitw -d -p 50 bundle exec rails s
+tmux select-pane -D
+tmux select-pane -D
+RAILS_ENV=development rails c
