@@ -19,23 +19,41 @@
 ## Automatically indent a newly created line to the same number of
 ## tabs and/or spaces as the preceding line -- or as the next line
 ## if the preceding line is the beginning of a paragraph.
+<<<<<<< HEAD
  set autoindent
+=======
+set autoindent
+>>>>>>> nano latest config
 
 ## Back up files to the current filename plus a tilde.
 # set backup
 
 ## The directory to put unique backup files in.
+<<<<<<< HEAD
  set backupdir "/tmp/"
 ## Use bold text instead of reverse video text.
  set boldtext
 
 ## Treat any line with leading whitespace as the beginning of a paragraph.
  set bookstyle
+=======
+# set backupdir ""
+
+## Use bold text instead of reverse video text.
+# set boldtext
+
+## Treat any line with leading whitespace as the beginning of a paragraph.
+# set bookstyle
+>>>>>>> nano latest config
 
 ## The characters treated as closing brackets when justifying paragraphs.
 ## This may not include any blank characters.  Only closing punctuation,
 ## optionally followed by these closing brackets, can end sentences.
+<<<<<<< HEAD
  set brackets ""')>]}"
+=======
+# set brackets ""')>]}"
+>>>>>>> nano latest config
 
 ## Automatically hard-wrap the current line when it becomes overlong.
 # set breaklonglines
@@ -43,9 +61,14 @@
 ## Do case-sensitive searches by default.
 # set casesensitive
 
+<<<<<<< HEAD
 ## Constantly display the cursor position in the status bar.  Note that
 ## this overrides "quickblank".
  set constantshow
+=======
+## Constantly display the cursor position in the status bar or minibar.
+# set constantshow
+>>>>>>> nano latest config
 
 ## Use cut-from-cursor-to-end-of-line by default.
 # set cutfromcursor
@@ -56,6 +79,7 @@
 ## Set the target width for automatic hard-wrapping and for justifying
 ## paragraphs.  If the specified value is 0 or less, the wrapping point
 ## will be the terminal's width minus this number.
+<<<<<<< HEAD
 # set fill -8
 
 ## Remember the used search/replace strings for the next session.
@@ -63,12 +87,25 @@
 
 ## Display a "scrollbar" on the righthand side of the edit window.
  set indicator
+=======
+# set fill -6
+
+## Remember the used search/replace strings for the next session.
+set historylog
+
+## Display a "scrollbar" on the righthand side of the edit window.
+set indicator
+>>>>>>> nano latest config
 
 ## Scroll the buffer contents per half-screen instead of per line.
 # set jumpyscrolling
 
 ## Display line numbers to the left (and any anchors in the margin).
+<<<<<<< HEAD
  set linenumbers
+=======
+set linenumbers
+>>>>>>> nano latest config
 
 ## Enable vim-style lock-files.  This is just to let a vim user know you
 ## are editing a file [s]he is trying to edit and vice versa.  There are
@@ -81,23 +118,41 @@
 ## The opening and closing brackets that can be found by bracket
 ## searches.  They cannot contain blank characters.  The former set must
 ## come before the latter set, and both must be in the same order.
+<<<<<<< HEAD
  set matchbrackets "(<[{)>]}"
+=======
+# set matchbrackets "(<[{)>]}"
+
+## Suppress title bar and show file name and editor state at the bottom.
+# set minibar
+>>>>>>> nano latest config
 
 ## Enable mouse support, if available for your system.  When enabled,
 ## mouse clicks can be used to place the cursor, set the mark (with a
 ## double click), and execute shortcuts.  The mouse will work in the X
 ## Window System, and on the console when gpm is running.
+<<<<<<< HEAD
  set mouse
+=======
+set mouse
+>>>>>>> nano latest config
 
 ## Switch on multiple file buffers (inserting a file will put it into
 ## a separate buffer).
 # set multibuffer
 
 ## Don't convert files from DOS/Mac format.
+<<<<<<< HEAD
 # set noconvert
 
 ## Don't display the helpful shortcut lists at the bottom of the screen.
 # set nohelp
+=======
+ set noconvert
+
+## Don't display the helpful shortcut lists at the bottom of the screen.
+ set nohelp
+>>>>>>> nano latest config
 
 ## Don't automatically add a newline when a file does not end with one.
 # set nonewlines
@@ -109,7 +164,11 @@
 # set operatingdir ""
 
 ## Remember the cursor position in each file for the next editing session.
+<<<<<<< HEAD
  set positionlog
+=======
+set positionlog
+>>>>>>> nano latest config
 
 ## Preserve the XON and XOFF keys (^Q and ^S).
 # set preserve
@@ -118,10 +177,16 @@
 ## paragraphs.  They cannot contain blank characters.  Only closing
 ## punctuation, optionally followed by closing brackets, can end
 ## sentences.
+<<<<<<< HEAD
  set punct "!.?"
 
 ## Do quick status-bar blanking.  Status-bar messages will disappear after
 ## 1 keystroke instead of 26.  Note that "constantshow" overrides this.
+=======
+# set punct "!.?"
+
+## Make status-bar messages disappear after 1 keystroke instead of after 20.
+>>>>>>> nano latest config
 # set quickblank
 
 ## The regular expression that matches quoting characters in email
@@ -193,7 +258,6 @@
 ## The characters (besides alphanumeric ones) that should be considered
 ## as parts of words.  This option does not have a default value.  When
 ## set, it overrides option 'set wordbounds'.
- set wordchars ""
 
 ## Let an unmodified Backspace or Delete erase the marked region (instead
 ## of a single character, and without affecting the cutbuffer).
@@ -204,6 +268,18 @@
 
 ## Paint the interface elements of nano.  These are examples;
 ## by default there are no colors, except for errorcolor.
+=======
+#set wordchars "-"
+
+## Let an unmodified Backspace or Delete erase the marked region (instead
+## of a single character, and without affecting the cutbuffer).
+set zap
+
+set guidestripe 90
+
+## Paint the interface elements of nano.  These are examples; there are
+## no colors by default, except for errorcolor and spotlightcolor.
+ set titlecolor green,black
  set titlecolor bold,green,black
  set statuscolor green,black
  set errorcolor bold,lightwhite,red
@@ -222,9 +298,6 @@
 # set stripecolor lightwhite,red
 # set scrollercolor red,lightwhite
 # set numbercolor lightwhite,red
-# set keycolor lightmagenta
-# set functioncolor magenta
-
 
 ## === Syntax coloring ===
 ## For all details, see 'man nanorc', section SYNTAX HIGHLIGHTING.
@@ -238,6 +311,14 @@
 # include "/usr/share/nano/sh.nanorc"
 
 ## In /usr/share/nano/extra/ you can find some syntaxes that are
+include "/usr/local/share/nano/*.nanorc"
+
+## Or you can select just the ones you need.  For example:
+# include "/usr/local/share/nano/html.nanorc"
+# include "/usr/local/share/nano/python.nanorc"
+# include "/usr/local/share/nano/sh.nanorc"
+
+## In /usr/local/share/nano/extra/ you can find some syntaxes that are
 ## specific for certain distros or for some less common languages.
 
 
