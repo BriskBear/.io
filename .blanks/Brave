@@ -2,5 +2,6 @@
 
 BIN=$(which brave)
 [[ $BIN ]]|| BIN=$(which brave-browser)
-xfce4-terminal --tab -T Brave -e "$BIN $1"
+[[ $(which tmux) ]] && tmux new-session -d -s Brave "$BIN $1" || \
+  xfce4-terminal --tab -T Brave -e "$BIN $1"
 #  printf "Brave not found\n"
