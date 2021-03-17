@@ -2,5 +2,6 @@
 
 tmux rename-window 'guard'
 tmux splitw -b -p 50 bundle exec guard -g server
+tmux splitw -b -p 50 bundle exec guard -g testing
 tmux select-pane -D
 RAILS_ENV=development rails c
