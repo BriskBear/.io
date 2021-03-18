@@ -1,16 +1,6 @@
-## Sample initialization file for GNU nano.
-##
-## For the options that take parameters, the default value is shown.
-## Other options are unset by default.  To make sure that an option
-## is disabled, you can use "unset <option>".
-##
-## Characters that are special in a shell should not be escaped here.
-## Inside string parameters, quotes should not be escaped -- the last
-## double quote on the line will be seen as the closing quote.
-
 ## Make 'nextword' (Ctrl+Right) and 'chopwordright' (Ctrl+Delete)
 ## stop at word ends instead of at beginnings.
-# set afterends
+ set afterends
 
 ## When soft line wrapping is enabled, make it wrap lines at blanks
 ## (tabs and spaces) instead of always at the edge of the screen.
@@ -25,17 +15,18 @@
 # set backup
 
 ## The directory to put unique backup files in.
- set backupdir "/tmp/"
+# set backupdir ""
+
 ## Use bold text instead of reverse video text.
  set boldtext
 
 ## Treat any line with leading whitespace as the beginning of a paragraph.
- set bookstyle
+# set bookstyle
 
 ## The characters treated as closing brackets when justifying paragraphs.
 ## This may not include any blank characters.  Only closing punctuation,
 ## optionally followed by these closing brackets, can end sentences.
- set brackets ""')>]}"
+# set brackets ""')>]}"
 
 ## Automatically hard-wrap the current line when it becomes overlong.
 # set breaklonglines
@@ -43,9 +34,8 @@
 ## Do case-sensitive searches by default.
 # set casesensitive
 
-## Constantly display the cursor position in the status bar.  Note that
-## this overrides "quickblank".
- set constantshow
+## Constantly display the cursor position in the status bar or minibar.
+# set constantshow
 
 ## Use cut-from-cursor-to-end-of-line by default.
 # set cutfromcursor
@@ -76,12 +66,15 @@
 # set locking
 
 ## Fall back to slow libmagic to try and determine an applicable syntax.
-# set magic
+ set magic
 
 ## The opening and closing brackets that can be found by bracket
 ## searches.  They cannot contain blank characters.  The former set must
 ## come before the latter set, and both must be in the same order.
- set matchbrackets "(<[{)>]}"
+# set matchbrackets "(<[{)>]}"
+
+## Suppress title bar and show file name and editor state at the bottom.
+# set minibar
 
 ## Enable mouse support, if available for your system.  When enabled,
 ## mouse clicks can be used to place the cursor, set the mark (with a
@@ -91,13 +84,13 @@
 
 ## Switch on multiple file buffers (inserting a file will put it into
 ## a separate buffer).
-set multibuffer
+ set multibuffer
 
 ## Don't convert files from DOS/Mac format.
-# set noconvert
+ set noconvert
 
 ## Don't display the helpful shortcut lists at the bottom of the screen.
-set nohelp
+ set nohelp
 
 ## Don't automatically add a newline when a file does not end with one.
 # set nonewlines
@@ -118,11 +111,10 @@ set nohelp
 ## paragraphs.  They cannot contain blank characters.  Only closing
 ## punctuation, optionally followed by closing brackets, can end
 ## sentences.
- set punct "!.?"
+# set punct "!.?"
 
-## Do quick status-bar blanking.  Status-bar messages will disappear after
-## 1 keystroke instead of 26.  Note that "constantshow" overrides this.
-# set quickblank
+## Make status-bar messages disappear after 1 keystroke instead of after 20.
+ set quickblank
 
 ## The regular expression that matches quoting characters in email
 ## or line-comment introducers in source code.  The default is:
@@ -193,35 +185,39 @@ set nohelp
 ## The characters (besides alphanumeric ones) that should be considered
 ## as parts of words.  This option does not have a default value.  When
 ## set, it overrides option 'set wordbounds'.
- set wordchars ""
+ set wordchars "-"
 
 ## Let an unmodified Backspace or Delete erase the marked region (instead
 ## of a single character, and without affecting the cutbuffer).
  set zap
 
-## Display a line-length warning stripe at <num> column
+## Vertical Stripe indicating your line is getting long
  set guidestripe 90
 
-## Paint the interface elements of nano.  These are examples;
-## by default there are no colors, except for errorcolor.
- set titlecolor bold,green,black
+## Paint the interface elements of nano.  These are examples; there are
+## no colors by default, except for errorcolor and spotlightcolor.
+ set titlecolor green,black
+ set promptcolor green,black
  set statuscolor green,black
- set errorcolor bold,lightwhite,red
- set selectedcolor black,cyan
- set stripecolor black,green
- set scrollercolor black,green
- set numbercolor bold,green,black
- set keycolor bold,cyan
+ set errorcolor bold,red,black
+ set spotlightcolor black,lime
+ set selectedcolor cyan,black
+ set stripecolor cyan,green
+ set scrollercolor green,black
+ set numbercolor green,black
+ set keycolor cyan
  set functioncolor green
 
 ## In root's .nanorc you might want to use:
-# set titlecolor bold,lightwhite,red
-# set statuscolor bold,lightwhite,red
+# set titlecolor bold,lightwhite,magenta
+# set promptcolor black,yellow
+# set statuscolor bold,lightwhite,magenta
 # set errorcolor bold,lightwhite,red
+# set spotlightcolor black,orange
 # set selectedcolor lightwhite,cyan
-# set stripecolor lightwhite,red
-# set scrollercolor red,lightwhite
-# set numbercolor lightwhite,red
+# set stripecolor ,yellow
+# set scrollercolor magenta
+# set numbercolor magenta
 # set keycolor lightmagenta
 # set functioncolor magenta
 
@@ -230,14 +226,14 @@ set nohelp
 ## For all details, see 'man nanorc', section SYNTAX HIGHLIGHTING.
 
 ## To include most of the existing syntax definitions, you can do:
-include "/usr/share/nano/*.nanorc"
+ include "/usr/share/nano/*.nanorc"
 
 ## Or you can select just the ones you need.  For example:
-# include "/usr/share/nano/html.nanorc"
-# include "/usr/share/nano/python.nanorc"
-# include "/usr/share/nano/sh.nanorc"
+# include "@PKGDATADIR@/html.nanorc"
+# include "@PKGDATADIR@/python.nanorc"
+# include "@PKGDATADIR@/sh.nanorc"
 
-## In /usr/share/nano/extra/ you can find some syntaxes that are
+## In @PKGDATADIR@/extra/ you can find some syntaxes that are
 ## specific for certain distros or for some less common languages.
 
 
