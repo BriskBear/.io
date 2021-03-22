@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cp ~/.io/samples/ssh_blank ~/.ssh/config.d/$1
+nano ~/.ssh/config.d/$1
