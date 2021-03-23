@@ -106,3 +106,4 @@ alias tsp='tmux splitw' # split window <arg>
 alias xdt='vi.EXEC' # Create executable with your editor
 alias tna='tmux.NANO' # Open 1 or many buffers in nano (even nested tmux)
 alias docc='docker-compose' # Invoke docker-compose
+alias nx='vi.EXEC' # Create an executable file <filepath> <lang> (bash)
