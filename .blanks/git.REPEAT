@@ -1,0 +1,11 @@
+#!/bin/bash
+
+REPO=$(pwd)
+while [ true ]
+do
+  printf "Pulled at: " >> /tmp/.git
+  stat -c %y $REPO/.git/FETCH_HEAD >> /tmp/.git
+  git status >> /tmp/.git
+  sleep 30s
+  wait
+done &
