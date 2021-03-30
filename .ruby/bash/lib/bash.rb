@@ -11,6 +11,11 @@ class Bash
     puts path
     la
   end
+  def method_missing(m, *args, &block)
+    def "self.#{m}"(*args)
+      Bash("#{m} #{*args}")
+    end
+  end
 end
 
 module BashBoss

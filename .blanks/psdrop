@@ -1,4 +1,4 @@
 #!/bin/bash
 
 PS1='\[$($HOME/.io/blanks/error.CODE $?)\]' # Green bars or red errorcode
-PS1+='\[$($HOME/.io/blanks/call.CAT \u266b)\]' # Randomly color changing notes!
+PS1+='\[$( $HOME/.io/blanks/call.CAT "\U266b" )\]  ' # Randomly color changing notes!

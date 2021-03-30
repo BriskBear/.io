@@ -23,7 +23,7 @@ fi
 printf "$SHEBANG\n\n" >> $EXEC
 
 # Edit the file with line-break after the shebang
-vi +3 $EXEC
+$EDITOR +3 $EXEC
 
 # Make the file Executable
 chmod u+x $EXEC
