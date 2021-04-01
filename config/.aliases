@@ -108,3 +108,4 @@ alias docc='docker-compose' # Invoke docker-compose
 alias nx='vi.EXEC' # New Executable <file_path> [script_lang]
 alias tv='tmux splitw -v -c "$(pwd)"' # Split here
 alias pls='gpg --list-secret-keys' # 'List Secret'
+alias ECP='$EDITOR ~/.config/io/custom_path' # Edit io custom path
