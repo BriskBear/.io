@@ -1,9 +1,25 @@
-#!/bin/bash
 
-for c in {0..255}
+
+ARRAY=( \
+    "${BLACK} BLACK ${NC}\n"
+    "${BLUE} BLUE ${NC}\n"
+    "${RUST} RUST ${NC}\n"
+    "${CYAN} CYAN ${NC}\n"
+    "${DARK_GREY} DARK_GREY ${NC}\n"
+    "${GREEN} GREEN ${NC}\n"
+    "${LIGHT_BLUE} LIGHT_BLUE ${NC}\n"
+    "${LIGHT_CYAN} LIGHT_CYAN ${NC}\n"
+    "${LIGHT_GRAY} LIGHT_GRAY ${NC}\n"
+    "${LIGHT_GREEN} LIGHT_GREEN ${NC}\n"
+    "${LIGHT_PURPLE} LIGHT_PURPLE ${NC}\n"
+    "${PINK} PINK ${NC}\n"
+    "${PURPLE} PURPLE ${NC}\n"
+    "${RED} RED ${NC}\n"
+    "${WHITE} WHITE ${NC}\n"
+    "${YELLOW} YELLOW ${NC}\n"
+)
+
+for c in ${ARRAY[@]}
 do
-    tput setaf $c
-    tput setaf $c |
-     cat -v
-    echo "boogers=$c"
+  printf $c
 done
