@@ -1,3 +1,8 @@
 #!/bin/bash
 
-$(~/.io/config/profiles/tmux/edit)
+tmux new-window -c $(pwd) -n edit
+tmux splitw -h
+tmux splitw -b
+tmux splitw -b -p 30
+tmux splitw -h -p 40\; clock-mode\; select-pane -L
+#DS.host\; tmux select-pane -D
