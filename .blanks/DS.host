@@ -1,0 +1,4 @@
+#!/bin/bash
+
+figlet -f smslant $HOSTNAME|lolcat -a -d 3
+sleep 9999999
