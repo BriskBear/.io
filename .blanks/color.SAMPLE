@@ -3,7 +3,6 @@
 ARRAY=( \
     "${BLACK} BLACK ${NC}\n"
     "${BLUE} BLUE ${NC}\n"
-    "${RUST} RUST ${NC}\n"
     "${CYAN} CYAN ${NC}\n"
     "${DARK_GREY} DARK_GREY ${NC}\n"
     "${GREEN} GREEN ${NC}\n"
@@ -15,8 +14,9 @@ ARRAY=( \
     "${PINK} PINK ${NC}\n"
     "${PURPLE} PURPLE ${NC}\n"
     "${RED} RED ${NC}\n"
-    "${WHITE} WHITE ${NC}\n"
+    "${RUST} RUST ${NC}\n"
     "${YELLOW} YELLOW ${NC}\n"
+    "${WHITE} WHITE ${NC}\n"
 )
 
 for c in ${ARRAY[@]}

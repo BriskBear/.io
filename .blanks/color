@@ -30,8 +30,9 @@ function color_usg() {
     printf "${YELLOW} USAGE:\n"
     printf '    printf ${RED}'"${RED}Red Text${YELLOW}"'${NC}\n '"${NC}\n"
     printf "${YELLOW}"
-    printf '     Use ${NC} to change back to default or shell will stay that color!'
-    printf "${NC}\n"
+    printf '     Use ${NC} to change back to default or shell will stay that color!'"\n"
+    printf '     color.SAMPLE will display color options.'"\n"
+    /tmp/blks/color.SAMPLE
 }
 
 #### MASTER TABLE DO NOT EDIT SAVE TO UPDATE###
