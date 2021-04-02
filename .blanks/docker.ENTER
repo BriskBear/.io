@@ -2,4 +2,4 @@
 
 container="$1"
 
-sudo docker start "$container" && sudo docker exec -itu 'gruff' "$container" bash
+docker exec -it $container bash

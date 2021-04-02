@@ -1,11 +1,11 @@
 #!/bin/bash
 
 HERE=$(pwd)
-LINK=$1
+LINK="$1"
 NAME=$(
     echo $LINK |rev| cut -f1 -d / |rev
 )
-cd "/home/$(whoami)/Downloads/"
+cd $HOME/Downloads
 wget $LINK
 # wget $LINK > "/home/$(whoami)/Downloads/"$NAME
 cd $HERE
