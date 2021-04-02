@@ -4,6 +4,7 @@
 . $HOME/.io/.blanks/color
 
 LOG='/dev/null'
+PSV=$(echo $(ls ~/.io/config/PSV/|sort -r)| cut -f1 -d ' ')
 
 # Remove existing RAMDisk
 rm -vr /tmp/blks /tmp/ps1 &>> $LOG
@@ -12,7 +13,7 @@ rm -vr /tmp/blks /tmp/ps1 &>> $LOG
 cp -vr $HOME/.io/.blanks/ /tmp/blks &>> $LOG
 
 # PS1 to RAMDisk
-cp -v $HOME/.io/config/PSV/1.7 /tmp/ps1 &>> $LOG
+cp -v $HOME/.io/config/PSV/$PSV /tmp/ps1 &>> $LOG
 
 # Downloads folder to RAMDisk
 mkdir -v /tmp/dwn &>> $LOG

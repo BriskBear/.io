@@ -1,0 +1,14 @@
+#!/bin/bash
+
+PS1='\[$($HOME/.io/blanks/error.CODE $?)\]' # Green bars or red errorcode                                                                                     
+PS1+='\[$($HOME/.io/blanks/call.CAT \h)\]' # Randomly color changing hostname                                                                                 
+PS1+='\[$(tput setaf 2)\]' # Output color to Green                                                                                                            
+PS1+=':' # Separate Hostname from working directory with ':'                                                                                                  
+PS1+='\w' # Working directory and classic $ to end the PS1                                                                                                    
+PS1+='\[$( tput sgr0 )\]' # Color back to "normal"                                                                                                            
+PS1+='$(__git_ps1 " (%s)") ' # git branch and status                                                                                                          
+PS1+='                    \033[19D' # name length                                                                                                             
+PS1+="\n"                                                                                                                                                     
+PS1+='\[$($HOME/.io/blanks/call.CAT ♫)\]' # Randomly color changing hostname                                                                                  
+PS1+='\[$( tput sgr0 )\]' # Color back to "normal"                                                                                                            
+PS1+='  ' # Notes buffer
