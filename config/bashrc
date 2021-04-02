@@ -212,7 +212,7 @@ done
 
 source $HOME/.io/.blanks/color
 
-figlet -f smslant -w 130 "$USER"'@'"$HOSTNAME"| lolcat -a -d 4
+figlet -f smslant -w 130 '@'"$HOSTNAME"| lolcat -a -d 4
 
 cat /tmp/neofile
 
