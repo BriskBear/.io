@@ -110,3 +110,4 @@ alias tv='tmux splitw -v -c "$(pwd)"' # Split here
 alias pls='gpg --list-secret-keys' # 'List Secret'
 alias ECP='$EDITOR ~/.config/io/custom_path' # Edit io custom path
 alias vi='/home/elijah/.io/blanks/vi +3' # 3rd line
+alias nan='nano' # Only one letter
