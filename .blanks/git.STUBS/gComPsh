@@ -1,0 +1,18 @@
+#!/bin/bash
+
+repo="$1"
+LOG='/tmp/.0'
+
+g_commit() {
+  git add --all
+  git status
+  sleep 5s
+  git commit
+}
+
+g_push() {
+  git pull --rebase
+  git status
+  git push
+}
+

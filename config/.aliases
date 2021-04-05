@@ -111,3 +111,5 @@ alias ECP='$EDITOR ~/.config/io/custom_path' # Edit io custom path
 alias vi='/home/elijah/.io/blanks/vi +3' # 3rd line
 alias nan='nano' # Only one letter
 alias tl='tree -AFL' # 'Show all folders requires <levels> arg'
+alias gck='git checkout' # Switch banches
+alias gnb='git checkout -n' # Create a new branch
