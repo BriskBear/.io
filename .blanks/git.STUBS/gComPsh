@@ -3,16 +3,36 @@
 repo="$1"
 LOG='/tmp/.0'
 
+declare -A REPOS
+source ~/.config/io/repos
+
 g_commit() {
+  branch=$(git branch|ack '\*'|awk '{print $2}')
   git add --all
   git status
-  sleep 5s
   git commit
+  echo $(pwd)
+  echo $branch
 }
 
+g_pull_time() {
+  stat -c %y .git/FETCH_HEAD
+}
 g_push() {
+  branch=$(git branch|ack '\*'|awk '{print $2}')
   git pull --rebase
   git status
   git push
+  echo $(pwd)
+  echo $branch
 }
 
+for r in ${REPOS[@]}
+do
+    cd $r
+    g_pull_time
+    g_commit >> /tmp/.0 2>&1
+    g_push >> /tmp/.0 2>&1
+done
+
+#export $REPOS

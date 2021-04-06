@@ -113,3 +113,5 @@ alias nan='nano' # Only one letter
 alias tl='tree -AFL' # 'Show all folders requires <levels> arg'
 alias gck='git checkout' # Switch banches
 alias gnb='git checkout -n' # Create a new branch
+alias runner='tail -f /tmp/.0' # 
+alias hst='DS.host' # host titlebar
