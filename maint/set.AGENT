@@ -1,3 +1,4 @@
 #!/bin/bash
 
 [[ -d $HOME/.config/io ]]|| ( cp -vr $HOME/.io/config/io/ $HOME/.config/ >> /dev/null )
+cp ~/.config/io/.stubs/ssh ~/.ssh/config
