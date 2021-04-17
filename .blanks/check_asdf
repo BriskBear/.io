@@ -1,0 +1,12 @@
+#!/bin/bash
+
+check_asdf() {
+  if [[ $(asdf &> /tmp/check) ]]
+  then
+      echo true
+  else
+      echo false
+  fi
+}
+
+export -f check_asdf
