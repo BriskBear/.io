@@ -1,5 +1,4 @@
-Host 
-    Hostname 
-    Port 
-    User 
-    IdentityFile 
+Host HOST
+    Hostname HOST 
+    User NAME
+    IdentityFile ID 

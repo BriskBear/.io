@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+`. /tmp/blks/src`
+
+puts ENV["SCRIPT"]
+puts ENV["HOME"]
