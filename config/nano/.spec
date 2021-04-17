@@ -26,6 +26,9 @@ vi_link() {
      elif [ $(cat /etc/group | grep wheel|grep $USER) ]
      then
          vi_link
+     elif [ $USER == 'root' ]
+     then
+         vi_link
      else
          printf "$ask_admin"
      fi
