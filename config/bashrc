@@ -10,7 +10,6 @@ esac
 
 # setCFG
 #$HOME/.io/maint/io.CONFIG
-export EDITOR='nano'
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -217,9 +216,9 @@ figlet -f smslant -w 130 '@'"$HOSTNAME"| lolcat -a -d 4
 cat /tmp/neofile
 
 # Add .io/config/envar`s
-if [ -f $HOME/.io/config/envar ]
+if [ -f $HOME/.config/io/iorc ]
 then
-    . ~/.io/config/envar
+    . ~/.config/io/iorc
 fi
 
 [[ $(which direnv 2>> /dev/null) ]]&& eval "$(direnv hook bash)"
