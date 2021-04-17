@@ -6,7 +6,7 @@ io_help() {
 
 io_configure() {
   $HOME/.io/maint/io.CONFIG
-  source $HOME/.bashrc
+  source $HOME/.profile
 }
 
 back_to_basics() {
