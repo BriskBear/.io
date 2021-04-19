@@ -1,3 +1,4 @@
 #!/bin/bash
 
 LOG='/tmp/.10'
+SCRIPT=$(realpath $0)
