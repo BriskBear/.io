@@ -2,9 +2,6 @@
 set nocompatible 
 filetype off 
 set rtp+=~/.vim/bundle/Vundle.vim
-" call pathogen#infect()
-
-" colorscheme apprentice
 
 set colorcolumn=90 " Line Ending Indicator
 set cursorline     " Underline Cursor
@@ -49,11 +46,9 @@ call vundle#begin()
 " START Plugins
 Plugin 'Vundlevim/Vundle.vim'
 Plugin 'thoughtbot/vim-rspec'
-Plugin 'ajh17/VimCompletesMe'
-Plugin 'natebosch/vim-lsc'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails'
-" Plugin 'Shougo/deoplete.nvim'
 Plugin 'preservim/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-syntastic/syntastic'
@@ -62,34 +57,16 @@ Plugin 'vim-syntastic/syntastic'
 call vundle#end()
 filetype plugin indent on
 " Plug Opts
-let g:lsc_server_commands = {
- \ 'ruby': {
- \   'command': 'solargraph stdio',
- \   'log_level': -1,
- \   'suppress_stderr': v:true,
- \  },
- \ 'bash': {
- \   'command': 'bash-language-server',
- \   'args': ['start'],
- \   'filetypes': ['sh'],
- \   'ignoredRootPaths': ["~"],
- \  }
- \}
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-let g:lsc_auto_map = {
- \  'GoToDefinition': 'gd',
- \  'FindeReferences': 'gr',
- \  'Rename': 'gR',
- \  'ShowHover': 'K',
- \  'FindeCodeActions': 'ga',
- \  'Completion': 'omnicfunc',
- \}
-
-let g:lsc_enable_autocomplete  = v:true
-let g:lsc_enable_diagnostics   = v:true
-let g:lsc_reference_highlights = v:true
-let g:lsc_trace_level          = 'off'
-set completeopt=menu,menuone,noinsert,noselect
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1] =~# '\s'
+endfunction
 
 " Colors
 hi NonText ctermbg=NONE ctermfg=2 cterm=NONE
