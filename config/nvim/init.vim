@@ -56,6 +56,7 @@ Plugin 'vim-syntastic/syntastic'
 " END Plugins
 call vundle#end()
 filetype plugin indent on
+
 " Plug Opts
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
