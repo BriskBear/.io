@@ -218,7 +218,7 @@ cat /tmp/neofile
 # Add .io/config/envar`s
 if [ -f $HOME/.config/io/iorc ]
 then
-    . ~/.config/io/iorc
+    source ~/.config/io/iorc
 fi
 
 [[ $(which direnv 2>> /dev/null) ]]&& eval "$(direnv hook bash)"
