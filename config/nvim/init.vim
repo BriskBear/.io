@@ -39,7 +39,7 @@ nnoremap <A-p> :set list!<CR>
 vnoremap <A-i> :setlocal autoindent!<CR>
 nnoremap <A-t> :NERDTree<CR>
 vnoremap <A-t> :NERDTree<CR>
-nnoremap <A-r> :tabnew 
+nnoremap <A-r> :tabfind 
 let mapleader = " " " map leader to Space
 
 call vundle#begin()
