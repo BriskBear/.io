@@ -22,6 +22,9 @@ fi
 # Create the file with shebang
 printf "$SHEBANG\n\n" >> $EXEC
 
+# Use a simple editor if no environment variable 
+[[ $EDITOR ]]|| EDITOR=nano
+
 # Make the file Executable
 chmod u+x $EXEC
 
