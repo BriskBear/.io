@@ -5,8 +5,7 @@ io_help() {
 }
 
 io_configure() {
-  $HOME/.io/maint/io.CONFIG
-  source $HOME/.profile
+  . ~/.profile
 }
 
 back_to_basics() {
@@ -58,3 +57,4 @@ do
   esac
   shift
 done
+
