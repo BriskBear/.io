@@ -1,5 +1,8 @@
 #!/bin/bash
 
+io_push() {
+  (cd $HOME/.io && gcam "$2") &
+}
 io_help() {
   cat $HOME/.io/usg/main_help
 }
@@ -49,6 +52,9 @@ do
       ;;
     -u|--unload)
       back_to_basics
+      ;;
+    -p|--push)
+      io_push $2
       ;;
     *)
       printf "${PINK}Unknown option: $1${NC}\n"
