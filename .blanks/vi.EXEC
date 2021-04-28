@@ -29,6 +29,6 @@ printf "$SHEBANG\n\n" >> $EXEC
 chmod u+x $EXEC
 
 # Edit the file with line-break after the shebang
-$EDITOR $EXEC
+$EDITOR +3 $EXEC
 
 
