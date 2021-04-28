@@ -9,7 +9,7 @@ declare \
 
 git add --all
 git commit -m "$message"
-git pull --rebase
+git pull
 git status
 git push
 
