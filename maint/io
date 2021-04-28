@@ -3,6 +3,11 @@
 io_push() {
   (cd $HOME/.io && gcam "$1" &>> /tmp/.10) &
 }
+
+io_pull() {
+  (cd $HOME/.io && git pull | grep -e '|' -e 'mode') &
+}
+
 io_help() {
   cat $HOME/.io/usg/main_help
 }
@@ -53,9 +58,12 @@ do
     -u|--unload)
       back_to_basics
       ;;
-    -p|--push)
+    -P|--push)
       io_push $2
       shift
+      ;;
+    -p|--pull)
+      io_pull
       ;;
     *)
       printf "${PINK}Unknown option: $1${NC}\n"
