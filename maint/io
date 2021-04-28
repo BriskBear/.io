@@ -55,6 +55,7 @@ do
       ;;
     -p|--push)
       io_push $2
+      shift
       ;;
     *)
       printf "${PINK}Unknown option: $1${NC}\n"
