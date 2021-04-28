@@ -9,7 +9,7 @@ alias cleanpass='rm $HOME/Templates/Database.kdbx' # Clear KPDB
 alias clone='git clone' # Clone a REPO
 alias cls='clear && date | lolcat -a' # Clear and Date
 alias disks='gnome-disks' # Yeah What?!
-alias EAL='$("$EDITOR $HOME/.io/config/.aliases")' # Edit Aliases
+alias EAL='$EDITOR $HOME/.io/config/.aliases' # Edit Aliases
 alias gaa='git add --all\; git status' # Thats pretty verbose
 alias gb='git branch' # Git Branch
 alias gcam='git.COMMIT' # commit all supply message on CLI
@@ -61,7 +61,7 @@ alias search='$HOME/.io/search' # Query for Files
 # alias setAl='source ~/.bashrc' # Reloads Aliases (PS1) [Defined in .bashrc Hence #]
 alias setCFG='$HOME/.io/maint/io.CONFIG' # Update .io Configs
 alias setup='Setup' # Package manager install; singular or space-separated list.
-alias sna='sudo nano' # Root Text Edit
+alias sna='sudo $EDITOR' # Root Text Edit
 alias splt='$HOME/.io/split.string' # Split a string into an array
 alias ssDisplay='export DISPLAY=:0' # Prep ssh session display
 alias steam='$HOME/.io/blanks/xtab steam' # 'Steam in new term-tab' 

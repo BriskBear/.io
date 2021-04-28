@@ -16,7 +16,7 @@ unless configs == []
     exit
   end
   num = edit.to_i - 1 
-  (num < 0) ? (`unset TMUX && tmux new-session "nano #{DOTRC}#{configs.find{|i| i =~ /.*#{edit}.*/ }}"`) : (`unset TMUX && tmux new-session "nano #{DOTRC}#{configs[num]}"`)
+  (num < 0) ? (`unset TMUX && tmux new-session "$EDITOR #{DOTRC}#{configs.find{|i| i =~ /.*#{edit}.*/ }}"`) : (`unset TMUX && tmux new-session "$EDITOR #{DOTRC}#{configs[num]}"`)
 else 
   puts DOTRC+' not found.'
 end 
