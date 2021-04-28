@@ -2,7 +2,7 @@
 
 . "$HOME/.io/.blanks/color"
 
-ERR="/tmp/.0"
+LOG="/tmp/.0"
 MESSAGES=( \
   "Setting ${LIGHT_CYAN}$HOME/.io${NC}${YELLOW} executables${NC}\n" \
   "Setting ${LIGHT_CYAN}$HOME/.io/.blanks${NC}${YELLOW} executables${NC}\n" \
@@ -23,13 +23,13 @@ BLANKS=$( \
 printf "${MESSAGES[0]}"
 for i in "${IOS[@]}"
 do
-    sudo chmod -v u+x "$i" &>> "$ERR"
+    sudo chmod -v u+x "$i" &>> "$LOG"
 #    printf "$i\n"
 done
 printf "${MESSAGES[1]}"
 for b in "${BLANKS[@]}"
 do
-    sudo chmod -v u+x "$b" &>> "$ERR"
+    sudo chmod -v u+x "$b" &>> "$LOG"
 #    printf "$b\n"
 done
 
