@@ -1,3 +1,6 @@
+" Align on argument
+nmap ga <esc>vip:EasyAlign 
+
 " Comment / Uncomment Lines: set mark i on one end move cursor to other end
 " C-i to comment <space>i to uncomment
 nnoremap <c-i> mp^<c-v>'iI" <esc>`p
