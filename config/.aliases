@@ -1,4 +1,5 @@
 alias aar='sudo add-apt-repository'                                                                           #  add package manager repo, requires ppa
+alias rsy='rsync -aAXP' # Rsync preserve all <source> <destination>
 alias aliases='~/.io/alias'                                                                                   #  All aliases + Descriptions in less / just aliases matching argument
 alias aptlist='apt list --upgradable'                                                                         #  list apt upgrades
 alias archv='$HOME/.io/Archive'                                                                               #  Archive $files $ArchiveName
