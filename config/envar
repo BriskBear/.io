@@ -1,4 +1,4 @@
 #!/bin/bash
 
-LOG='/tmp/.10'
-SCRIPT=$(realpath $0)
+export LOG='/tmp/.10'
+export SCRIPT=$(realpath $0)
