@@ -14,6 +14,9 @@ MSG=( \
 # Populate the apt queue
 source /tmp/queue
 
+# Log announce
+echo "Start $SCRIPT Log" >> $LOG
+
 # Check for lolcat, install if ruby, and install all queued
 if [[ $(lolcat?) = 'lolcat']]
 then
@@ -46,3 +49,7 @@ cat /tmp/queue >> $keyLOG && \
  rm -vf /tmp/queue &>> $LOG
 printf ${MSG[stop]}$(date)"\n" >> $keyLOG
 unset queue
+
+# Log denounce
+echo "Stop $SCRIPT Log" >> $LOG
+

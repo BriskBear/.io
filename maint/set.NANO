@@ -2,10 +2,13 @@
 
 # Add some color!
 . $HOME/.io/.blanks/color
+. ~/.io/config/envar
+
+# Log announce
+echo "Start $SCRIPT Log" >> $LOG
 
 # Set Variables and Messages
 package="nano"
-LOG='/dev/null'
 declare -A MSG=( \
   [fd]="Nano usrcfg already exists\n" \
   [mk]="Creating $package\n" \
@@ -33,6 +36,9 @@ source ~/.io/config/$package/.spec
  || ln -vs $HOME/.io/config/$package/$VER $HOME/.config/$package/$cfgname &>> $LOG
 
 printf " $HOME/"'.config/'"$package"'/'"${LIGHT_CYAN}$cfgname${NC}"' set for '"${LIGHT_BLUE}$VER${NC}\n"
+
+# Log denounce
+echo "Stop $SCRIPT Log" >> $LOG
 
 export VER
 unset package cfgname LOG MSG

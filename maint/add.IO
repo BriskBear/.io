@@ -1,8 +1,8 @@
 #!/bin/bash
 
 . "$HOME/.io/.blanks/color"
+. ~/.io/config/envar
 
-LOG="/tmp/.0"
 MESSAGES=( \
   "Setting ${LIGHT_CYAN}$HOME/.io${NC}${YELLOW} executables${NC}\n" \
   "Setting ${LIGHT_CYAN}$HOME/.io/.blanks${NC}${YELLOW} executables${NC}\n" \
@@ -20,6 +20,9 @@ BLANKS=$( \
     -type f \
 )
 
+# Log announce
+echo "Start $SCRIPT Log" >> $LOG
+
 printf "${MESSAGES[0]}"
 for i in "${IOS[@]}"
 do
@@ -32,6 +35,9 @@ do
     sudo chmod -v u+x "$b" &>> "$LOG"
 #    printf "$b\n"
 done
+
+# Log denounce
+echo "Stop $SCRIPT Log" >> $LOG
 
 #sudo chmod u+x ~/.io/* -R
 #find . -maxdepth 1 -type f

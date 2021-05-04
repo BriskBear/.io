@@ -1,22 +1,19 @@
 #!/bin/bash
 
-LOG='/dev/null'
-INFORM_NAME='ioFonts'
-LINK='/usr/share/fonts/io'
+. ~/.io/config/envar
 STATIC_DIR="$HOME/.io/fonts"
-TMP='.fnt'
-
-#rm -vr "/tmp/$TMP" &>> $LOG
-#cp -vr "$STATIC_DIR" "/tmp/$TMP" &>> $LOG
-
 FONTS=$(ls -A $STATIC_DIR)
-# nodot=$(echo ${FONTS[@]/'.'})
-# nodotdot=$(echo ${nodot[@]/'..'})
-#echo $nodotdot
+
+# Log announce
+echo "Start $SCRIPT Log" >> $LOG
+
+# Copy fonts from .io/fonts to system folder
 for f in ${FONTS[@]}
 do
     printf "$f"': '"\n" >> $LOG
     sudo rm -v /usr/share/fonts/$f &>> $LOG
     sudo cp -v $STATIC_DIR/$f /usr/share/fonts/$f &>> $LOG
-#    sudo ln -vs /tmp/.fnt/$f /usr/share/fonts/$f &>> $LOG
 done
+
+# Log denounce
+echo "Stop $SCRIPT Log" >> $LOG

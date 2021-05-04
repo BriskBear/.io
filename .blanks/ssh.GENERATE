@@ -1,15 +1,15 @@
 #!/bin/bash
 
-~/.config/io/iorc
+. ~/.io/config/envar
 
 [[ "$#" -gt 0 ]] && U_NAME="$1" || (printf "Enter username for the new key: " && read U_NAME)
-mkdir -vm 700 -p $HOME/.ssh/{.pk,config.d} &> $LOG
+mkdir -vm 700 -p $HOME/.ssh/{.pk,config.d} &>> $LOG
 
 chmod 740 $HOME/.ssh/.pk
 [[ $(which ssh-keygen) ]] || Setup openssh
 ssh-keygen -q -b 4096 -O "$U_NAME" -t RSA -f $HOME/.ssh/.pk/$(date +%Y-%m-%d_"$U_NAME")
-mv -v $HOME/.ssh/.pk/*.pub $HOME/.ssh/authorized_keys
-mv -v $HOME/.config/io/.stubs/ssh $HOME/.ssh/config
+mv -v $HOME/.ssh/.pk/*.pub $HOME/.ssh/authorized_keys|tee $LOG
+mv -v $HOME/.config/io/.stubs/ssh $HOME/.ssh/config|tee $LOG
 chmod 700 $HOME/.ssh/.pk
 chmod 600 $HOME/.ssh/.pk/*
 cat $HOME/.ssh/$(date +%Y-%m-%d_$U_NAME).pub >> $HOME/.ssh/authorized_keys

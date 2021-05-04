@@ -2,9 +2,12 @@
 
 # Add Color to Output
 . $HOME/.io/.blanks/color
+. $HOME/.io/config/envar
 
-LOG='/dev/null'
 PSV=$(echo $(ls ~/.io/config/PSV/|sort -r)| cut -f1 -d ' ')
+
+# Log announce
+echo "Start $SCRIPT Log" >> $LOG
 
 # Remove existing RAMDisk
 rm -vr /tmp/blks /tmp/ps1 &>> $LOG
@@ -23,3 +26,6 @@ mkdir -v /tmp/dwn &>> $LOG
   || ( ln -vs /tmp/blks $HOME/.io/blanks &>> $LOG && \
        printf "${LIGHT_CYAN}blanks${NC} set to RAMDisk\n" |tee -a $LOG
      )
+
+# Log denounce
+echo "Stop $SCRIPT Log" >> $LOG
