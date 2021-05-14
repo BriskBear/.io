@@ -10,7 +10,6 @@ These will remap based on what neofetch says your distro is.
 _That's just not set up yet. Soon-coming!_
 
 # Installation
-LOCAL CHANGES
 
 `git clone https://github.com/briskbear/.io ~/.io` Clone the repo to your home directory >
 hidden io directory  
