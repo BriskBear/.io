@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require '/tmp/blks/replacer'
+load '/tmp/blks/replacer'
 
 if ARGV.count < 3
   then puts "Usage: nnash <Host> <Name> <Key_Path>"
