@@ -10,6 +10,7 @@ These will remap based on what neofetch says your distro is.
 _That's just not set up yet. Soon-coming!_
 
 # Installation
+LOCAL CHANGES
 
 `git clone https://github.com/briskbear/.io ~/.io` Clone the repo to your home directory >
 hidden io directory  
@@ -32,7 +33,7 @@ package manager commands:
     covered _my_ needs yet right?)  
   - `ssh.INIT` this sets up .ssh/ folders with usable permissions and generates a fresh key
   for you off the bat. I cannot tell you how much time I've wasted trying to get these assigned
-  correctly over the years, but you get to spend seconds doing it right the first time.  
+  correctly over the years, but you get to spend seconds doing it right the first time.
 
 ## Unimerge  
 _The moment I've all been waiting for_
