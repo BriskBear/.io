@@ -53,3 +53,9 @@ now it uses direnv and detects your OS and plugs the right verbs!
 [Blanks => Binaries](https://www.simplified.guide/bash/compile-script "Compile Bash Script"): This process needs to include VERBOSE `blanks` documentation.
 _this would be super nifty for some speed but right now blanks change so often its not 
 actually practical. I'll probably solidify __some__ of these as I go_
+
+Vim settings ~> .lua
+Logs Consistant:  
+ - "LOG=blah" ~> ". ~/.io/config/envar"  
+ - "/tmp/.0" ~> ". ~/.io/config/envar"  
+ - Do not forget to copy announce/denounce statements!  
