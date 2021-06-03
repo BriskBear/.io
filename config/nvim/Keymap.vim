@@ -1,73 +1,81 @@
-" Align on argument
-nmap ga <esc>vip:EasyAlign 
 
-" Comment / Uncomment Lines: set mark i on one end move cursor to other end
-" C-i to comment <space>i to uncomment
-nnoremap <c-i> mp^<c-v>'iI" <esc>`p
-nnoremap <Leader>i mp^<c-v>'ilx`p
+" ================================= Braces & Brackets =================
 
-" Indent / Unindent block ( i marker and cursor )
-nnoremap <Leader><Tab> mp^<c-v>'iI  <esc>`p
-nnoremap <Leader><A-Tab> mp<home><c-v>'ihx`p 
+  inoremap {<cr> {<cr>}<c-o><s-o>  
+  inoremap [<cr> [<cr>]<c-o><s-o>  
+  inoremap (<cr> (<cr>)<c-o><s-o>  
+  inoremap (<space> (  )<c-o>h
+  inoremap [<space> [  ]<c-o>h
+  inoremap {<space> {  }<c-o>h
+  inoremap <<space> <  ><c-o>h
+  inoremap ' ''<c-o>i
+  inoremap ` ``<c-o>i
+  inoremap (' ('')<c-o>h
+  inoremap \" \"\"<c-o>h
+  inoremap (s (<c-o>A)
+  inoremap {s {<c-o>A}
+  inoremap [s [<c-o>A]
+  inoremap "s "<c-o>A"
+  inoremap 's '<c-o>A'
+  inoremap `s `<c-o>A`
 
-" Esc. Remaps
-inoremap jk <esc>
-inoremap kj <esc>
-vnoremap jk <esc>
-vnoremap kj <esc>
+" ================================= Comments ==========================
 
-" Quick-Save / Exit
-nnoremap <C-s> :w<CR>
-vnoremap <C-s> :w<CR>
-nnoremap <C-x> :q<CR>
-vnoremap <C-x> :q<CR>
-nnoremap <Leader>q :q!<CR>
-vnoremap <Leader>q :q!<CR>
+   nnoremap <Leader># mrI# <esc>`r
+   nnoremap <Leader><A-#> mr^d2l`r
+   vnoremap # <c-v>I# <esc>
+   vnoremap <A-#> <c-v>x.
 
-" Toggle Visible Spaces
-nnoremap <A-p> :set list!<CR>
-vnoremap <A-p> :set list!<CR>
+" ================================= Completion ========================
 
-" I Don't think this is working
-nnoremap <A-i> :setlocal autoindent!<CR>
-vnoremap <A-i> :setlocal autoindent!<CR>
+  inoremap </ <c-o>mi</<c-x><c-o><esc>ml`ia
+  inoremap < <><c-o>i
+  inoremap "<Space>=== " ==================================<c-o>mn===================================<CR>
 
-" Open a file-finder pane
-nnoremap <A-t> :NERDTree<CR>
-vnoremap <A-t> :NERDTree<CR>
+" ================================= EasyAlign =========================
 
-" Open a file in a new tab (specify path/to/file)
-nnoremap <A-r> :tabfind 
-nnoremap <Leader>t :tabnew 
+  xmap ga <Plug>(EasyAlign)
+  nmap ga <Plug>(EasyAlign)
 
-" Reaload the Config file (after saving changes!)
-nnoremap <Leader>r :source $MYVIMRC<CR>
-vnoremap <Leader>r :source $MYVIMRC<CR>
+" ================================= Insert Movement ===================
 
-" Hash-comment 1 line
-nnoremap <Leader># ^i# <c-o>$
+  inoremap <c-h> <c-o>h
+  inoremap <c-j> <c-o>j
+  inoremap <c-k> <c-o>k
+  inoremap <c-l> <esc>la
 
-" Instead of turning off auto-indent, paste-toggle
-set pastetoggle=<Leader>p
- 
-" Close brackets automagickally
-inoremap {<cr> {<cr>}<c-o><s-o>  
-inoremap [<cr> [<cr>]<c-o><s-o>  
-inoremap (<cr> (<cr>)<c-o><s-o>  
-inoremap (<space> (  )<c-o>h
-inoremap [<space> [  ]<c-o>h
-inoremap {<space> {  }<c-o>h
-inoremap <<space> <  ><c-o>h
-inoremap " ""<c-o>i
-inoremap ' ''<c-o>i
-inoremap ` ``<c-o>i
-inoremap ` ``<c-o>i
-inoremap ` ``<c-o>i
-inoremap ( ()<c-o>i
-inoremap { {}<c-o>i
-inoremap [ []<c-o>i
-inoremap < <><c-o>i
-inoremap (' ('')<c-o>h
-inoremap \" \"\"<c-o>h
+" ================================= Select All ========================
 
+  inoremap <A-a> <esc>mpggVG
+  nnoremap <A-a> mpggVG
+  vnoremap <A-a> mpggVG
+
+" ================================= Tabs / unTabs =====================
+
+  nnoremap <Leader><Tab> mp^<c-v>'ii  <esc>`p
+  nnoremap <Leader><A-Tab> mp<home><c-v>'ihx`p 
+  nnoremap <A-Tab> vip<c-v>lx
+  vnoremap <A-Tab> <c-v>lxv
+  nnoremap <Tab> mpvip<c-v>I  <esc>`p
+
+
+" ================================ Utility ============================
+
+  nnoremap ~ :r! 
+  inoremap jk <esc>
+  nnoremap <c-s> :w<CR>
+  nnoremap <c-x> :q<CR>
+  nnoremap <Leader>r :source $MYVIMRC<CR>
+  nnoremap <Leader>R :set nu relativenumber!<CR>
+  nnoremap <Leader> :q!<CR>
+  nnoremap <Leader>% :! ./%<CR>
+  nnoremap <Leader>t :tabnew 
+  nnoremap <A-t> :tabfind 
+  nnoremap <Leader>key :tabfind ~/.config/nvim/Keymap.vim<CR>
+  nnoremap <Leader>init :tabfind ~/.config/nvim/init.vim<CR>
+
+" ================================= Whitespace Toggle =================
+
+  nnoremap <A-p> :set list!<CR>
+  vnoremap <A-p> :set list!<CR>
 

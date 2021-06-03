@@ -1,4 +1,9 @@
 #!/bin/bash
 
+clear
 figlet -f smslant $HOSTNAME|lolcat -a -d 3
-sleep 9999999
+sleep "9999999"
+
+update_host() {
+  echo "figlet -f smslant $(ssh cppwiki 'cat /tmp/act_host')| lolcat -a"
+}
