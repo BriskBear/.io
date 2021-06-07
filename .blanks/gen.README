@@ -1,18 +1,40 @@
 #!/bin/bash
 
+declare -A args
 IN_FILE=$(echo "$1"|rev|cut -f1 -d '/'|rev)
 RM="$IN_FILE.md"
 
-touch $RM
-printf "# $IN_FILE  \n" >> $RM
-printf "### Usage:  \n\n\n\n" >> $RM
-printf "#### Example(s):  \n\n\n\n" >> $RM
-printf "### Description:  \n" >> $RM
-cat "$1"|grep -v "\#!"|grep ^# |cut -f2 -d '#' >> $RM
-printf "\n## __Code__  \n" >> $RM
-printf "\`\`\`\n" >> $RM
-cat "$1"|grep ^'#!' >> $RM
-cat "$1"|grep -v ^'#' >> $RM
-printf "\`\`\`\n" >> $RM
+gen_form() {
+    touch $RM
+    printf "# $IN_FILE  \n" >> $RM
+    printf "### Usage:  \n\n\n\n" >> $RM
+    printf "#### Example(s):  \n\n\n\n" >> $RM
+    gen_desc "$1"
+    gen_code "$1"
+}
 
+gen_desc() {
+    printf "### Description:  \n" >> $RM
+    cat $1| \
+      grep '^\#'| \
+        grep -v '\#!'| \
+          cut -f2 -d '#' >> $RM
+}
+
+gen_code() {
+    printf "\n## __Code__  \n" >> $RM
+    printf "\`\`\`\n" >> $RM
+    cat "$1"|grep ^'#!' >> $RM
+    cat "$1"|grep -v ^'#' >> $RM
+    printf "\`\`\`\n" >> $RM
+}
+
+
+while [[ $# > 0 ]]
+do
+
+done
+
+gen_form "$1"
 vi +4 $RM
+
