@@ -1,0 +1,12 @@
+#!/bin/bash
+
+function treeview() {
+  tree --du -aFhlQL 1 $1
+  while  [ true ]
+  do
+    read dir
+    tree --du -aFhlQL 2 $dir
+  done
+}
+
+treeview $1

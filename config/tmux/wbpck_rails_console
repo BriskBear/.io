@@ -1,0 +1,10 @@
+#!/bin/bash
+
+inv_proxy() {
+  tmux splitw -h -p 45 'ssh proxy'
+  tmux select-pane -D
+}
+
+tmux rename-window 'dashboard'
+tmux splitw -d -p 61
+inv_proxy

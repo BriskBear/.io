@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require '/tmp/blks/replacer'
+load '/tmp/blks/replacer'
 
 if ARGV.count < 3
   then puts "Usage: nnash <Host> <Name> <Key_Path>"
@@ -9,15 +9,17 @@ end
 
 host = ARGV[0]
 name = ARGV[1]
-id   = ARGV[2]
+id   = ARGV[2].freeze
 
 arg = {
   "HOST": host,
   "ID": id,
   "NAME": name,
-  "source": "~/.io/samples/ssh_blank",
-  "dest": "~/.ssh/config.d/#{host}"
+  "source": `printf ~/.io/samples/ssh_blank`,
+  "dest": `printf ~/.ssh/config.d/#{host}`
 }
+
+replacer arg
 
 #cp ~/.io/samples/ssh_blank ~/.ssh/config.d/$1
 #nano ~/.ssh/config.d/$1
