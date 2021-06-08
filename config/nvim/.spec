@@ -31,6 +31,7 @@ install_neovim() {
 update_config() {
     printf "$warn"
     echo $update
+    read update
 }
 
 echo $SOURCE
@@ -38,6 +39,6 @@ echo $DEST
 
 update_config
 
-# copy_config
+copy_config
 # get_Vundle
 # install_neovim
