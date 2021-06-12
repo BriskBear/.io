@@ -1,0 +1,8 @@
+#!/bin/bash
+
+. ~/.io/blanks/check_asdf
+
+[[ check_asdf == 'true' ]]&& (echo 'asdf installed') \
+  || (git clone https://github.com/asdf-vm/asdf.git ~/.asdf)
+
+echo 'you may want to source ~/.bashrc again'
