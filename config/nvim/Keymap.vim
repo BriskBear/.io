@@ -3,15 +3,22 @@
 
   inoremap {<cr> {<cr>}<c-o><s-o>  
   inoremap [<cr> [<cr>]<c-o><s-o>  
-  inoremap (<cr> (<cr>)<c-o><s-o>  
-  inoremap (<space> (  )<c-o>h
-  inoremap [<space> [  ]<c-o>h
-  inoremap {<space> {  }<c-o>h
-  inoremap <<space> <  ><c-o>h
-  inoremap ' ''<c-o>i
-  inoremap ` ``<c-o>i
-  inoremap (' ('')<c-o>h
-  inoremap \" \"\"<c-o>h
+ inoremap (<cr> (<cr>)<c-o><s-o>  
+  inoremap ((<space> (  )<c-o>h
+  inoremap [[<space> [  ]<c-o>h
+  inoremap {{<space> {  }<c-o>h
+  inoremap <<<space> <  ><c-o>h
+  inoremap "" ""<c-o>i
+  inoremap '' ''<c-o>i
+  inoremap `` ``<c-o>i
+  inoremap ('( ('')<c-o>i
+  inoremap (( ()<c-o>i
+  inoremap [[ []<c-o>i
+  inoremap {{ {}<c-o>i
+  inoremap << <><c-o>i
+  inoremap <%= <%=<space><space>%><c-o>2h
+  inoremap <%<space> <%<space><space>%><c-o>2h
+  inoremap \"\" \"\"<c-o>h
   inoremap (s (<c-o>A)
   inoremap {s {<c-o>A}
   inoremap [s [<c-o>A]
@@ -24,18 +31,18 @@
    nnoremap <Leader># mrI# <esc>`r
    nnoremap <Leader><A-#> mr^d2l`r
    vnoremap # <c-v>I# <esc>
-   vnoremap <A-#> <c-v>x.
+   vnoremap <A-#> I<Del><Del><esc>
 
 " ================================= Completion ========================
 
-  inoremap </ <c-o>mi</<c-x><c-o><esc>ml`ia
-  inoremap < <><c-o>i
+  inoremap </ </<c-x><c-o>
   inoremap "<Space>=== " ==================================<c-o>mn===================================<CR>
 
 " ================================= EasyAlign =========================
 
   xmap ga <Plug>(EasyAlign)
   nmap ga <Plug>(EasyAlign)
+  vmap <M-A> gaip*<c-X>
 
 " ================================= Insert Movement ===================
 
@@ -62,7 +69,9 @@
 " ================================ Utility ============================
 
   nnoremap ~ :r! 
-  inoremap jk <esc>
+  inoremap kj <esc>
+  inoremap KJ <esc>
+  vnoremap KJ <esc>
   nnoremap <c-s> :w<CR>
   nnoremap <c-x> :q<CR>
   nnoremap <Leader>r :source $MYVIMRC<CR>

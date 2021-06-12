@@ -13,7 +13,10 @@
   set showmode               " default, display mode at bottom line
   set smartcase              " Unless includes capital
   set cursorline             " Locate the cursor vertically
+  set path+=**               " search everywhere for files
   set omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType ruby setl omnifunc=syntaxcomplete#Complete
+  let $BASH_ENV = "~/.io/config/.aliases"
 
   " update leader key to space
   let mapleader=" "
@@ -44,7 +47,7 @@
 
 " =================== Keys =============================================
 
-  source ~/.config/nvim/Keymap.vim
+  source ~/.config/nvim/Keymap.vim 
 
 " =================== Indentation ======================================
 
@@ -100,4 +103,6 @@
   set statusline+=\ \ \ \ \ \ 
   set statusline+=%{&fileencoding?&fileenconding:&encoding}
   set statusline+=\:%{&fileformat}
+
+
 

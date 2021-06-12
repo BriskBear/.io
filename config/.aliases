@@ -134,3 +134,4 @@ alias v='nvim' # neovim no args
 alias bat='batcat' # syntax and formatting
 alias sv='sudo nvim' # no args sudo
 alias rp='realpath' # full path to pointed
+alias brkln='echo "#################################################### $(date) ###############################################"' # insert visual break
