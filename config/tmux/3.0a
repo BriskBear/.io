@@ -1,3 +1,23 @@
-# TMUX CONFIG
 
+set-option -g prefix C-Space
 set -g mouse on
+set -g status-keys vi
+set -g status off
+set -g status-style fg=green,bg=black
+set -g status-right "#(date +%%H:%%M -u)"
+
+unbind-key |
+unbind-key -
+
+bind C-space send-prefix
+bind y setw synchronize-panes on
+bind C-s setw synchronize-panes off
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xsel -i --clipboard"
+bind | splitw -hc "`pwd`"
+bind r source-file ~/.config/tmux/tmux.conf\; display "Tmux config loaded"
+
+unbind-key C-b
