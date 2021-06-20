@@ -137,3 +137,4 @@ alias x='$HOME/.io/.sec/.x'                                                     
 alias +x='chmod -v +x'                                                                                                             #  Verbosely add executable permissions to the argument (!! for everyone !!)
 alias xdt='vi.EXEC'                                                                                                                #  Create executable with your editor
 alias xtab='$HOME/.io/blanks/xtab'                                                                                                 #  Open command in new XFCE Terminal tab
+alias webdev='bin/webpack-dev-server' # Start webpacker in development mode
