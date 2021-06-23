@@ -1,0 +1,7 @@
+bind -x '"\C-\ep":"git push"'
+bind -x '"\ep":"git pull"'
+bind -x '"\es":"git status"'
+bind -x '"\C-f":"fc"'
+bind -x '"\ev":"nvim"'
+bind -x '"\ea"=>"git add --all && git status"'
+bind '"\ec":"git commit -m "'
