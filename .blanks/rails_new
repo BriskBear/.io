@@ -1,0 +1,6 @@
+#!/bin/bash
+
+[ $# = 1 ]&& \
+  (rails new $1 && cd $1) \
+  || ( printf "${RUST}Usage: rails_new <project_name>${NC}\n")
+
