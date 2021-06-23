@@ -166,20 +166,25 @@ then
   fi
 fi
 
-## Start the SSH-Agent: Uncomment \ on 153 and all of 154 to enable default ~/.ssh/id_rsa
-if [[ $(which ssh-agent 2>> /dev/null) ]]
-then
-  [ -z "$SSH_AUTH_SOCK" ]&& eval $(ssh-agent -s)
-  declare -a ssh_keys
-  [[ -s ~/.config/io/ssh.KEYS ]]&& source ~/.config/io/ssh.KEYS #\
-  #  || ln -s ~/.config/io/ssh.KEYS.sample ~/.config/io/ssh.KEYS
-  for k in "${ssh_keys[@]}"
-  do
-      ssh-add "$k" &>>/tmp/sshadd
-      d=$( echo $k|rev|cut -f1 -d /|rev )
-  done
-  unset ssh_keys
-fi
+ # Start the SSH-Agent: Uncomment \ on 153 and all of 154 to enable default ~/.ssh/id_rsa
+ [[ $(which ssh-agent 2>> /dev/null) ]]
+# en
+[ -z "$SSH_AUTH_SOCK" ]&& eval $(ssh-agent -s)
+declare -a ssh_keys
+[[ -s ~/.config/io/ssh.KEYS ]]&& source ~/.config/io/ssh.KEYS #\
+#  || ln -s ~/.config/io/ssh.KEYS.sample ~/.config/io/ssh.KEYS
+for k in "${ssh_keys[@]}"
+do
+    ssh-add "$k" &>>/tmp/sshadd
+    d=$( echo $k|rev|cut -f1 -d /|rev )
+done
+unset ssh_keys
+
+# Hotkeys
+bind -x '"\C-f":"fc"'
+bind -x '"\ev":"nvim"'
+bind -x '"\ea":"git add --all"'
+bind '"\ec":"git commit -m "'
 
 # AutoJump
 [[ $(which autojump 2>> /dev/null) ]] && source /usr/share/autojump/autojump.bash
