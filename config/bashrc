@@ -181,10 +181,7 @@ done
 unset ssh_keys
 
 # Hotkeys
-bind -x '"\C-f":"fc"'
-bind -x '"\ev":"nvim"'
-bind -x '"\ea":"git add --all"'
-bind '"\ec":"git commit -m "'
+source ~/.io/config/keybinds
 
 # AutoJump
 [[ $(which autojump 2>> /dev/null) ]] && source /usr/share/autojump/autojump.bash
