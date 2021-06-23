@@ -1,4 +1,4 @@
-bind -x '"\C-p":"printf "${LIGHT_GREEN}" && git push && printf "${NC}"'
+bind -x '"\C-p":"printf ${LIGHT_GREEN} ; git push ; printf ${NC}"'
 bind -x '"\ep":"git pull"'
 bind -x '"\es":"git status"'
 bind -x '"\C-f":"fc"'
