@@ -36,6 +36,7 @@ install_neovim() {
     ( ./nvim.appimage --appimage-extract ) && \
     ( sudo rsync -aAXP ./squashfs-root/usr/ /usr/) \
   ) && ( echo 'neovim Installed!' )
+  rm -rf nvim.appimage ./squashfs-root
 }
 
 update_config() {
