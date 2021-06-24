@@ -1,0 +1,17 @@
+#  Configure tmux
+# 15:alias ctmux='$EDITOR ~/.config/tmux/tmux.conf'                                                                                     
+#  Open 1 or many buffers in nano (even nested tmux)
+# 120:alias tna='tmux.NANO'                                                                                                              
+#  Split tmux panel |<arg>%
+# 123:alias tsph='tmux splitw -c `pwd` -h -p'                                                                                            
+#  New tmux session
+# 125:alias ts='tmux new-session -s'                                                                                                     
+#  List active tmux sessions
+# 127:alias txl='tmux ls'                                                                                                                
+
+detect_session() {
+    [[ $(tmux ls|grep "$1") ]] \
+      && ( echo true )
+}
+
+detect_session $1

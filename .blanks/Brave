@@ -2,6 +2,17 @@
 
 BIN=$(which brave)
 [[ $BIN ]]|| BIN=$(which brave-browser)
-[[ $(which tmux) ]] && tmux new-session -d -s Brave "$BIN $1" || \
-  xfce4-terminal --tab -T Brave -e "$BIN $1"
-#  printf "Brave not found\n"
+
+check_session() {
+  [[ $(tmux.ACT Process) ]] \
+    && (send_session brave) \
+    || (new_session brave)
+}
+
+new_session() {
+    tmux new-session -ds Process /usr/bin/brave
+}
+# [[ $(which tmux) ]] && tmux new-session -d -s Brave "$BIN $1" || \
+#   xfce4-terminal --tab -T Brave -e "$BIN $1"
+# #  printf "Brave not found\n"
+new_session
