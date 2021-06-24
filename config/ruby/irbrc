@@ -1,0 +1,28 @@
+require 'interactive_editor'
+require 'colorize'
+require 'irb/completion'
+
+IRB.conf[:PROMPT][:MASTER] = {
+  :AUTO_INDENT => true,
+  :PROMPT_I => '%N.%m{ ',
+  :PROMPT_S => '%N.%m{ ',
+  :PROMPT_C => '%N.$m{ ',
+  :RETURN => "  ∟>> %s\n"
+}
+
+IRB.conf[:SAVE_HISTORY] = 10000
+# if ENV['RAILS_ENV'] === 'development'
+#   IRB.conf[:IRB_NAME] = "\033[1;31mrails\033[0m"
+# elsif ENV['RAILS_ENV'] === 'production'
+#   IRB.conf[:IRB_NAME] = "\033[1;32mproduction\033[0m"
+# else
+#   IRB.conf[:IRB_NAME] = "\033[1;31mruby\033[0m"
+# end
+
+module Kernel
+  def q
+    exit
+  end
+end
+
+IRB.conf[:PROMPT_MODE] = :MASTER
