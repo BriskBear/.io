@@ -12,21 +12,11 @@ copy_config() {
     || ( cp -rvf $SOURCE $DEST )
 }
 
-get_plugs() {
-  plugs=(
-    'kien/ctrlp.vim'
-    'tpope/vim-endwise'
-    'ervandew/supertab'
-    'junegunn/vim-easy-align'
-  )
+get_Vundle() {
   [[ -d ~/.vim/bundle ]]&& \
   ( echo "~/.vim/bundle exists!" && exit ) \
   || ( mkdir -vp ~/.vim/bundle/ )
-  for p in ${plugs[@]}
-  do
-    git clone "https://github.com/$p" "$HOME/.vim/bundle/$p" &>> /tmp/.10
-  # ( git clone https://github.com/Vundlevim/Vundle.vim ~/.vim/bundle/Vundle.vim &>> /tmp/.10 & )
-  done
+  ( git clone https://github.com/Vundlevim/Vundle.vim ~/.vim/bundle/Vundle.vim &>> /tmp/.10 & )
 }
 
 install_neovim() {
@@ -34,9 +24,8 @@ install_neovim() {
   ( wget $url && \
     ( chmod u+x nvim.appimage ) && \
     ( ./nvim.appimage --appimage-extract ) && \
-    ( sudo rsync -aAXP ./squashfs-root/usr/ /usr/) \
+    ( sudo cp -vrf ./squashfs-root/usr /usr) \
   ) && ( echo 'neovim Installed!' )
-  rm -rf nvim.appimage squashfs-root
 }
 
 update_config() {
@@ -48,8 +37,8 @@ update_config() {
 echo $SOURCE
 echo $DEST
 
-# update_config
+update_config
 
 copy_config
-get_plugs
-install_neovim
+# get_Vundle
+# install_neovim
