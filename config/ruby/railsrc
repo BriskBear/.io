@@ -1,0 +1,6 @@
+--database=postgresql
+--webpack
+--skip-action-mailer
+--skip-action-mailbox
+--skip-test
+--template=~/.config/ruby/template.rb
