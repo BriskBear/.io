@@ -141,3 +141,6 @@ alias xdt='vi.EXEC'                                                             
 alias xtab='$HOME/.io/blanks/xtab'                                                                                                 #  Open command in new XFCE Terminal tab
 shopt -s expand_aliases
 alias httpry.c='httpry -i wlan0' # Monitor http requests on default NIC
+alias gpg.long='gpg -K --keyid-format=long' # Granular reference numbers
+alias c='xclip -selection clipboard' # Copy to Xclipboard
+alias eek='gpg --expert --edit-key' # Edit gpg key with all options
