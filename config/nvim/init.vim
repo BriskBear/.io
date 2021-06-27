@@ -80,10 +80,10 @@
 
 " =================== Plugins Load =====================================
 
-  set runtimepath+=~/.vim/bundle/ctrlp.vim
-  set runtimepath+=~/.vim/bundle/vim-endwise
-  set runtimepath+=~/.vim/bundle/vim-supertab
-  set runtimepath+=~/.vim/bundle/vim-easy-align
+  set runtimepath+=~/.vim/kien/ctrlp.vim
+  set runtimepath+=~/.vim/tpope/vim-endwise
+  set runtimepath+=~/.vim/ervandew/vim-supertab
+  set runtimepath+=~/.vim/junegunn/vim-easy-align
 
 " =================== Colors ==========================================
 
