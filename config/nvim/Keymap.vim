@@ -82,6 +82,8 @@
   nnoremap <A-t> :tabfind 
   nnoremap <Leader>key :tabfind ~/.config/nvim/Keymap.vim<CR>
   nnoremap <Leader>init :tabfind ~/.config/nvim/init.vim<CR>
+  nnoremap <Leader>s :w 
+  nnoremap <Leader>S :w 
 
 " ================================= Whitespace Toggle =================
 
