@@ -12,3 +12,6 @@ def add_gems
     gem 'rubocop-rspec'
   end
 end
+
+printf "---\n\n..." > logs/build.yml
+run "bundle install"
