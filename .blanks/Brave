@@ -1,18 +1,20 @@
 #!/bin/bash
 
 BIN=$(which brave)
-[[ $BIN ]]|| BIN=$(which brave-browser)
+[[ $BIN ]]|| BIN=$(which brave)
 
 check_session() {
   [[ $(tmux.ACT Process) ]] \
-    && (send_session brave) \
-    || (new_session brave)
+    && (send_session $1) \
+    || (new_session $1)
 }
 
 new_session() {
-    tmux new-session -ds Process /usr/bin/brave
+    tmux new-session -ds Process $1
 }
-# [[ $(which tmux) ]] && tmux new-session -d -s Brave "$BIN $1" || \
-#   xfce4-terminal --tab -T Brave -e "$BIN $1"
-# #  printf "Brave not found\n"
-new_session
+
+send_session() {
+    tmux send -t Process "tmux split-pane -v $BIN" ENTER
+}
+
+check_session $BIN
