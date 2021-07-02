@@ -1,4 +1,3 @@
-shopt -s expand_aliases
 alias aar='sudo add-apt-repository'                                                                                                #  add package manager repo, requires ppa
 alias aliases='~/.io/alias'                                                                                                        #  All aliases + Descriptions in less / just aliases matching argument
 alias aptlist='apt list --upgradable'                                                                                              #  list apt upgrades
@@ -8,6 +7,7 @@ alias bat='batcat'                                                              
 alias brave='Brave'                                                                                                                #  Call the blank not the bin
 alias brkln='echo "#################################################### $(date) ###############################################"'  #  insert visual break
 alias capp='bundle exec cap production'                                                                                            #  Bundle capistrano!
+alias catto='cat << eof >>'                                                                                                        #  Append multiple lines
 alias catto='cat << eof >>'                                                                                                        #  Append multiple lines
 alias ..='cd ../'                                                                                                                  #  Up 1
 alias cleanpass='rm $HOME/Templates/Database.kdbx'                                                                                 #  Clear KPDB
@@ -34,6 +34,7 @@ alias gcan='git commit -m'                                                      
 alias gc='git clone'                                                                                                               #  Clone a new repo!
 alias gch='git.CLONE'                                                                                                              #  Clone from GitHub, only need <usrname>/<repo> [destination_dir]
 alias gck='git checkout'                                                                                                           #  Switch banches
+alias gcl='git clone git@gitlab:'                                                                                                  #  Clone from gitlab
 alias gcl='git clone git@gitlab:'                                                                                                  #  Clone from gitlab
 alias gcu='git reset HEAD~'                                                                                                        #  Git Commit Undo
 alias gen.RM='gen.README'                                                                                                          #  Generate Markdown readme for a script
@@ -145,3 +146,4 @@ alias x='$HOME/.io/.sec/.x'                                                     
 alias +x='chmod -v +x'                                                                                                             #  Verbosely add executable permissions to the argument (!! for everyone !!)
 alias xdt='vi.EXEC'                                                                                                                #  Create executable with your editor
 alias xtab='$HOME/.io/blanks/xtab'                                                                                                 #  Open command in new XFCE Terminal tab
+shopt -s expand_aliases
