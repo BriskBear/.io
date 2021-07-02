@@ -1,4 +1,5 @@
 set-option -g mouse on
+set -g default-shell "/usr/bin/bash"
 set -g status-keys vi
 set -g status off
 set -g status-style fg=green,bg=black

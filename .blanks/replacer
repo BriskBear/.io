@@ -9,6 +9,8 @@ def replacer(chain = {})
   @string = File.read("#{src}")
 
   chain.each do |h,k|
+    next if k.nil?
+    puts k
     @string = @string.gsub("#{h}", "#{k}")
     File.write(log, "replacing #{h} with #{k} in #{dst}", mode: "a")
   end
