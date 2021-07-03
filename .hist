@@ -1,0 +1,79 @@
+brave
+xsel
+xclip --help
+xclip
+man xclip
+gpg --export -a 7A9A6869230948A5 |xclip
+gpg --export -a 7A9A6869230948A5 /tmp/pub
+gpg --export -a 7A9A6869230948A5 >> xclip
+gpg --export -a 7A9A6869230948A5 >> /tmp/pub
+xclip /tmp/pub 
+xclip -i /tmp/pub 
+cat /tmp/pub
+cat /tmp/pub|xclip
+xclip -o
+echo cheese |xclip
+xclip -o
+killall xclip
+echo cheese |xclip
+xclip -o
+man xclip
+echo cheese| xclip -selection clipboard
+na c 'xclip -selection clipboard' 'Copy to Xclipboard'
+alias v 'xclip -o' 'Paste from xclip'
+gpg --export -a 7A9A6869230948A5 | c
+na eek 'gpg --expert --edit-key' 'Edit gpg key with all options'
+eek microwavablemuffin
+gpg --export -a AA4C39E8A7895929| c
+v ~/.gnupg/gpg-agent.conf 
+v ~/.profile 
+gpgconf --kill gpg-agent
+source ~/.profile 
+gpg -K --with-keygrip
+v ~/.gnupg/sshcontrol 
+ssh-add -l
+ssh-add -L
+ssh -T git@github
+cd ~/.io
+?
+fg
+gits
+git gitu
+gau config/profile
+gits
+cat .hist >> .gitignore
+io -c
+ls
+gits
+git rm .hist
+git rm --cached 
+git rm --cached  .hist
+gits
+git rm --cached .hist
+gits
+git commit -m 'stuff'
+. ~/.profiles
+. ~/.profile
+v ~/.profile
+. ~/.profile
+v ~/.profile
+asdf
+asdfasdfasdf
+asdfas
+asdfasdf
+v ~/.profile
+wor
+workasdflkakjsdflkajksdflkjgits
+gits
+gp
+gp --merge --no-ff
+gp --ff
+sort.aliases
+EAL
+gits
+rm .hist
+gits
+git commit -m  merged!
+gits
+SVC reboot -i
+q
