@@ -1,3 +1,4 @@
+shopt -s expand_aliases
 alias aar='sudo add-apt-repository'                                                                                                #  add package manager repo, requires ppa
 alias aliases='~/.io/alias'                                                                                                        #  All aliases + Descriptions in less / just aliases matching argument
 alias aptlist='apt list --upgradable'                                                                                              #  list apt upgrades
@@ -50,7 +51,7 @@ alias gits='(gpt ; git status)'                                                 
 alias gm='git merge'                                                                                                               #  git merge <target_branch>
 alias gmm='git merge master'                                                                                                       #  Merge master branch with current branch(test-compat)
 alias gnb='git checkout -n'                                                                                                        #  Create a new branch
-alias gp='git pull'                                                                                                                #  Little is pull big is push
+alias gp='git stash && git pull && git stash apply'                                                                                #  Little is pull big is push
 alias GP='git push'                                                                                                                #  Big is push little is pull
 alias gpg.long='gpg -K --keyid-format=long'                                                                                        #  Granular reference numbers
 alias GPset='git push --set-upstream origin master'                                                                                #  Git Push Setup Repo
@@ -146,4 +147,4 @@ alias x='$HOME/.io/.sec/.x'                                                     
 alias +x='chmod -v +x'                                                                                                             #  Verbosely add executable permissions to the argument (!! for everyone !!)
 alias xdt='vi.EXEC'                                                                                                                #  Create executable with your editor
 alias xtab='$HOME/.io/blanks/xtab'                                                                                                 #  Open command in new XFCE Terminal tab
-shopt -s expand_aliases
+alias E='export'                                                                                                                   #  Set an environment variable or function
