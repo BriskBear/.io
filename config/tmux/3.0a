@@ -4,6 +4,8 @@ set -g status-keys vi
 set -g status off
 set -g status-style fg=green,bg=black
 set -g status-right "#(date +%%H:%%M -u)"
+set -g utf8 on
+set -g status-utf8 on
 
 unbind-key |
 unbind-key -
