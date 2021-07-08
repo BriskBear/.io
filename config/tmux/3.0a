@@ -7,6 +7,7 @@ set -g status-right "#(date +%%H:%%M -u)"
 set -g utf8 on
 set -g status-utf8 on
 
+<<<<<<< Updated upstream
 unbind-key |
 unbind-key -
 
@@ -25,6 +26,14 @@ unbind-key C-b
 set-option -g prefix C-Space
 bind-key C-Space send-prefix
 
+=======
+set -g mouse on
+unbind C-b
+set-option -g prefix C-Space
+bind-key C-Space send-prefix
+
+unbind |
+>>>>>>> Stashed changes
 unbind h
 unbind j
 unbind k
