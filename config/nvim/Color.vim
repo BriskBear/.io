@@ -17,4 +17,7 @@
   hi CursorLine       gui=underline
   hi ColorColumn  ctermbg=darkgreen      ctermfg=black     cterm=NONE
   hi Cursor           ctermfg=black  ctermbg=darkgreen     cterm=NONE
+  hi TabLineFill       ctermfg=NONE       ctermbg=NONE     cterm=NONE
+  hi TabLineSel   ctermfg=darkgreen       ctermbg=NONE     cterm=bold
+  hi TabLine          ctermfg=black       ctermbg=cyan     cterm=bold
 
