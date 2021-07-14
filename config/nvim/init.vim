@@ -106,5 +106,3 @@
   set statusline+=%{&fileencoding?&fileenconding:&encoding}
   set statusline+=\:%{&fileformat}
 
-
-
