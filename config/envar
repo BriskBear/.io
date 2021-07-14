@@ -2,3 +2,4 @@
 
 LOG='/tmp/.10'
 SCRIPT=$(realpath $0)
+LOCAL_IP=$(ip a|grep 'inet '|grep -v 127|awk '{print $2}'|cut -f1 -d /)
