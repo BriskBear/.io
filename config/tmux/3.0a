@@ -19,19 +19,11 @@ bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xsel -i --clipboar
 bind | splitw -hc "`pwd`"
 bind r source-file ~/.config/tmux/tmux.conf \; display "Tmux config loaded"
 
-unbind-key C-b
+set -g mouse on
+unbind C-b
 set-option -g prefix C-Space
 bind-key C-Space send-prefix
 
-unbind h
-unbind j
-unbind k
-unbind l
-unbind C-h
-unbind C-j
-unbind C-k
-unbind C-l
-bind-key | split-window -h
 bind-key j select-pane -D
 bind-key h select-pane -L
 bind-key k select-pane -U
