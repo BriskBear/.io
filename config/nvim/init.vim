@@ -13,14 +13,9 @@
   set showmode             "  default, display mode at bottom line
   set smartcase            "  Unless includes capital
   set cursorline           "  Locate the cursor vertically
-<<<<<<< Updated upstream
   set path+=~/.io/.blanks  "  Edit blanks easy
   set path+=**             "  search recursive for files
 
-=======
-  set path+=~/.io/.blanks  "  Search .io blanks
-  set path+=**             "  search recursive for files
->>>>>>> Stashed changes
   set omnifunc=htmlcomplete#CompleteTags
   autocmd FileType ruby setl omnifunc=syntaxcomplete#Complete
   let $BASH_ENV = "~/.io/config/.aliases"
