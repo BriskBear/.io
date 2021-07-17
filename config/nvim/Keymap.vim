@@ -3,7 +3,7 @@
 
   inoremap {<cr> {<cr>}<c-o><s-o>  
   inoremap [<cr> [<cr>]<c-o><s-o>  
- inoremap (<cr> (<cr>)<c-o><s-o>  
+  inoremap (<cr> (<cr>)<c-o><s-o>  
   inoremap ((<space> (  )<c-o>h
   inoremap [[<space> [  ]<c-o>h
   inoremap {{<space> {  }<c-o>h
@@ -51,9 +51,9 @@
   inoremap <c-k> <c-o>k
   inoremap <c-l> <esc>la
 
-" ================================= Select All ========================
+" ================================= select all ========================
 
-  inoremap <A-a> <esc>mpggVG
+  inoremap <a-a> <esc>mpggvg
   nnoremap <A-a> mpggVG
   vnoremap <A-a> mpggVG
 
@@ -64,6 +64,7 @@
   nnoremap <A-Tab> vip<c-v>lx
   vnoremap <A-Tab> <c-v>lxv
   nnoremap <Tab> mpvip<c-v>I  <esc>`p
+  vnoremap <Tab> <c-v>I<Tab><esc>
 
 
 " ================================ Utility ============================

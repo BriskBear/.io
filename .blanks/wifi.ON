@@ -4,11 +4,10 @@
 GREEN="$(tput setaf 2)"
 RED="$(tput setaf 1)"
 NC="$(tput sgr0)"
+
 # Tell the good folks what you're doing.
 echo Starting Network and DHCP daemons.
-
-# sudo first
-sudo echo ""
+echo ""
 
 # Begin actually starting the services.
 sudo systemctl restart systemd-networkd & # Basic Networking daemon
@@ -31,7 +30,7 @@ echo Letting them wake up......
 
 sleep 5 # ^1 Footnote 1 for the intelligently impared. ( me sometimes )
 
-iwctl station wlan0 connect $WiNet
+iwctl station wlan0 connect \"$WiNet\"
 
 p=$(ping -c 1 briskbear.rocks)
 
