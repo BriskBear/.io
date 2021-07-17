@@ -77,3 +77,42 @@ git commit -m  merged!
 gits
 SVC reboot -i
 q
+v config/tmux/3.0a 
+ts new
+txl
+ta new
+q
+txl
+ts new
+tmux -u
+ts new
+cd ~/io
+gits
+git status
+cd .io
+git status
+git stash
+v config/tmux/3.0a
+git stash
+git merge --abort
+gp
+gits
+git restore --staged config/tmux/3.0a
+ls config/tmux/
+gp
+ls config/
+git stash
+ls
+ls config/
+ls config/tmux/
+git stash --help
+git stash clear
+gis
+gits
+gaa 
+git commit -m 'yea'
+GP
+ln -s /home/elijahdaniel/.io/config/tmux /home/elijahdaniel/.config/tmux
+ts new
+v config/tmux/3.0a 
+q

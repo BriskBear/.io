@@ -1,0 +1,23 @@
+wifi.con
+wifi.ON
+SVC disable xfce4
+SVC disable xfwm
+whereis xinitrc
+whereis .xinitrc
+ls /etc/X11/xinit/xinitrc
+bat $_
+setup batcat
+setup cat
+setup bat
+unalias bat
+bat /etc/X11/xinit/xinitrc
+la
+mkdir -p .config/i3
+cp /etc/i3/config .config/i3/
+v ~/.config/i3
+v ~/.config/i3/config 
+cd ~/.io
+ls
+cd fonts/
+ls
+exit
