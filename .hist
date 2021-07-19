@@ -116,3 +116,75 @@ ln -s /home/elijahdaniel/.io/config/tmux /home/elijahdaniel/.config/tmux
 ts new
 v config/tmux/3.0a 
 q
+mp
+cd 
+ls
+cd code
+ls
+cd project
+ls
+du.
+tree 
+irb
+ls
+irb
+ls
+cd ruby+/
+irb
+export bash_list=$( ls -r )
+echo $bash_list | wc
+echo $bash_list
+ls -r
+lls
+ls
+..
+ls
+cd things
+export bash_list=$( ls -rRr )
+echo $bash_list | wc
+echo $bash_list
+export bash_list=$( ls -R )
+echo $bash_list | wc
+echo $bash_list
+ls config
+export bash_list=$( ls -AR )
+irb
+bind -P
+
+ls
+cd
+ls
+man git 
+ls
+mount
+ls env
+mount env
+mount
+ls
+mount
+sv /etc/fstab 
+umount env
+mount ent
+mount env
+ls
+ll
+mount
+cd env
+ls
+cd ~/.io
+git stash --all
+. ~/.bashrc
+. ~/.profile 
+ls
+gp
+ls
+gpg -K
+ls
+gpg -se -r microwavablemuffin io_.md 
+git pull
+git config -e
+nash github
+git config --global -e
+git config -e
+ssh -T github
+sudo shutdown
