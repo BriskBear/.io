@@ -1,0 +1,20 @@
+htop
+top
+ls ~/.io/config
+mkdir i3
+ls
+rm -r i3
+mkdir ~/.io/config/i3
+j config
+ls
+mv i3status/ i3/
+ls
+mv i3/i3status/ i3/status
+ls i3
+tal 2 i3
+v i3/status/config 
+rm $_
+cp /etc/i3status.conf i3/status/config
+ll ~/.config
+ls ~/.config|grep i3
+ln -s ~/.io/config/i3/status ~/.config/i3status

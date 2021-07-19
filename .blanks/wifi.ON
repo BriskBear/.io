@@ -32,6 +32,8 @@ sleep 5 # ^1 Footnote 1 for the intelligently impared. ( me sometimes )
 
 iwctl station wlan0 connect \"$WiNet\"
 
+sleep 5
+
 p=$(ping -c 1 briskbear.rocks)
 
 if [[ ! $p ]]

@@ -142,3 +142,6 @@ alias wp='bin/webpack-dev-server'                                               
 alias x='$HOME/.io/.sec/.x'                                                                                   #  Secret secrets
 alias xtab='$HOME/.io/blanks/xtab'                                                                            #  Open command in new XFCE Terminal tab
 alias xdt='vi.EXEC'                                                                                           #  Create executable with your editor
+alias i3='startx $(which i3)' # Find and start i3
+alias glo='git log --oneline' # quickinfo
+alias gsuba='git submodule add' # Add submodule <URL>

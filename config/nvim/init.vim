@@ -14,6 +14,7 @@
   set smartcase            "  Unless includes capital
   set cursorline           "  Locate the cursor vertically
   set path+=~/.io/.blanks  "  Edit blanks easy
+  set path+=~/.config " Edit Configs Easily
   set path+=**             "  search recursive for files
 
   set omnifunc=htmlcomplete#CompleteTags
