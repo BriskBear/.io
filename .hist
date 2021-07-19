@@ -188,3 +188,27 @@ git config --global -e
 git config -e
 ssh -T github
 sudo shutdown
+cd ~/.io
+gits
+wifi.ON
+gits
+gp
+ls
+ls ~/.config/i3
+ls config/i3
+mv ~/.config/i3/* config/i3/
+ls
+gp
+git config -e
+gp
+git config -e
+nvim .gin/config
+nvim .git/config
+vip
+v
+git config -e
+gp
+git stash --help
+git statsh clear
+git stash clear
+exit
