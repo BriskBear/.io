@@ -2,31 +2,38 @@
 
 " =================== General Configuration ===========================
 
-  set autoread             "  reload changes from outside of vim
-  set colorcolumn=90       "  Line Ending Indicator
-  set number               "  #s 'relative' to cursor
-  set history=10000        "  much cmdline history
-  set ignorecase           "  ignore case
-  set lcs+=space:❚         "  Use column to indicate spaces when enabled
-  set mouse=a              "  Mouse Enabled
-  set showcmd              "  show commands, even if incomplete?
-  set showmode             "  default, display mode at bottom line
-  set smartcase            "  Unless includes capital
-  set cursorline           "  Locate the cursor vertically
-  set path+=~/.io/.blanks  "  Edit blanks easy
-  set path+=~/.config " Edit Configs Easily
-  set path+=**             "  search recursive for files
+  set autoread               " reload changes from outside of vim
+  set colorcolumn=90         " Line Ending Indicator
+  set number relativenumber  " #s 'relative' to cursor
+  set history=10000          " much cmdline history
+  set ignorecase             " ignore case
+  set lcs+=trail:❚,space:❚   " Use column to indicate spaces when enabled
+  set mouse=a                " Mouse Enabled
+  set showcmd                " show commands, even if incomplete?
+  set showmode               " default, display mode at bottom line
+  set smartcase              " Unless includes capital
+  set cursorline             " Locate the cursor vertically
+  set path+=~/.io/.blanks    " Edit Blanks Easily
+  set path+=~/.config        " Edit Configurations Easily
+  set path+=**               " search recursive for files
 
   set omnifunc=htmlcomplete#CompleteTags
   autocmd FileType ruby setl omnifunc=syntaxcomplete#Complete
   let $BASH_ENV = "~/.io/config/.aliases"
 
-  " update leader key to space
+  " Update Leader Key to Space
   let mapleader=" "
   set timeout timeoutlen=1500
 
-  " syntax highlighting
+  " Syntax Highlighting
   syntax on
+
+  " Auto-Numbers
+  augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+  augroup END
 
 " =================== Swap Files Off ==================================
 
