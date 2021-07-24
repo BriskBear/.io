@@ -14,11 +14,12 @@
   set smartcase              " Unless includes capital
   set cursorline             " Locate the cursor vertically
   set path+=~/.io/.blanks    " Edit Blanks Easily
-  set path+=~/.config        " Edit Configurations Easily
+  set path+=~/.config/*      " Edit Configurations Easily
   set path+=**               " search recursive for files
 
   set omnifunc=htmlcomplete#CompleteTags
   autocmd FileType ruby setl omnifunc=syntaxcomplete#Complete
+
   let $BASH_ENV = "~/.io/config/.aliases"
 
   " Update Leader Key to Space
