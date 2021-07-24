@@ -12,6 +12,7 @@
   hi ModeMsg        ctermbg=black       ctermfg=green       cterm=reverse
   hi LineNr         ctermbg=NONE        ctermfg=darkgreen   cterm=NONE
   hi CursorLineNr   ctermbg=darkgreen   ctermfg=black       cterm=NONE
+  hi ModeMsg        ctermbg=darkgreen    ctermfg=cyan
   hi StatusLine     ctermbg=black       ctermfg=darkgreen   cterm=NONE
   hi WildMenu       ctermbg=darkcyan    ctermfg=black       cterm=NONE
   hi CursorLine     gui=underline

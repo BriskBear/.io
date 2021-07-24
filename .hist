@@ -212,3 +212,12 @@ git stash --help
 git statsh clear
 git stash clear
 exit
+cd ~/.io
+gits
+git commit -m 'add i3 tools'
+GP
+gits
+gp
+GP
+shutdown -h no
+shutdown 

@@ -156,6 +156,15 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# class                 border  backgr. text    indicator child_border
+client.focused          #004800 #011e03 #26c06d #00a100   #026228
+client.focused_inactive #333333 #062909 #678472 #484e50   #5f676a
+client.unfocused        #333333 #678472 #026228 #292d2e   #222222
+client.urgent           #2f343a #678472 #ffffff #900000   #900000
+client.placeholder      #000000 #678472 #ffffff #000000   #0c0c0c
+
+client.background       #1d1f21
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -186,9 +195,19 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        colors {
+            background #1d1f21
+            statusline #484e50
+            separator #062909
+
+            focused_workspace #484e50 #00a100 #1d1f21
+            active_workspace  #ffffff #1d1f21 #00a100
+            inactive_workspace #484e50 #1d1f21 #026228
+        }
         status_command i3status
         position top
 }
 
 bindsym $mod+shift+x exec i3lock -c 1d1f21
+exec_always ~/.config/i3/gitbg ~/.config/i3/op.gif &
 exec compton -f
