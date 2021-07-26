@@ -18,3 +18,35 @@ cp /etc/i3status.conf i3/status/config
 ll ~/.config
 ls ~/.config|grep i3
 ln -s ~/.io/config/i3/status ~/.config/i3status
+q
+urxvt
+q
+nvim now_list
+txl
+. .profile 
+bind -X
+ls
+mount env
+tail -n 1 /etc/fstab
+tail  /etc/fstab
+sv /etc/fstab
+ls
+v now_list 
+v l8r_list 
+v now_list 
+ls
+cd
+cd ~/.io
+cd config/
+gits
+git commit -m 'check'
+wifi.ON
+ls
+ping google.com
+wifi.ON
+ping google.com
+ls
+git.INIT
+grv
+i3
+ls

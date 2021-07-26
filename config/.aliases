@@ -145,3 +145,5 @@ alias xdt='vi.EXEC'                                                             
 alias i3='startx $(which i3)' # Find and start i3
 alias glo='git log --oneline' # quickinfo
 alias gsuba='git submodule add' # Add submodule <URL>
+alias mkdir='mkdir -v' # Be verbose
+alias rm='rm -v' # Be verbose
