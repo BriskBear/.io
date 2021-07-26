@@ -5,7 +5,7 @@ io_push() {
 }
 
 io_pull() {
-  (cd $HOME/.io && git pull | grep -e '|' -e 'mode') &
+  (cd $HOME/.io && git stash ; git pull | grep -e '|' -e 'mode' ; git stash apply) &
 }
 
 io_help() {

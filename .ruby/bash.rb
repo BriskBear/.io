@@ -6,6 +6,8 @@ end
 
 String.class_eval {include BashBoss}
 
-def Bash(command)
-  `#{command}`.split("\n").map!{|i| i.chomp}
+module Bash
+  def ls (*args)
+    `ls #{args}`.split(/\n/).map{|i| i.chomp}
+  end
 end

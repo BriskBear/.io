@@ -2,22 +2,34 @@
 
 load '/tmp/blks/replacer'
 
-if ARGV.count < 3
-  then puts "Usage: nnash <Host> <Name> <Key_Path>"
+if ARGV.count < 2
+  then puts "Usage: nnash <Host> <Name> [Key_Path]"
   exit 1
 end
 
 host = ARGV[0]
 name = ARGV[1]
-id   = ARGV[2]
+id   = ARGV[2].freeze
 
-arg = {
-  "HOST": host,
-  "ID": id,
-  "NAME": name,
-  "source": "~/.io/samples/ssh_blank",
-  "dest": "~/.ssh/config.d/#{host}"
-}
+if id.nil?
+  arg = {
+    "HOST": host,
+    "NAME": name,
+    "source": `printf ~/.io/samples/ssh_blank`,
+    "dest": `printf ~/.ssh/config.d/#{host}`
+  }
+else
+  arg = {
+    "HOST": host,
+    "ID": id,
+    "NAME": name,
+    "source": `printf ~/.io/samples/ssh_blank`,
+    "dest": `printf ~/.ssh/config.d/#{host}`
+  }
+end
+
+
+replacer arg
 
 #cp ~/.io/samples/ssh_blank ~/.ssh/config.d/$1
 #nano ~/.ssh/config.d/$1

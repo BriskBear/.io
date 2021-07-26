@@ -32,7 +32,7 @@ package manager commands:
     covered _my_ needs yet right?)  
   - `ssh.INIT` this sets up .ssh/ folders with usable permissions and generates a fresh key
   for you off the bat. I cannot tell you how much time I've wasted trying to get these assigned
-  correctly over the years, but you get to spend seconds doing it right the first time.  
+  correctly over the years, but you get to spend seconds doing it right the first time.
 
 ## Unimerge  
 _The moment I've all been waiting for_
@@ -53,3 +53,9 @@ now it uses direnv and detects your OS and plugs the right verbs!
 [Blanks => Binaries](https://www.simplified.guide/bash/compile-script "Compile Bash Script"): This process needs to include VERBOSE `blanks` documentation.
 _this would be super nifty for some speed but right now blanks change so often its not 
 actually practical. I'll probably solidify __some__ of these as I go_
+
+Vim settings ~> .lua
+Logs Consistant:  
+ - "LOG=blah" ~> ". ~/.io/config/envar"  
+ - "/tmp/.0" ~> ". ~/.io/config/envar"  
+ - Do not forget to copy announce/denounce statements!  

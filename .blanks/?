@@ -1,11 +1,22 @@
 #!/bin/bash
 
+aliases=(
+    ~/.io/config/.aliases
+    ~/.config/io/local_aliases
+)
+
+query() {
+    for f in ${aliases[@]}
+    do
+        grep -n " $1" $f --color=auto | sed -e 's/\s\+/ /' | sed -e 's/\#/\n\#/'
+    done
+    exit
+}
+
+
 if [ $1 ]
 then
-    QRY="$1"
-    grep -n " $QRY" ~/.io/config/.aliases --color=auto
-    grep -n " $QRY" ~/.config/io/local_aliases --color=auto
-    exit
+    query $1
 fi
 
 nl ~/.io/config/.aliases | less

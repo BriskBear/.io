@@ -1,18 +1,21 @@
 #!/usr/bin/env ruby
-  def replacer(chain = {})
-    log = '/tmp/.10'
-    src = chain[:source]
-    dst = chain[:dest]
-    chain = chain.except(:source)
-    chain = chain.except(:dest)
-    @string = File.open(src, 'rb').read
 
-    chain.each do |h,k|
-      @string = @string.gsub("#{h}", "#{k}")
-      File.write(log, "replacing #{h} with #{k} in #{dst}", mode: "a")
-    end
-    
-    File.write(dst,@string)    
-    print @string
-    dst
+def replacer(chain = {})
+  log = '/tmp/.10'
+  src = chain[:source]
+  dst = chain[:dest]
+  chain = chain.except(:source)
+  chain = chain.except(:dest)
+  @string = File.read("#{src}")
+
+  chain.each do |h,k|
+    next if k.nil?
+    puts k
+    @string = @string.gsub("#{h}", "#{k}")
+    File.write(log, "replacing #{h} with #{k} in #{dst}", mode: "a")
   end
+  
+  File.write(dst,@string)    
+  print @string
+  dst
+end

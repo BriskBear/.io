@@ -4,3 +4,8 @@ blanks/**
 logs
 logs/**
 maint/io.CONFIG.save
+config/.hist
+fonts/.hist
+gifbg
+op.gif
+xwinwrap

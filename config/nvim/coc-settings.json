@@ -1,9 +1,0 @@
-{
-    "languageserver": {
-        "ruby": {
-            "command": "solargraph",
-            "args": ["stdio"],
-            "filetypes": ["rb"]
-        }
-    }
-}
