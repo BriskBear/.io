@@ -1,7 +1,0 @@
-[user]
-	name = MicrowavableMuffin
-	email = fakeone@briskbear.rocks
-[pull]
-	rebase = false
-[core]
-	editor = nano

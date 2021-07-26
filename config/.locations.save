@@ -1,6 +1,0 @@
-
-#locations['nanorc']='/etc/nanorc'
-#locations['vimrc']='/etc/vimrc'
-#locations['.vimrc.local']='$HOME/.vimrc.local'
-#locations['conf_enabled.network']='/etc/systemd/network/conf_enabled.network'
-#locations['desertink.vim']='/usr/share/vim/vim82/colors/desertink.vim'

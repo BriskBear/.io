@@ -1,6 +1,0 @@
-set editing-mode vi
-set keymap vi-command
-
-set keymap vi-insert
-"\C-l": "\e \C-l i"
-"kj": "\e"
