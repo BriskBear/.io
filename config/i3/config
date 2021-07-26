@@ -209,5 +209,5 @@ bar {
 }
 
 bindsym $mod+shift+x exec i3lock -c 1d1f21
-exec_always ~/.config/i3/gitbg ~/.config/i3/op.gif &
+exec_always $HOME/.config/i3/gifbg ~/.config/i3/op.gif
 exec compton -f
