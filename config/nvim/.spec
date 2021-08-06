@@ -34,7 +34,7 @@ install_neovim() {
   ( wget $url && \
     ( chmod u+x nvim.appimage ) && \
     ( ./nvim.appimage --appimage-extract ) && \
-    ( sudo rsync -aAXP ./squashfs-root/usr/ /usr/) \
+    ( rsync -aAXP ./squashfs-root/usr/ /usr/) \
   ) && ( echo 'neovim Installed!' )
 }
 
