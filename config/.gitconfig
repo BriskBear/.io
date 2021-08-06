@@ -4,4 +4,4 @@
 [pull]
 	rebase = false
 [core]
-	editor = nano
+	editor = nvim
