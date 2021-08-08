@@ -29,4 +29,4 @@
   hi   Constant       guifg=#9cb39d
   hi   lCursor        guifg=#000000
   hi   Conceal        guifg=#BBE0E6
-  hi Comment guifg=#BBE0E6 guibg=#1A2F23
+  hi   Comment        guifg=#BBE0E6   guibg=#1A2F23

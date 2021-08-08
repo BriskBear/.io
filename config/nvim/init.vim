@@ -1,5 +1,3 @@
-  set nocompatible
-
 " =================== General Configuration ===========================
 
   set autoread               " reload changes from outside of vim
