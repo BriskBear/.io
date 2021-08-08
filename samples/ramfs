@@ -1,1 +1,1 @@
-none    /mnt/env     ramfs    noauto,user,size=2048M,mode=0070   0    0
+none    /mnt/env     ramfs    noauto,users,size=2048M,mode=0070   0    0
