@@ -145,3 +145,4 @@ alias xdt='vi.EXEC'                                                             
 alias i3='startx $(which i3)' # Find and start i3
 alias glo='git log --oneline' # quickinfo
 alias gsuba='git submodule add' # Add submodule <URL>
+alias rubymine='Process rubymine.sh' # Start rubymine and log to /tmp/rubymine.log

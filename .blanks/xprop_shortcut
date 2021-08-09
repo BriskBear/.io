@@ -1,0 +1,11 @@
+#!/bin/bash
+
+xprop_call() {
+  out_file=~/env/xprop_out$1
+  xprop &>> $out_file &
+  xfce4-terminal -x tail -f $out_file; exit
+  sleep 30s
+  rm $out_file
+}
+
+xprop_call $1

@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:zig 15
+font pango:Uroob 15
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -113,6 +113,7 @@ set $ws3 "3: "
 assign [ class="Brave-browser" ] $ws3
 set $ws4 "4: "
 assign [ class="Atom" ] $ws4
+assign [ class="jetbrains-rubymine" ] $ws4
 set $ws5 "5: "
 assign [ class="Steam" ] $ws5
 set $ws6 "$wkr6"
@@ -122,6 +123,8 @@ set $ws8 "8: "
 set $ws9 "9: "
 assign [ class="TelegramDesktop" ] $ws9
 assign [ class="discord" ] $ws9
+assign [ class="Microsoft Teams - Preview" ] $ws9
+exec teams
 set $ws10 "10: "
 assign [ class="VLC media player" ] $ws10
 
@@ -187,7 +190,12 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position top
 }
 
 bindsym $mod+shift+x exec i3lock -c 1d1f21
-exec compton -f
+# exec compton -f
+
+exec xrandr --output DP-0 --mode 1440x900 --pos 1280x62 --rotate normal --output DP-1 --off --output DP-2 --off --output DP-3 --primary --mode 1280x1024 --pos 0x0 --rotate normal --output DP-4 --off --output DP-5 --off --output DP-6 --off
+
+

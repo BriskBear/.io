@@ -1,20 +1,27 @@
 #!/bin/bash
 
+# Find the Executable Checking multiple common names
 BIN=$(which brave)
 [[ $BIN ]]|| BIN=$(which brave-browser)
+[[ $BIN ]]|| BIN=$(which brave-browser-stable)
 
+# Start exe in tmux_session: "Process" (Launching if necessary)
 check_session() {
   [[ $(tmux.ACT Process) ]] \
     && (send_session $1) \
     || (new_session $1)
 }
 
+# Start tmux_session: "Process"
 new_session() {
-    tmux new-session -ds Process "$1"
+  tmux new-session -ds Process "$1"
 }
 
+# Start a new pane for the process in tmux_session: "Process"
 send_session() {
-    tmux send -t Process "tmux split-pane -v $BIN" ENTER
+  tmux send -t Process "tmux split-pane -v $BIN" ENTER
 }
 
+## All Functions Declared ##
+# Take Action!
 check_session $BIN

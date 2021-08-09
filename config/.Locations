@@ -2,3 +2,4 @@
 
 locations['bashrc']="$HOME/.bashrc"
 locations['profile']="$HOME/.profile"
+locations['inputrc']="$HOME/.inputrc"
