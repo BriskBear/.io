@@ -150,3 +150,4 @@ alias x='$HOME/.io/.sec/.x'                                                     
 alias xdt='vi.EXEC'                                                                                                                #  Create executable with your editor
 alias xtab='$HOME/.io/blanks/xtab'                                                                                                 #  Open command in new XFCE Terminal tab
 shopt -s expand_aliases
+alias guard='bundle exec guard' # always bundle
