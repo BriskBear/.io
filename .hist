@@ -77,3 +77,147 @@ git commit -m  merged!
 gits
 SVC reboot -i
 q
+v config/tmux/3.0a 
+ts new
+txl
+ta new
+q
+txl
+ts new
+tmux -u
+ts new
+cd ~/io
+gits
+git status
+cd .io
+git status
+git stash
+v config/tmux/3.0a
+git stash
+git merge --abort
+gp
+gits
+git restore --staged config/tmux/3.0a
+ls config/tmux/
+gp
+ls config/
+git stash
+ls
+ls config/
+ls config/tmux/
+git stash --help
+git stash clear
+gis
+gits
+gaa 
+git commit -m 'yea'
+GP
+ln -s /home/elijahdaniel/.io/config/tmux /home/elijahdaniel/.config/tmux
+ts new
+v config/tmux/3.0a 
+q
+mp
+cd 
+ls
+cd code
+ls
+cd project
+ls
+du.
+tree 
+irb
+ls
+irb
+ls
+cd ruby+/
+irb
+export bash_list=$( ls -r )
+echo $bash_list | wc
+echo $bash_list
+ls -r
+lls
+ls
+..
+ls
+cd things
+export bash_list=$( ls -rRr )
+echo $bash_list | wc
+echo $bash_list
+export bash_list=$( ls -R )
+echo $bash_list | wc
+echo $bash_list
+ls config
+export bash_list=$( ls -AR )
+irb
+bind -P
+
+ls
+cd
+ls
+man git 
+ls
+mount
+ls env
+mount env
+mount
+ls
+mount
+sv /etc/fstab 
+umount env
+mount ent
+mount env
+ls
+ll
+mount
+cd env
+ls
+cd ~/.io
+git stash --all
+. ~/.bashrc
+. ~/.profile 
+ls
+gp
+ls
+gpg -K
+ls
+gpg -se -r microwavablemuffin io_.md 
+git pull
+git config -e
+nash github
+git config --global -e
+git config -e
+ssh -T github
+sudo shutdown
+cd ~/.io
+gits
+wifi.ON
+gits
+gp
+ls
+ls ~/.config/i3
+ls config/i3
+mv ~/.config/i3/* config/i3/
+ls
+gp
+git config -e
+gp
+git config -e
+nvim .gin/config
+nvim .git/config
+vip
+v
+git config -e
+gp
+git stash --help
+git statsh clear
+git stash clear
+exit
+cd ~/.io
+gits
+git commit -m 'add i3 tools'
+GP
+gits
+gp
+GP
+shutdown -h no
+shutdown 

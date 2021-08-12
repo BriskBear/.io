@@ -1,31 +1,40 @@
-  set nocompatible
-
-" =================== General Configuration ===========================
+" =================== General Configuration ============================
 
   set autoread               " reload changes from outside of vim
-  set colorcolumn=90         " Line Ending Indicator
-  set number                 " #s 'relative' to cursor
+  set colorcolumn=80,100     " Line Ending Indicator
+  set number relativenumber  " #s 'relative' to cursor
   set history=10000          " much cmdline history
   set ignorecase             " ignore case
-  set lcs+=space:❚           " Use column to indicate spaces when enabled
+  set lcs+=trail:❚,space:❚   " Use column to indicate spaces when enabled
   set mouse=a                " Mouse Enabled
   set showcmd                " show commands, even if incomplete?
   set showmode               " default, display mode at bottom line
   set smartcase              " Unless includes capital
   set cursorline             " Locate the cursor vertically
-  set path+=**               " search everywhere for files
+  set path+=~/.io/.blanks/** " Edit Blanks Easily
+  set path+=~/.config/**     " Edit Configurations Easily
+  set path+=**               " search recursive for files
+
   set omnifunc=htmlcomplete#CompleteTags
   autocmd FileType ruby setl omnifunc=syntaxcomplete#Complete
+
   let $BASH_ENV = "~/.io/config/.aliases"
 
-  " update leader key to space
+  " Update Leader Key to Space
   let mapleader=" "
   set timeout timeoutlen=1500
 
-  " syntax highlighting
+  " Syntax Highlighting
   syntax on
 
-" =================== Swap Files Off ==================================
+  " Auto-Numbers
+  augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+  augroup END
+
+" =================== Swap Files Off ===================================
 
   set noswapfile
   set nobackup
@@ -65,12 +74,12 @@
   set nowrap    " Don't Wrap lines
   set linebreak " Wrap lines at a convenient point
 
-" =================== Window Pane Resizing ============================
+" =================== Window Pane Resizing =============================
 
   nnoremap <silent> <Leader>[ :exe "resize" . (winheight(0) * 3/2)<CR>
   nnoremap <silent> <Leader>] :exe "resize" . (winheight(0) * 2/3)<CR>
 
-" =================== Seeing Is Beliving ==============================
+" =================== Seeing Is Beliving ===============================
 
   nmap <Leader>b :%.!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk<CR>;
   nmap <Leader>n :%.!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk --xmpfilter-style<CR>;
@@ -85,11 +94,11 @@
   set runtimepath+=~/.vim/ervandew/vim-supertab
   set runtimepath+=~/.vim/junegunn/vim-easy-align
 
-" =================== Colors ==========================================
+" =================== Colors ===========================================
 
   source ~/.config/nvim/Color.vim
 
-" =================== Status Line =====================================
+" =================== Status Line ======================================
 
   set statusline=
   set statusline+=%#LineNr#
@@ -103,6 +112,3 @@
   set statusline+=\ \ \ \ \ \ 
   set statusline+=%{&fileencoding?&fileenconding:&encoding}
   set statusline+=\:%{&fileformat}
-
-
-

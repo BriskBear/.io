@@ -1,0 +1,11 @@
+Auto-merging config/tmux/tmux.conf
+CONFLICT (content): Merge conflict in config/tmux/tmux.conf
+Auto-merging config/tmux/3.0a
+CONFLICT (content): Merge conflict in config/tmux/3.0a
+Auto-merging config/nvim/init.vim
+Auto-merging config/nvim/Keymap.vim
+Auto-merging config/nvim/Color.vim
+CONFLICT (content): Merge conflict in config/nvim/Color.vim
+Auto-merging config/bashrc
+Auto-merging config/.aliases
+CONFLICT (content): Merge conflict in config/.aliases
