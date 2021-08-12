@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+Gem::Specification.new do |s|
+  s.name         =  NAME
+  s.version      =  VERSION
+  s.summary      =  SUMMARY
+  s.description  =  DESCRIPTION
+  s.authors      =  AUTHORS
+  s.email        =  EMAIL
+  s.files        =  FILES
+  s.homepage     =  HOMEPAGE
+  s.license      =  LICENSE
+end

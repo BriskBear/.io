@@ -30,6 +30,9 @@ shopt -s checkwinsize
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
 
+# Navigate to path instead of responding no such command
+shopt -s autocd
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -166,20 +169,6 @@ then
   fi
 fi
 
-#  # Start the SSH-Agent: Uncomment \ on 153 and all of 154 to enable default ~/.ssh/id_rsa
-#  [[ $(which ssh-agent 2>> /dev/null) ]]
-# # en
-# [ -z "$SSH_AUTH_SOCK" ]&& eval $(ssh-agent -s)
-# declare -a ssh_keys
-# [[ -s ~/.config/io/ssh.KEYS ]]&& source ~/.config/io/ssh.KEYS #\
-# #  || ln -s ~/.config/io/ssh.KEYS.sample ~/.config/io/ssh.KEYS
-# for k in "${ssh_keys[@]}"
-# do
-#     ssh-add "$k" &>>/tmp/sshadd
-#     d=$( echo $k|rev|cut -f1 -d /|rev )
-# done
-# unset ssh_keys
-
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
@@ -216,7 +205,7 @@ done
 
 source $HOME/.io/.blanks/color
 
-figlet -f smslant -w 130 '@'"$HOSTNAME"| lolcat -a -d 4
+figlet -f smslant -w 130 '@'"$HOSTNAME"| lolcat -a -d 1
 
 cat /tmp/neofile
 

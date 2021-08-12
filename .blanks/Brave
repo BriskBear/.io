@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BIN=$(which brave)
-[[ $BIN ]]|| BIN=$(which brave)
+[[ $BIN ]]|| BIN=$(which brave-browser)
 
 check_session() {
   [[ $(tmux.ACT Process) ]] \
@@ -10,7 +10,7 @@ check_session() {
 }
 
 new_session() {
-    tmux new-session -ds Process $1
+    tmux new-session -ds Process "$1"
 }
 
 send_session() {

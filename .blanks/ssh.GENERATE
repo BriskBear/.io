@@ -1,17 +1,32 @@
 #!/bin/bash
 
-~/.config/io/iorc
+# Instantiate Log Store
+[[ -f $HOME/.config/io/iorc ]] \
+  && source ~/.config/io/iorc \
+  || LOG=/tmp/generate.log
 
-[[ "$#" -gt 0 ]] && U_NAME="$1" || (printf "Enter username for the new key: " && read U_NAME)
+# Set sshKey Username
+[[ "$#" -gt 0 ]] \
+  && U_NAME="$1" \
+  || (
+    printf "Enter username for the new key: " \
+    && read U_NAME
+  )
+
 mkdir -vm 700 -p $HOME/.ssh/{.pk,config.d} &> $LOG
 
 chmod 740 $HOME/.ssh/.pk
 [[ $(which ssh-keygen) ]] || Setup openssh
 ssh-keygen -q -b 4096 -O "$U_NAME" -t RSA -f $HOME/.ssh/.pk/$(date +%Y-%m-%d_"$U_NAME")
-mv -v $HOME/.ssh/.pk/*.pub $HOME/.ssh/authorized_keys
-mv -v $HOME/.config/io/.stubs/ssh $HOME/.ssh/config
+mv -v $HOME/.ssh/.pk/*.pub $HOME/.ssh/authorized_keys|tee -a $LOG
+cp -v $HOME/.config/io/.stubs/ssh $HOME/.ssh/config|tee -a $LOG
 chmod 700 $HOME/.ssh/.pk
 chmod 600 $HOME/.ssh/.pk/*
 cat $HOME/.ssh/$(date +%Y-%m-%d_$U_NAME).pub >> $HOME/.ssh/authorized_keys
+
+# Cleanup Logstore
+[[ -f $HOME/.config/io/iorc ]] \
+  && source ~/.config/io/iorc \
+  || unset LOG
 
 unset U_NAME
