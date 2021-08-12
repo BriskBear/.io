@@ -1,5 +1,5 @@
 set-option -g mouse on
-set -g default-shell "/usr/bin/bash"
+set -g default-shell /usr/bin/bash
 set -g status-keys vi
 set -g status-style fg=green,bg=black
 set -g status-right "#(date +%%H:%%M -u)"
@@ -14,7 +14,6 @@ bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xsel -i --clipboar
 bind | splitw -hc "`pwd`"
 bind r source-file ~/.config/tmux/tmux.conf \; display "Tmux config loaded"
 
-set -g mouse on
 bind-key j select-pane -D
 bind-key h select-pane -L
 bind-key k select-pane -U
