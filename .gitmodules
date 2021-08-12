@@ -4,3 +4,6 @@
 [submodule "config/PSV"]
 	path = config/PSV
 	url = https://github.com/briskbear/cfg_ps1
+[submodule "config/ruby"]
+	path = config/ruby
+	url = https://github.com/briskbear/cfg_ruby

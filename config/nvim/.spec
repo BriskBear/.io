@@ -51,4 +51,4 @@ echo $DEST
 
 copy_config
 get_plugs
-install_neovim
+echo 'call install_neovim to build nightly'

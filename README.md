@@ -1,3 +1,5 @@
+# _subconfigs_  
+_breaks configs into individual subrepositories_  
 # .io
 _Linux Dotfiles for my profile and aliases._ - I'm keeping this here because it's so cute
  and naiive how this idea got started.
