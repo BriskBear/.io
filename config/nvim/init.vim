@@ -1,4 +1,4 @@
-" =================== General Configuration ===========================
+" =================== General Configuration ============================
 
   set autoread               " reload changes from outside of vim
   set colorcolumn=80,100     " Line Ending Indicator
@@ -34,7 +34,7 @@
     autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
   augroup END
 
-" =================== Swap Files Off ==================================
+" =================== Swap Files Off ===================================
 
   set noswapfile
   set nobackup
@@ -74,12 +74,12 @@
   set nowrap    " Don't Wrap lines
   set linebreak " Wrap lines at a convenient point
 
-" =================== Window Pane Resizing ============================
+" =================== Window Pane Resizing =============================
 
   nnoremap <silent> <Leader>[ :exe "resize" . (winheight(0) * 3/2)<CR>
   nnoremap <silent> <Leader>] :exe "resize" . (winheight(0) * 2/3)<CR>
 
-" =================== Seeing Is Beliving ==============================
+" =================== Seeing Is Beliving ===============================
 
   nmap <Leader>b :%.!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk<CR>;
   nmap <Leader>n :%.!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk --xmpfilter-style<CR>;
@@ -94,11 +94,11 @@
   set runtimepath+=~/.vim/ervandew/vim-supertab
   set runtimepath+=~/.vim/junegunn/vim-easy-align
 
-" =================== Colors ==========================================
+" =================== Colors ===========================================
 
   source ~/.config/nvim/Color.vim
 
-" =================== Status Line =====================================
+" =================== Status Line ======================================
 
   set statusline=
   set statusline+=%#LineNr#

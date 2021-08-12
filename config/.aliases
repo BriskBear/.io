@@ -28,7 +28,7 @@ alias capp='bundle exec cap production'                                         
 alias catto='cat << eof >>'                                                                                                        #  Append multiple lines
 alias cleanpass='rm $HOME/Templates/Database.kdbx'                                                                                 #  Clear KPDB
 alias clone='git clone'                                                                                                            #  Clone a REPO
-alias cls='clear && date | lolcat -a'                                                                                              #  Clear and Date
+alias cls='clear && date -u | lolcat -a -d 6'                                                                                              #  Clear and Date
 alias ctmux='$EDITOR ~/.config/tmux/tmux.conf'                                                                                     #  Configure tmux
 alias dira='direnv allow'                                                                                                          #  Activate local .direnv file
 alias disks='gnome-disks'                                                                                                          #  Yeah What?!
@@ -138,7 +138,6 @@ alias v='nvim'                                                                  
 alias vash='vim $HOME/.ssh/config'                                                                                                 #  Open .ssh/config in Vim Text Editor
 alias viswp='rm -vr /home/elijah/.local/share/nvim/swap/*'                                                                         #  Clear nvim swap
 alias webdev='bin/webpack-dev-server'                                                                                              #  Webpack Devel
-<<<<<<< Updated upstream
 alias wp='bin/webpack-dev-server'                                                                             #  Stop typing so much
 alias x='$HOME/.io/.sec/.x'                                                                                   #  Secret secrets
 alias xtab='$HOME/.io/blanks/xtab'                                                                            #  Open command in new XFCE Terminal tab
@@ -148,7 +147,6 @@ alias glo='git log --oneline' # quickinfo
 alias gsuba='git submodule add' # Add submodule <URL>
 alias mkdir='mkdir -v' # Be verbose
 alias rm='rm -v' # Be verbose
-=======
 alias wp='bin/webpack-dev-server'                                                                                                  #  Stop typing so much
 alias x='$HOME/.io/.sec/.x'                                                                                                        #  Secret secrets
 alias xtab='$HOME/.io/blanks/xtab'                                                                                                 #  Open command in new XFCE Terminal tab
@@ -174,4 +172,3 @@ alias tsp='tmux splitw'                                                         
 alias xdt='vi.EXEC'                                                                                                                #  Create executable with your editor
 alias R.='. R.'                                                                                                                    #  reset terminal
 alias cp='cp -v'                                                                                                                   #  copy verbosely
->>>>>>> Stashed changes
