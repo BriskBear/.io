@@ -1,12 +1,12 @@
 #!/bin/bash
 
 index="1"
-LIST_FILE="/home/lij/.io/samples/Resources"
+LIST_FILE="$HOME/.io/samples/Resources"
 OUT_FILE="/data/wiki/LumpyspaceResList.html"
 PATHS=()
-QTY=$(cat /home/lij/.io/samples/Resources | wc -l)
+QTY=$(cat $HOME/.io/samples/Resources | wc -l)
 RESOURCES=()
-TEMPLATE="/home/lij/.io/samples/ResourceList.html"
+TEMPLATE="$HOME/.io/samples/ResourceList.html"
 #___________________________________________________VARIABLES DECLARED
 listADD() {
     string=$1

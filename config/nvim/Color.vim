@@ -25,8 +25,8 @@
   hi   Ignore         guifg=#000000
   hi   Statement      guifg=#26c06d
   hi   Type           guifg=#1AA053
-  hi   PreProc        guifg=#BEE6E3
-  hi   Constant       guifg=#9cb39d
+  hi   PreProc        guifg=#BEE6E3   gui=bold
+  hi   Constant       guifg=#9cb39d   gui=bold
   hi   lCursor        guifg=#000000
   hi   Conceal        guifg=#BBE0E6
   hi   Comment        guifg=#BBE0E6   guibg=#1A2F23

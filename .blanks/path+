@@ -3,6 +3,7 @@
 source $HOME/.config/io/custom_path
 PATH+=":/var/lib/flatpak/exports/share"
 PATH+=":$HOME/.local/share/flatpak/exports/share"
-PATH+=":$HOME/.io/blanks"
+PATH+=":/tmp/blks"
 PATH+=":/snap/bin"
 PATH+=":$HOME/bin"
+PATH+=":/usr/local/pgsql/bin"

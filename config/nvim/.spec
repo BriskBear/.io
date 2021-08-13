@@ -7,8 +7,8 @@ url='https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage'
 warn=" ${CYAN}Cowardly,${NC}${LIGHT_GREEN} preserving ${NC}nvim config.\n${RED}DANGER ${NC}${PINK}replace current nvim config with the newest from ~/.io?${NC} (${RED}y${NC}/${LIGHT_GREEN}n${NC})\n"
 
 copy_config() {
-  [[ -d ~/.config/nvim ]]&& \
-    ( echo 'neovim config exists!' && exit ) \
+  [[ -d ~/.config/nvim ]] \
+    && ( echo 'neovim config exists!' && exit ) \
     || ( cp -rvf $SOURCE $DEST )
 }
 
@@ -19,18 +19,17 @@ get_plugs() {
     'junegunn/vim-easy-align'
     'kien/ctrlp.vim'
   )
-  [[ -d ~/.vim/ ]]&& \
-  ( echo "~/.vim/ exists!" && exit ) \
-  || ( mkdir -vp ~/.vim/ )
+  [[ -d ~/.config/nvim/plugs ]]&& \
+  ( echo "plugs dir exists!" && exit ) \
+  || ( mkdir -vp ~/.config/nvim/plugs )
   for p in ${plugs[@]}
   do
-    git clone "https://github.com/$p" "$HOME/.vim/$p"
-  # ( git clone https://github.com/Vundlevim/Vundle.vim ~/.vim/bundle/Vundle.vim &>> /tmp/.10 & )
+    git clone "https://github.com/$p" "$HOME/.config/nvim/plugs/$p"
   done
 }
 
 install_neovim() {
-  [[ -d ~/Downloads ]]&& ( cd ~/Downloads )
+  [[ -d ~/Downloads ]] && ( cd ~/Downloads )
   ( wget $url && \
     ( chmod u+x nvim.appimage ) && \
     ( ./nvim.appimage --appimage-extract ) && \
