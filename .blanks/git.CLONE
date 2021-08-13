@@ -1,8 +1,10 @@
 #!/bin/bash
 
-REPO="$1"
 CP_PATH="$2"
+MSG="\033[0;36m  ERR: Please Install git\033[0m\n"
+REPO="$1"
 
 # Clone from github via https, but just type the repo and clonelocation
-git clone https://github.com/$REPO $CP_PATH
-
+[[ $(git --version) ]] \
+  && ( git clone https://github.com/$REPO $CP_PATH ) \
+  || ( printf $MSG )

@@ -2,6 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+shopt -s autocd
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -67,7 +68,7 @@ fi
 
 ## Git BASH
 # Load
-source $HOME/.io/blanks/git-sh-prompt
+source /tmp/blks/git-sh-prompt
 # Config
 GIT_PS1_SHOWDIRTYSTATE='true'
 GIT_PS1_SHOWUPSTREAM='verbose'
@@ -179,7 +180,7 @@ source ~/.io/config/keybinds
 [[ $(which autojump 2>> /dev/null) ]] && source /usr/share/autojump/autojump.bash
 
 # Path environment variable for spawning executables
-  PATH=/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
   [[ -f $HOME/.io/.blanks/path+ ]] \
     && source $HOME/.io/.blanks/path+ \
@@ -205,7 +206,11 @@ done
 
 source $HOME/.io/.blanks/color
 
+<<<<<<< Updated upstream
 figlet -f smslant -w 130 '@'"$HOSTNAME"| lolcat -a -d 1
+=======
+figlet -f smslant -w 130 '@'"$HOSTNAME"| lolcat -a -d 3
+>>>>>>> Stashed changes
 
 cat /tmp/neofile
 
