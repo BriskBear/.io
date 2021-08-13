@@ -151,3 +151,4 @@ alias +x='chmod -v +x'                                                          
 alias xdt='vi.EXEC'                                                                                                                #  Create executable with your editor
 alias xdt='vi.EXEC'                                                                                           #  Create executable with your editor
 alias xtab='$HOME/.io/blanks/xtab'                                                                                                 #  Open command in new XFCE Terminal tab
+alias webdev='bin/webpack-dev-server' # Webpack Devel
