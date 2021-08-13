@@ -33,8 +33,9 @@
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
     autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
   augroup END
-
-" =================== Swap Files Off ===================================
+  autocmd BufNewFile .\* 0r ~/.config/nvim/mdl/skeleton.yml 
+  
+" =================== Swap Files Off ==================================
 
   set noswapfile
   set nobackup

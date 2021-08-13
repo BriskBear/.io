@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define constants
-key_dir="$HOME/.io/blanks/keys"
+key_dir="/tmp/blks/keys"
 
 # Build the queue
 add.QUEUE "$@"

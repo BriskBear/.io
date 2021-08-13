@@ -20,14 +20,13 @@ function with_cat() {
       # Install all items in the queue
       for p in ${queue[@]}
       do
-          (sudo pacman -Syu --needed --noconfirm $p | tee -a $LOG|lolcat -a) \
-           || (yay --needed --noconfirm $p | tee -a $LOG |lolcat -a)
+        (sudo pacman -Syu --needed --noconfirm $p | tee -a $LOG|lolcat -a)
       done
   else
       # Install all items in the queue
       for p in ${queue[@]}
       do
-          yay --needed --noconfirm $p | tee -a $LOG
+        (sudo pacman -Syu --needed --noconfirm $p | tee -a $LOG)
       done
   fi
 }
