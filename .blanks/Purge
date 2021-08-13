@@ -3,7 +3,7 @@
 # sudo pacman -Rcn --noconfirm $1 #| lolcat
 # Define constants
 LOG="$HOME/.io/logs/Purge"
-key_dir="$HOME/.io/blanks/keys"
+key_dir="/tmp/blks/keys"
 
 # Build the queue
 add.QUEUE "$@"

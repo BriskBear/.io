@@ -59,13 +59,10 @@
 
 " ================================= Tabs / unTabs =====================
 
-  nnoremap <Leader><Tab> mp^<c-v>'ii  <esc>`p
-  nnoremap <Leader><A-Tab> mp<home><c-v>'ihx`p 
-  nnoremap <A-Tab> vip<c-v>lx
-  vnoremap <A-Tab> <c-v>lxv
-  nnoremap <Tab> mpvip<c-v>I  <esc>`p
-  vnoremap <Tab> <c-v>I<Tab><esc>
-
+        nnoremap <A-Tab> vip<c-v>lx
+        vnoremap <A-Tab> <c-v>lxv
+        nnoremap <Tab> mpvip<c-v>I  <esc>`p2l
+        vnoremap <Tab> <c-v>0I<Tab><esc>
 
 " ================================ Utility ============================
 
