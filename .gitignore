@@ -9,3 +9,4 @@ fonts/.hist
 gifbg
 op.gif
 xwinwrap
+config/nvim/plugs/**
