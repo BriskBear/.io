@@ -200,7 +200,11 @@ do
 done
 
 # NeoFetch
-[[ $(which neofetch 2> /dev/null) ]]&& /usr/bin/neofetch --color_blocks off &> /tmp/neofile & disown;
+[[ $(which neofetch 2> /dev/null) ]] \
+  && (
+    set -mb
+    /usr/bin/neofetch --color_blocks off &> /tmp/neofile & disown;
+  )
 
 # Figlet
 
@@ -208,7 +212,8 @@ source $HOME/.io/.blanks/color
 
 figlet -f smslant -w 130 '@'"$HOSTNAME"| lolcat -a -d 1
 
-cat /tmp/neofile
+# cat /tmp/neofile
+printf "${CYAN}Neofile Updated${NC}\n"
 
 # Add .io/config/envar`s
 if [ -f $HOME/.config/io/iorc ]
