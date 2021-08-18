@@ -1,0 +1,6 @@
+#!/bin/bash
+
+before=$(fc-list)
+fc-cache -f -v
+after=$(fc-list)
+diff $before $after
