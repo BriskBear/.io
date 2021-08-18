@@ -53,7 +53,7 @@
 
 " ================================= select all ========================
 
-  inoremap <a-a> <esc>mpggvg
+  inoremap <a-a> <esc>mpggVG
   nnoremap <A-a> mpggVG
   vnoremap <A-a> mpggVG
 
