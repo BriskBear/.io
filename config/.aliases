@@ -62,7 +62,6 @@ alias gm='git merge'                                                            
 alias gmm='git merge master'                                                                                  #  Merge master branch with current branch(test-compat)
 alias gnb='git checkout -n'                                                                                   #  Create a new branch
 alias gp='git pull'                                                                                           #  Little is pull big is push
-alias gp='git stash && git pull && git stash apply'                                                                                #  Little is pull big is push
 alias gpg.long='gpg -K --keyid-format=long'                                                                                        #  Granular reference numbers
 alias gpt='printf "Pulled at: " && stat -c %y .git/FETCH_HEAD'                                                #  Time of Most recent local git pull
 alias gra='git remote add origin'                                                                             #  Add remote (origin) <remote_url>

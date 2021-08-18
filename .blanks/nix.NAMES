@@ -1,0 +1,4 @@
+#!/bin/bash
+
+nim=($(ls -A| tr ' ' '_'| tr '[:upper:]' '[:lower:]'))
+echo ${nim[@]}
