@@ -1,15 +1,19 @@
 #!/bin/bash
 
 source ~/.io/config/envar
+
 SOURCE=`dirname $SCRIPT`
-DEST="$HOME/.config/"
+DEST="$HOME/.config/nvim/"
 url='https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage'
 warn=" ${CYAN}Cowardly,${NC}${LIGHT_GREEN} preserving ${NC}nvim config.\n${RED}DANGER ${NC}${PINK}replace current nvim config with the newest from ~/.io?${NC} (${RED}y${NC}/${LIGHT_GREEN}n${NC})\n"
 
 copy_config() {
   [[ -d ~/.config/nvim ]] \
     && ( echo 'neovim config exists!' && exit ) \
-    || ( cp -rvf $SOURCE $DEST )
+    || ( 
+      [[ -e $HOME/.config/nvim ]]|| mkdir -vp $HOME/.config/nvim
+      cp -rvf $SOURCE $DEST
+    )
 }
 
 get_plugs() {

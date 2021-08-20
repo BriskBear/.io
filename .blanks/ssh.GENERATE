@@ -22,7 +22,6 @@ mv -v $HOME/.ssh/.pk/*.pub $HOME/.ssh/authorized_keys|tee -a $LOG
 cp -v $HOME/.config/io/.stubs/ssh $HOME/.ssh/config|tee -a $LOG
 chmod 700 $HOME/.ssh/.pk
 chmod 600 $HOME/.ssh/.pk/*
-cat $HOME/.ssh/$(date +%Y-%m-%d_$U_NAME).pub >> $HOME/.ssh/authorized_keys
 
 # Cleanup Logstore
 [[ -f $HOME/.config/io/iorc ]] \
