@@ -1,6 +1,0 @@
-#!/bin/bash
-
-rsync -aAXP \
-  ~/.config/nvim/ \
-  ~/.io/config/nvim/
-
