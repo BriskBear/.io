@@ -89,10 +89,10 @@
 
 " =================== Plugins Load =====================================
 
-  set runtimepath+=~/.vim/kien/ctrlp.vim
-  set runtimepath+=~/.vim/tpope/vim-endwise
-  set runtimepath+=~/.vim/ervandew/vim-supertab
-  set runtimepath+=~/.vim/junegunn/vim-easy-align
+  set runtimepath+=~/.config/nvim/plugs/kien/ctrlp.vim
+  set runtimepath+=~/.config/nvim/plugs/tpope/vim-endwise
+  set runtimepath+=~/.config/nvim/plugs/ervandew/vim-supertab
+  set runtimepath+=~/.config/nvim/plugs/junegunn/vim-easy-align
 
 " =================== Colors ==========================================
 

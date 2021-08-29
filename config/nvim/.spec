@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/.io/config/envar
+SCRIPT=`realpath $0`
 SOURCE=`dirname $SCRIPT`
 DEST="$HOME/.config/"
 url='https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage'
@@ -21,20 +21,19 @@ get_plugs() {
   )
   [[ -d ~/.vim/ ]]&& \
   ( echo "~/.vim/ exists!" && exit ) \
-  || ( mkdir -vp ~/.vim/ )
+  || ( mkdir -vp ~/.config/nvim/plugs )
   for p in ${plugs[@]}
   do
-    git clone "https://github.com/$p" "$HOME/.vim/$p"
-  # ( git clone https://github.com/Vundlevim/Vundle.vim ~/.vim/bundle/Vundle.vim &>> /tmp/.10 & )
+    git clone "https://github.com/$p" "$HOME/.config/nvim/plugs/$p"
   done
 }
 
 install_neovim() {
   [[ -d ~/Downloads ]]&& ( cd ~/Downloads )
-  ( wget $url && \
+  ( curl -L $url -o nvim.appimage && \
     ( chmod u+x nvim.appimage ) && \
     ( ./nvim.appimage --appimage-extract ) && \
-    ( rsync -aAXP ./squashfs-root/usr/ /usr/) \
+    ( cp -rf ./squashfs-root/usr/* /usr/) 
   ) && ( echo 'neovim Installed!' )
 }
 
