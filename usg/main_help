@@ -1,8 +1,0 @@
-Usage: io [null|-h|?] [-c]
-
-Options:
-  -c, --config        Run io.CONFIG reload ~/.bashrc, which enables io changes/updates
-  -h, ?, (no input)   This help text
-
-These are common io commands used in various situations:
-  setup <arg(s)>      Install one or more space-separated programs  
