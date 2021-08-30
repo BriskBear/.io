@@ -5,6 +5,7 @@ logs
 logs/**
 maint/io.CONFIG.save
 config/.hist
+config/nvim/plugs/**
 fonts/.hist
 gifbg
 op.gif
