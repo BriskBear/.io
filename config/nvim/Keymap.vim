@@ -77,7 +77,7 @@
   nnoremap <c-x> :q<CR>
   nnoremap <Leader>r :source $MYVIMRC<CR>
   nnoremap <Leader>R :set nu relativenumber!<CR>
-  nnoremap <Leader> :q!<CR>
+  nnoremap <Leader>q :q!<CR>
   nnoremap <Leader>% :! ./%<CR>
   nnoremap <Leader>t :tabnew 
   nnoremap <A-t> :tabfind 
