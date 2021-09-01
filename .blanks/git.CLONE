@@ -4,5 +4,5 @@ REPO="$1"
 CP_PATH="$2"
 
 # Clone from github via https, but just type the repo and clonelocation
-git clone https://github.com/$REPO $CP_PATH
+git clone https://github.com/$REPO --depth 1 $CP_PATH
 
