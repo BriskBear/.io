@@ -3,6 +3,7 @@
 REPO="$1"
 CP_PATH="$2"
 
-# Clone from github via https, but just type the repo and clonelocation
-git clone https://github.com/$REPO --depth 1 $CP_PATH
-
+# Clone from github via https, but just type the repo and clone location
+[ $# -gt 2 ] \
+  && ( git clone https://github.com/$REPO ${@:2} ) \
+  || ( git clone https://github.com/$REPO $CP_PATH --depth 1 )
