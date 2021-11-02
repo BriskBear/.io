@@ -1,0 +1,34 @@
+!! Transparency (0-1):
+st.alpha: 0.87
+st.alphaOffset: 0.15
+
+!! Set a default font and font size as below:
+xterm*font:xft:VictorMono Nerd Font:pixelsize=15:style=Bold Oblique
+*.font:VictorMono Nerd Font:pixelsize=15:style=Bold Oblique
+! st.termname: st-256color
+st.borderpx: 1
+
+
+!! Set the background, foreground and cursor colors as below:
+
+!! custom:
+*.color0: #141516
+*.color1: #58141a 
+*.color2: #0e462a 
+*.color3: #af6508 
+*.color4: #090c58 
+*.color5: #341451 
+*.color6: #2f89B2 
+*.color7: #c390a3 
+*.color8: #8e7d80 
+*.color9: #a00919 
+*.color10: #17aD5c
+*.color11: #fed61c
+*.color12: #2133bc
+*.color13: #672a88
+*.color14: #09d7de
+*.color15: #3ece9c
+*.background: #210708
+*.foreground: #3ece9c
+*.cursorColor: #a61021
+
