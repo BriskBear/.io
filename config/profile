@@ -20,8 +20,11 @@ then
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ]
+if [ -d "$HOME/.bin" ]
 then
     PATH="$HOME/.local/bin:$PATH"
-    PATH="$HOME/bin:$PATH"
+    PATH="$HOME/.bin:$PATH"
 fi
+
+# Created by `pipx` on 2021-09-09 05:44:59
+export PATH="$PATH:/home/cloudjoy/.local/bin"

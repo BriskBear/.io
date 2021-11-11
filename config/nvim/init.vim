@@ -11,14 +11,14 @@
   set showmode               " default, display mode at bottom line
   set smartcase              " Unless includes capital
   set cursorline             " Locate the cursor vertically
-  set path+=~/.io/.blanks    " Edit Blanks Easily
-  set path+=~/.config/*      " Edit Configurations Easily
+  set path+=$HOME/.io/.blanks    " Edit Blanks Easily
+  set path+=$HOME/.config        " Edit Configurations Easily
   set path+=**               " search recursive for files
 
   set omnifunc=htmlcomplete#CompleteTags
   autocmd FileType ruby setl omnifunc=syntaxcomplete#Complete
 
-  let $BASH_ENV = "~/.io/config/.aliases"
+  let $BASH_ENV = "$HOME/.io/config/.aliases"
 
   " Update Leader Key to Space
   let mapleader=" "
@@ -42,9 +42,9 @@
 
 " =================== Persistent Undo ==================================
 
-  if has('persistent_undo') && !isdirectory(expand('~').'/.vim/backups')
-    silent !mkdir ~/.vim/backups > /dev/null 2>$1
-    set undodir=~/.vim/backups
+  if has('persistent_undo') && !isdirectory(expand('$HOME').'/.vim/backups')
+    silent !mkdir $HOME/.vim/backups > /dev/null 2>$1
+    set undodir=$HOME/.vim/backups
     set undofile
   endif
 
@@ -56,7 +56,7 @@
 
 " =================== Keys =============================================
 
-  source ~/.config/nvim/Keymap.vim 
+  source $HOME/.config/nvim/Keymap.vim 
 
 " =================== Indentation ======================================
 
@@ -89,14 +89,14 @@
 
 " =================== Plugins Load =====================================
 
-  set runtimepath+=~/.config/nvim/plugs/kien/ctrlp.vim
-  set runtimepath+=~/.config/nvim/plugs/tpope/vim-endwise
-  set runtimepath+=~/.config/nvim/plugs/ervandew/vim-supertab
-  set runtimepath+=~/.config/nvim/plugs/junegunn/vim-easy-align
+  set runtimepath+=$HOME/.config/nvim/plugs/kien/ctrlp.vim
+  set runtimepath+=$HOME/.config/nvim/plugs/tpope/vim-endwise
+  set runtimepath+=$HOME/.config/nvim/plugs/ervandew/vim-supertab
+  set runtimepath+=$HOME/.config/nvim/plugs/junegunn/vim-easy-align
 
 " =================== Colors ==========================================
 
-  source ~/.config/nvim/Color.vim
+  source $HOME/.config/nvim/Color.vim
 
 " =================== Status Line =====================================
 
