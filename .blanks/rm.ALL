@@ -1,0 +1,9 @@
+#!/bin/bash
+
+list=($(
+  printf '%s\n' $(whereis $1)|
+    grep -v ':\|/tmp/blks'
+))
+
+rm -rvf ${list[@]} || \
+  sudo rm -rvf ${list[@]}
