@@ -35,17 +35,6 @@ back_to_basics() {
 
 [[ $# -eq 0 ]]&& io_help
 
-#case "$opt" in
-#  c)
-#    $HOME/.io/maint/io.CONFIG
-#    PS1='Configure'
-#    source $HOME/.bashrc
-#    ;;
-#  *)
-#    io_help
-#    ;;
-#esac
-
 while [[ "$#" -gt 0 ]]
 do
   case $1 in
