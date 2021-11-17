@@ -6,5 +6,23 @@ REPO="$1"
 
 # Clone from github via https, but just type the repo and clonelocation
 [[ $(git --version) ]] \
-  && ( git clone https://github.com/$REPO $CP_PATH ) \
-  || ( printf $MSG )
+  && ( printf "${CYAN}$(git --version|awk '{print $NF}')${NC}\n" ) \
+  || ( printf $MSG && exit )
+
+case $1 in 
+  -a|--aur)
+    git clone https://aur.archlinux.org/$2 /tmp/aur/$2 ${@:3}
+    ;;
+  -l|--lab)
+    git clone gitlab:$2 ${@:3}
+    ;;
+  -h|--hub)
+    git clone github:$2 /tmp/hub/$2 ${@:3}
+    ;;
+  *)
+    printf "${RUST}Usage:\n  git.CLONE < -a|-l|-h > <subcatagory/repo>\n"
+    printf "  -a : clone from Archlinux User Repositories\n"
+    printf "  -l : clone from gitlab specified ssh-config\n"
+    printf "  -h : clone form github specified ssh-config${NC}\n"
+    ;;
+esac

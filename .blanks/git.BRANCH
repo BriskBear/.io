@@ -1,4 +1,5 @@
 #!/bin/bash
 
-git checkout -b $1
+[[ $# -eq 1 ]]&&( git checkout -b $1 ) \
+  || ( printf "${RED}ERR: Supply ONE <branch_name>${NC}\n" )
 # Creates and checksout a new branch by the name of $1
