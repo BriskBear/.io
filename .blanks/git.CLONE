@@ -17,7 +17,7 @@ case $1 in
     git clone gitlab:$2 ${@:3}
     ;;
   -h|--hub)
-    git clone github:$2 /tmp/hub/$2 ${@:3}
+    git clone github:$2 ${@:3}
     ;;
   *)
     printf "${RUST}Usage:\n  git.CLONE < -a|-l|-h > <subcatagory/repo>\n"

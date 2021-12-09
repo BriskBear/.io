@@ -32,7 +32,7 @@ alias gbo='git branch --set-upstream-to=origin/master master'                   
 alias gcam='git.COMMIT'                                                                                                            #  commit all supply message on CLI
 alias gcan='git commit -m'                                                                                                         #  Git commit all NANO the commit msg
 alias gc='git clone'                                                                                                               #  Clone a new repo!
-alias gch='git.CLONE'                                                                                                              #  Clone from GitHub, only need <usrname>/<repo> [destination_dir]
+alias gch='git.CLONE -h'                                                                                                           #  Clone from GitHub, only need <usrname>/<repo> [destination_dir]
 alias gck='git checkout'                                                                                                           #  Switch banches
 alias gcu='git reset HEAD~'                                                                                                        #  Git Commit Undo
 alias gen.RM='gen.README'                                                                                                          #  Generate Markdown readme for a script
@@ -150,3 +150,4 @@ alias neofile='cat /tmp/neofile' #
 alias nfl='$EDITOR ~/.bin/fns' # EDIT local user functions
 alias yd='yarn develop' # Less typing
 alias ys='yarn start' # Start the local node app
+alias docker='sudo docker' # 
