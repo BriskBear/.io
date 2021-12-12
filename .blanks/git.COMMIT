@@ -10,5 +10,5 @@ declare \
 git add --all
 git commit -m "$message"
 git pull
-git status
+git status -s
 git push

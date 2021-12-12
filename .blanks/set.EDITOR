@@ -1,0 +1,21 @@
+#!/bin/bash
+
+[[ $(which --version) ]]|| ( printf "${hiRed}dependency 'which' missing!${NC}\n"; return 1 )
+
+order=(
+  'nano'
+  'nvim'
+  'vim'
+  'vi'
+)
+
+set_edit() {
+  printf '%s\n' ${order[@]}|
+   xargs -I % which % 1>> /tmp/editors 2> /dev/null
+  export EDITOR=`head -n 1 /tmp/editors`
+  rm /tmp/editors
+}
+
+[[ -z $EDITOR ]] \
+  && set_edit \
+  || echo "$EDITOR is already the editor!"

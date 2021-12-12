@@ -23,7 +23,7 @@ fi
 printf "$SHEBANG\n\n" >> $EXEC
 
 # Use a simple editor if no environment variable 
-[[ $EDITOR ]]|| EDITOR=nano
+[[ $EDITOR ]]|| EDITOR=/tmp/blks/set.EDITOR
 
 # Make the file Executable
 chmod u+x $EXEC
