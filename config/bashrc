@@ -208,7 +208,7 @@ source $HOME/.io/.blanks/color
 
 figlet -f smslant -w 130 '@'"$HOSTNAME"| lolcat -a -d 1
 
-cat /tmp/neofile
+tail -n +1 /tmp/neofile
 
 # Add .io/config/envar`s
 if [ -f $HOME/.config/io/iorc ]
