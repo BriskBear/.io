@@ -1,8 +1,5 @@
 #!/bin/bash
 
-cgrab() {
-  export col=`grabc`
-  dunstify `echo $col|xclip -i`,default 'Color Grab' "$col"
-}
-
-cgrab
+eval "$(/tmp/blks/set.VARS CGRAB `grabc`)"
+echo $CGRAB|xclip -i -selection clipboard
+dunstify 'Color Grab' "$CGRAB"
