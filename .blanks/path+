@@ -1,5 +1,6 @@
 #!/bin/bash
 
+[[ -f ~/.local/bin/fns ]]&& source ~/.local/bin/fns
 source $HOME/.config/io/custom_path
 PATH+=":/var/lib/flatpak/exports/share"
 PATH+=":$HOME/.local/share/flatpak/exports/share"
