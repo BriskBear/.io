@@ -3,7 +3,7 @@
 # Add Color to Output
 . $HOME/.io/.blanks/color
 
-LOG='/dev/null'
+LOG='/tmp/io/log/set.BLANKS'
 PSV=$(echo $(ls ~/.io/config/PSV/|sort -r)| cut -f1 -d ' ')
 
 # Remove existing RAMDisk
