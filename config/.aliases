@@ -1,3 +1,4 @@
+shopt -s expand_aliases
 
 alias aar='sudo add-apt-repository'                                                                                                #  add package manager repo, requires ppa
 alias aliases='~/.io/alias'                                                                                                        #  All aliases + Descriptions in less / just aliases matching argument
@@ -25,7 +26,6 @@ alias EALL="$EDITOR $HOME/.config/io/local_aliases"                             
 alias ECP='$EDITOR ~/.config/io/custom_path'                                                                                       #  Edit io custom path
 alias eek='gpg --expert --edit-key'                                                                                                #  Edit gpg key with all options
 alias E='export'                                                                                                                   #  Set an environment variable or function
-alias gaa='git add \. \; git status'                                                                                               #  Thats pretty verbose
 alias gan='git update-index --no-assume-unchanged'                                                                                 #  git undo assume unchanged
 alias gau='git update-index --assume-unchanged'                                                                                    #  git assume unchanged
 alias gb='git branch'                                                                                                              #  Git Branch
@@ -107,7 +107,6 @@ alias RED='RAILS_ENV=development'                                               
 alias REP='RAILS_ENV=production'                                                                                                   #  CAUTION: assigns affecting production DBth
 alias RET='RAILS_ENV=test'                                                                                                         #  Rails testing
 alias rm='rm -v'                                                                                                                   #  Be verbose
-alias rp='realpath'                                                                                                                #  full path to pointed
 alias R.='. R.'                                                                                                                    #  reset terminal
 alias rspec='bundle exec rspec'                                                                                                    #  always bundle exec your rspec
 alias rsy='rsync -aAXP'                                                                                                            #  Rsync preserve all <source> <destination>
@@ -157,3 +156,6 @@ alias x='$HOME/.io/.sec/.x'                                                     
 alias x='$HOME/.io/.sec/.x'                                                                                                        #  Secret secrets
 alias +x='chmod -v +x'                                                                                                             #  Whoops
 alias xdt='vi.EXEC'                                                                                                                #  Create executable with your editor
+alias ns='dunstify' # 
+alias gatsk='echo alias\ gatsk\ called' # 
+alias gatss='echo gatss\ alias\ called' # 
