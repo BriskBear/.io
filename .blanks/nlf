@@ -1,0 +1,8 @@
+#!/bin/bash
+
+nlf() {
+  [[ -d ~/.bin ]]|| mkdir -vp ~/.local/bin
+  . set.EDITOR && $EDITOR ~/.local/bin/fns
+}
+
+nlf
