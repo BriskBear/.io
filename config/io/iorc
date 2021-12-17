@@ -1,4 +1,2 @@
-export WiNet='0'
-export LOG='/tmp/.10'
-export SCRIPT=$(realpath $0)
+export WiNet=''
 export LOCAL_IP=$(ip a|grep 'inet '|grep -v 127|awk '{print $2}'|cut -f1 -d /)
