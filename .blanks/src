@@ -1,5 +1,0 @@
-#!/bin/bash
-
-LOG='/tmp/.10'
-SCRIPT=`realpath $0`
-SCRIPT_PATH=`dirname $0`

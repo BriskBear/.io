@@ -1,7 +1,0 @@
-#!/bin/bash
-
-println() {
-  printf '%s\n' "$@"
-}
-
-println "$@"
