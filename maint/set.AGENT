@@ -1,4 +1,4 @@
 #!/bin/bash
 
 [[ -d $HOME/.config/io ]]|| ( cp -vr $HOME/.io/config/io $HOME/.config/ >> /dev/null )
-[[ ! -f $HOME/.ssh/config ]] && (cp -v ~/.config/io/.stubs/ssh ~/.ssh/config)
+[[ ! -f $HOME/.ssh/config ]]&& (cp -v ~/.config/io/.stubs/ssh ~/.ssh/config)
