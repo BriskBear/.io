@@ -1,14 +1,16 @@
 #!/bin/bash
 
-FILE=$1
+leaf?() {
+  FILE="$1"
+  
+  if [ -f $FILE ]
+  then
+    printf "Confirmed: ${Gre}$FILE${NC}\n"
+  elif [ ! -f $FILE ]
+  then 
+    printf "No such file: ${hiRed}$FILE${NC}\n"
+    return 1
+  fi
+}
 
-if [ -f $FILE ]
-then
-  echo "Confirmed: $FILE"
-elif [ ! -f $FILE ]
-then 
-  echo "No such file: $FILE"
-  exit
-fi
-
-#echo continued...
+leaf? "$1"
