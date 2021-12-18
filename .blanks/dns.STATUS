@@ -1,3 +1,7 @@
 #!/bin/bash
 
-systemd-resolve --status
+dns_status() {
+  systemd-resolve --status
+}
+
+dns_status
