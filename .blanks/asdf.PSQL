@@ -1,0 +1,24 @@
+#!/bin/bash
+
+asdf_postgres() {
+  deps=(
+    openssl
+    libreadline
+    zlib
+    curl
+    uuid
+  )
+  
+  Setup ${deps[@]}  #  github:briskbear/.io core library
+  aurl uuid         #  github:briskbear/.io core library
+  
+  [[ $(asdf --help) ]] || ( printf "${hiRed}asdf not installed!${NC}\n" && return 1 )
+  
+  asdf plugin-add postgres
+  
+  [[ $1 =~ -l ]] || ( asdf install postgres latest && return 0 )
+  
+  asdf list-all postgres
+}
+
+asdf_postgres

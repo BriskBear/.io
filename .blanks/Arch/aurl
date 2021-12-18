@@ -1,0 +1,26 @@
+#!/bin/bash
+
+aur_curl() {
+  warn=(
+    "Usage: $0 <aur_package_name>\n"
+  )
+  
+  aurl() {
+    curl -L "https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz" -o "/tmp/$1.tar.gz" 
+    pushd ~/code/src
+    tar -xvf "/tmp/$1.tar.gz"
+    popd
+    pushd ~/code/src/$1
+    makepkg
+    pushd pkg/$1
+    sudo cp -rvf usr/ /
+    popd
+    popd
+  }
+  
+  [[ $# -gt 0 ]] \
+    && aurl "$1" \
+    || printf '%s\n' ${warn[@]}
+}
+
+aur_curl "$@"
