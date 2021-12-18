@@ -1,7 +1,11 @@
 #!/bin/bash
 
-private_key=$1
-ssh-keygen \
-    -y \
-    -f \
-    ~/.ssh/.pk/$private_key > ~/.ssh/$private_key.pub
+calculate_public() {
+  private_key="$1"
+  ssh-keygen \
+      -y \
+      -f \
+      ~/.ssh/.pk/$private_key > ~/.ssh/$private_key.pub
+}
+
+calculate_public "$@"
