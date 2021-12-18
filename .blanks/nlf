@@ -1,8 +1,8 @@
 #!/bin/bash
 
-nlf() {
+new_local_function() {
   [[ -d ~/.bin ]]|| mkdir -vp ~/.local/bin
   . set.EDITOR && $EDITOR ~/.local/bin/fns
 }
 
-nlf
+new_local_function
