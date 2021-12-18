@@ -1,8 +1,0 @@
-#!/bin/bash
-
-echo "$HOME/.io/config/.Locations" |
- rev |
-  cut \
-   -f1 \
-   -d / |
-   rev

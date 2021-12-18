@@ -1,17 +1,20 @@
 #!/bin/bash
 
-ERR=$1
+err_code() {
+  ERR="$1"
+  
+  printf $USER
+  if [ $ERR -gt "0" ]
+  then
+      printf "$(tput setaf 1)"
+      printf "$ERR"
+  else
+      printf "$(tput setaf 2)"
+      printf "]|["
+  fi
+  
+  printf "$(tput sgr0)"
+  unset ERR
+}
 
-printf $USER
-#echo $ERR
-if [ $ERR -gt "0" ]
-then
-    printf "$(tput setaf 1)"
-    printf "$ERR"
-else
-    printf "$(tput setaf 2)"
-    printf "]|["
-fi
-
-printf "$(tput sgr0)"
-unset ERR
+err_code "$@"
