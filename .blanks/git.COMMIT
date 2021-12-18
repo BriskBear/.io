@@ -1,14 +1,18 @@
 #!/bin/bash
 
-declare \
- authorization='N'
-declare \
- rm_file='$null'
-declare \
- message="$@"
+gcpsh() {
+  declare \
+   authorization='N'
+  declare \
+   rm_file='$null'
+  declare \
+   message="$@"
+  
+  git add .
+  git commit -m "$message"
+  git pull
+  git status -s
+  git push
+}
 
-git add --all
-git commit -m "$message"
-git pull
-git status -s
-git push
+gcpsh "$@"
