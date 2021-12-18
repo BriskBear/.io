@@ -1,9 +1,13 @@
 #!/bin/bash
 
-printf "#!/bin/bash\n\n" >> /tmp/queue
-for e in "$@"
-do
-    echo "queue+=(\"$e\")" >> /tmp/queue
-done
+queue_add() {
+  printf "#!/bin/bash\n\n" >> /tmp/queue
+  for e in "$@"
+  do
+      echo "queue+=(\"$e\")" >> /tmp/queue
+  done
+  
+  chmod +x /tmp/queue
+}
 
-chmod +x /tmp/queue
+queue_add "$@"
