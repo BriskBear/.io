@@ -1,5 +1,9 @@
 #!/bin/bash
 
-eval "$(/tmp/blks/set.VARS CGRAB `grabc`)"
-echo $CGRAB|xclip -i -selection clipboard
-dunstify 'Color Grab' "$CGRAB"
+color_grab() {
+  eval "$(/tmp/blks/set.VARS CGRAB `grabc`)"
+  echo $CGRAB|xclip -i -selection clipboard
+  dunstify 'Color Grab' "$CGRAB"
+}
+
+color_grab
