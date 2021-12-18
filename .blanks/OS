@@ -1,3 +1,9 @@
 #!/bin/bash
 
-cat /etc/*-release | grep PRETTY | cut -f2 -d =
+get_os() {
+  cat /etc/*-release| \
+   grep PRETTY| \
+    awk -F '=' '{print $2}'
+}
+
+get_os
