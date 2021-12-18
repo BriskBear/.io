@@ -1,10 +1,14 @@
 #!/bin/bash
 
-# Define constants
-key_dir="$HOME/.io/blanks/keys"
+query_list() {
+  # Define constants
+  key_dir="$HOME/.io/blanks/keys"
+  
+  # Build the queue
+  add.QUEUE "$@"
+  
+  # Switch chooses the correct installer to read the queue
+  $(switch $key_dir/Query)
+}
 
-# Build the queue
-add.QUEUE "$@"
-
-# Switch chooses the correct installer to read the queue
-$(switch $key_dir/Query)
+query_list "$@"

@@ -1,12 +1,14 @@
 #!/bin/bash
 
-# sudo pacman -Rcn --noconfirm $1 #| lolcat
-# Define constants
-LOG="$HOME/.io/logs/Purge"
-key_dir="$HOME/.io/blanks/keys"
+purge_list() {
+  LOG="$HOME/.io/logs/Purge"
+  key_dir="$HOME/.io/blanks/keys"
+  
+  # Build the queue
+  add.QUEUE "$@"
+  
+  # Switch chooses the correct installer to read the queue
+  $(switch $key_dir/Purge)
+}
 
-# Build the queue
-add.QUEUE "$@"
-
-# Switch chooses the correct installer to read the queue
-$(switch $key_dir/Purge)
+purge_list "$@"

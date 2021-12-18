@@ -1,35 +1,39 @@
 #!/bin/bash
 
-unset fig
-[[ $(figlet -v 2> /dev/null) ]] \
-  && fig=1
+pts_id() {
+  unset fig
+  [[ $(figlet -v 2> /dev/null) ]] \
+    && fig=1
+  
+  unset lol
+  [[ $(lolcat -v 2> /dev/null) ]] \
+    && lol=2
+  
+  unset pts
+  pts=$(
+    ps| \
+    grep 'ps'| \
+    awk '{print $2}'
+  )
+  
+  state=$(( $fig + $lol ))
+  clear -x
+  case $state in
+    1)
+      echo $pts|figlet -f slant
+      ;;
+    2)
+      echo $pts|lolcat -a -d 9
+      ;;
+    3)
+      echo $pts|figlet -f slant|lolcat -a -d 1
+      ;;
+    *)
+      echo Counter\ Error!
+      echo 'pts anyway: '$pts
+      ;;
+  esac
+  sleep 99999999
+}
 
-unset lol
-[[ $(lolcat -v 2> /dev/null) ]] \
-  && lol=2
-
-unset pts
-pts=$(
-  ps| \
-  grep 'ps'| \
-  awk '{print $2}'
-)
-
-state=$(( $fig + $lol ))
-clear -x
-case $state in
-  1)
-    echo $pts|figlet -f slant
-    ;;
-  2)
-    echo $pts|lolcat -a -d 9
-    ;;
-  3)
-    echo $pts|figlet -f slant|lolcat -a -d 1
-    ;;
-  *)
-    echo Counter\ Error!
-    echo 'pts anyway: '$pts
-    ;;
-esac
-sleep 99999999
+pts_id
