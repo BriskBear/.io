@@ -1,7 +1,11 @@
 #!/bin/bash
 
-NEWFONT=$1
-test -d /usr/share/fonts/truetype && echo "fonts!" || echo "No Fonts!" && sudo mkdir /usr/share/fonts/truetype
-sudo cp $NEWFONT /usr/share/fonts/truetype/
-sleep 1
-sudo fc-cache -f -v
+font_add() {
+  NEWFONT="$1"
+  test -d /usr/share/fonts/truetype && echo "fonts!" || echo "No Fonts!" && sudo mkdir /usr/share/fonts/truetype
+  sudo cp $NEWFONT /usr/share/fonts/truetype/
+  sleep 0.1
+  sudo fc-cache -f -v
+}
+
+font_add "$1"
