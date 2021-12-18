@@ -1,13 +1,17 @@
 #!/bin/bash
 
-user=$(git config -l|grep name|rev|cut -f1 -d '='|rev)
-repo=$(pwd|rev|cut -f1 -d '/'|rev)
+git_init() {
+  user=$(git config -l|grep name|rev|cut -f1 -d '='|rev)
+  repo=$(pwd|rev|cut -f1 -d '/'|rev)
+  
+  [[ -f README.md ]]|| echo "# $repo" >> README.md
+  
+  git init
+  git add .
+  git commit -m 'Initialize Repository'
+  git branch -M master
+  git remote add origin "https://github.com/$user/$repo.git"
+  git push -u origin master
+}
 
-[[ -f README.md ]]|| echo "# $repo" >> README.md
-
-git init
-git add --all
-git commit -m 'Initialize Repository'
-git branch -M master
-git remote add origin "https://github.com/$user/$repo.git"
-git push -u origin master
+git_init
