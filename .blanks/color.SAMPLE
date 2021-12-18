@@ -1,100 +1,104 @@
 #!/bin/bash
 
-ARRAY=( \
-  "${BLACK} BLACK ${NC}"
-  "${BLUE} BLUE ${NC}"
-  "${CYAN} CYAN ${NC}"
-  "${DARK_GREY} DARK_GREY ${NC}"
-  "${GREEN} GREEN ${NC}"
-  "${LIGHT_BLUE} LIGHT_BLUE ${NC}"
-  "${LIGHT_CYAN} LIGHT_CYAN ${NC}"
-  "${LIGHT_GRAY} LIGHT_GRAY ${NC}"
-  "${LIGHT_GREEN} LIGHT_GREEN ${NC}"
-  "${LIGHT_PURPLE} LIGHT_PURPLE ${NC}"
-  "${PINK} PINK ${NC}"
-  "${PURPLE} PURPLE ${NC}"
-  "${RED} RED ${NC}"
-  "${RUST} RUST ${NC}"
-  "${YELLOW} YELLOW ${NC}"
-  "${WHITE} WHITE ${NC}"
-)
+all_colors() {
+  ARRAY=( \
+    "${BLACK} BLACK ${NC}"
+    "${BLUE} BLUE ${NC}"
+    "${CYAN} CYAN ${NC}"
+    "${DARK_GREY} DARK_GREY ${NC}"
+    "${GREEN} GREEN ${NC}"
+    "${LIGHT_BLUE} LIGHT_BLUE ${NC}"
+    "${LIGHT_CYAN} LIGHT_CYAN ${NC}"
+    "${LIGHT_GRAY} LIGHT_GRAY ${NC}"
+    "${LIGHT_GREEN} LIGHT_GREEN ${NC}"
+    "${LIGHT_PURPLE} LIGHT_PURPLE ${NC}"
+    "${PINK} PINK ${NC}"
+    "${PURPLE} PURPLE ${NC}"
+    "${RED} RED ${NC}"
+    "${RUST} RUST ${NC}"
+    "${YELLOW} YELLOW ${NC}"
+    "${WHITE} WHITE ${NC}"
+  )
+  
+  i=0
+  for c in ${ARRAY[@]}
+  do
+    printf $c\|
+    i=$(( $i + 1 ))
+    [[ $(( $i % 10 )) -eq 0 ]]&& printf "\n"
+  done
+  
+  COLORS=(
+    "    ${Bla}Bla${NC}    "
+    "    ${Red}Red${NC}    "
+    "    ${Gre}Gre${NC}    "
+    "    ${Yel}Yel${NC}    "
+    "    ${Blu}Blu${NC}    "
+    "    ${Pur}Pur${NC}    "
+    "    ${Cya}Cya${NC}    "
+    "    ${Whi}Whi${NC}    "
+    "   ${dGra}dGra${NC}   "
+    "   ${bBla}bBla${NC}   "
+    "   ${bRed}bRed${NC}   "
+    "   ${bGre}bGre${NC}   "
+    "   ${bYel}bYel${NC}   "
+    "   ${bBlu}bBlu${NC}   "
+    "   ${bPur}bPur${NC}   "
+    "   ${bCya}bCya${NC}   "
+    "   ${bWhi}bWhi${NC}   "
+    "   ${uBla}uBla${NC}   "
+    "   ${uRed}uRed${NC}   "
+    "   ${uGre}uGre${NC}   "
+    "   ${uYel}uYel${NC}   "
+    "   ${uBlu}uBlu${NC}   "
+    "   ${uPur}uPur${NC}   "
+    "   ${uCya}uCya${NC}   "
+    "   ${uWhi}uWhi${NC}   "
+    "   ${uNoC}uNoC${NC}   "
+    "  ${bgBla}bgBla${NC}  "
+    "  ${bgRed}bgRed${NC}  "
+    "  ${bgGre}bgGre${NC}  "
+    "  ${bgYel}bgYel${NC}  "
+    "  ${bgBlu}bgBlu${NC}  "
+    "  ${bgPur}bgPur${NC}  "
+    "  ${bgCya}bgCya${NC}  "
+    "  ${bgWhi}bgWhi${NC}  "
+    "  ${hiBla}hiBla${NC}  "
+    "  ${hiRed}hiRed${NC}  "
+    "  ${hiGre}hiGre${NC}  "
+    "  ${hiYel}hiYel${NC}  "
+    "  ${hiBlu}hiBlu${NC}  "
+    "  ${hiPur}hiPur${NC}  "
+    "  ${hiCya}hiCya${NC}  "
+    "  ${hiWhi}hiWhi${NC}  "
+    " ${bhiBla}bhiBla${NC} "
+    " ${bhiRed}bhiRed${NC} "
+    " ${bhiGre}bhiGre${NC} "
+    " ${bhiYel}bhiYel${NC} "
+    " ${bhiBlu}bhiBlu${NC} "
+    " ${bhiPur}bhiPur${NC} "
+    " ${bhiCya}bhiCya${NC} "
+    " ${bhiWhi}bhiWhi${NC} "
+    "${hibgBla}hibgBla${NC}"
+    "${hibgRed}hibgRed${NC}"
+    "${hibgGre}hibgGre${NC}"
+    "${hibgYel}hibgYel${NC}"
+    "${hibgBlu}hibgBlu${NC}"
+    "${hibgPur}hibgPur${NC}"
+    "${hibgCya}hibgCya${NC}"
+    "${hibgWhi}hibgWhi${NC}"
+    "${xBG}xBG${NC}"
+  )
+  
+  i=0
+  for hue in ${COLORS[@]}
+  do
+    printf $hue\|
+    i=$(( $i + 1 ))
+    [[ $(( $i % 10 )) -eq 0 ]]&& printf "\n"
+  done
+  
+  printf "\n"
+}
 
-i=0
-for c in ${ARRAY[@]}
-do
-  printf $c\|
-  i=$(( $i + 1 ))
-  [[ $(( $i % 10 )) -eq 0 ]]&& printf "\n"
-done
-
-COLORS=(
-  "    ${Bla}Bla${NC}    "
-  "    ${Red}Red${NC}    "
-  "    ${Gre}Gre${NC}    "
-  "    ${Yel}Yel${NC}    "
-  "    ${Blu}Blu${NC}    "
-  "    ${Pur}Pur${NC}    "
-  "    ${Cya}Cya${NC}    "
-  "    ${Whi}Whi${NC}    "
-  "   ${dGra}dGra${NC}   "
-  "   ${bBla}bBla${NC}   "
-  "   ${bRed}bRed${NC}   "
-  "   ${bGre}bGre${NC}   "
-  "   ${bYel}bYel${NC}   "
-  "   ${bBlu}bBlu${NC}   "
-  "   ${bPur}bPur${NC}   "
-  "   ${bCya}bCya${NC}   "
-  "   ${bWhi}bWhi${NC}   "
-  "   ${uBla}uBla${NC}   "
-  "   ${uRed}uRed${NC}   "
-  "   ${uGre}uGre${NC}   "
-  "   ${uYel}uYel${NC}   "
-  "   ${uBlu}uBlu${NC}   "
-  "   ${uPur}uPur${NC}   "
-  "   ${uCya}uCya${NC}   "
-  "   ${uWhi}uWhi${NC}   "
-  "   ${uNoC}uNoC${NC}   "
-  "  ${bgBla}bgBla${NC}  "
-  "  ${bgRed}bgRed${NC}  "
-  "  ${bgGre}bgGre${NC}  "
-  "  ${bgYel}bgYel${NC}  "
-  "  ${bgBlu}bgBlu${NC}  "
-  "  ${bgPur}bgPur${NC}  "
-  "  ${bgCya}bgCya${NC}  "
-  "  ${bgWhi}bgWhi${NC}  "
-  "  ${hiBla}hiBla${NC}  "
-  "  ${hiRed}hiRed${NC}  "
-  "  ${hiGre}hiGre${NC}  "
-  "  ${hiYel}hiYel${NC}  "
-  "  ${hiBlu}hiBlu${NC}  "
-  "  ${hiPur}hiPur${NC}  "
-  "  ${hiCya}hiCya${NC}  "
-  "  ${hiWhi}hiWhi${NC}  "
-  " ${bhiBla}bhiBla${NC} "
-  " ${bhiRed}bhiRed${NC} "
-  " ${bhiGre}bhiGre${NC} "
-  " ${bhiYel}bhiYel${NC} "
-  " ${bhiBlu}bhiBlu${NC} "
-  " ${bhiPur}bhiPur${NC} "
-  " ${bhiCya}bhiCya${NC} "
-  " ${bhiWhi}bhiWhi${NC} "
-  "${hibgBla}hibgBla${NC}"
-  "${hibgRed}hibgRed${NC}"
-  "${hibgGre}hibgGre${NC}"
-  "${hibgYel}hibgYel${NC}"
-  "${hibgBlu}hibgBlu${NC}"
-  "${hibgPur}hibgPur${NC}"
-  "${hibgCya}hibgCya${NC}"
-  "${hibgWhi}hibgWhi${NC}"
-  "${xBG}xBG${NC}"
-)
-
-i=0
-for hue in ${COLORS[@]}
-do
-  printf $hue\|
-  i=$(( $i + 1 ))
-  [[ $(( $i % 10 )) -eq 0 ]]&& printf "\n"
-done
-
-printf "\n"
+all_colors
