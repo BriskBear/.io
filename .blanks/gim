@@ -1,11 +1,17 @@
 #!/bin/bash
 
-# Subject is the file being edited and uploaded.
-SBJ=$1 
+vim_add() {
+  # Subject is the file being edited and uploaded.
+  SBJ=$1 
+  
+  [[ $EDITOR ]]|| . /tmp/blks/set.EDITOR
+  $EDITOR $SBJ
+  read -p "Commit Message:\n  " msg
+  git add $SBJ
+  git commit -m "$msg"
+  git pull
+  
+  git push
+}
 
-vim $SBJ
-git add $SBJ
-git commit
-git pull
-
-git push
+vim_add "$@"
