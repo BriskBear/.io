@@ -1,5 +1,9 @@
 #!/bin/bash
 
-sudo apt update -y
-sudo apt install -y software-properties-common dirmngr apt-transport-https lsb-release ca-certificates
-printf "${LIGHT_CYAN}add-apt-repository is now available${NC}\n"
+add_apt_setup() {
+  sudo apt update -y
+  sudo apt install -y software-properties-common dirmngr apt-transport-https lsb-release ca-certificates
+  printf "${LIGHT_CYAN}add-apt-repository is now available${NC}\n"
+}
+
+add_apt_setup
