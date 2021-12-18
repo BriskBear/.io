@@ -1,15 +1,19 @@
 #!/bin/bash
 
-# Check if lolcat is installed
-if [[ $(ruby -v 2>> /tmp/.0) ]]
-then
-    [[ "$(gem list -i lolcat)" = "true" ]] && \
-        echo lolcat|lolcat -a \
-      || echo sadcat
-else
-    echo deadcat
-fi
+test_cat() {
+  # Check if lolcat is installed
+  if [[ $(ruby -v 2>> /tmp/.0) ]]
+  then
+      [[ "$(gem list -i lolcat)" = "true" ]] && \
+          echo lolcat|lolcat -a \
+        || echo sadcat
+  else
+      echo deadcat
+  fi
+  
+  # Cat laughs with rainbow if lolcat is installed!
+  # Cat is sad if ruby is in the path, but lolcat gem not installed
+  # Cat is dead if ruby is not installed in the path
+}
 
-# Cat laughs with rainbow if lolcat is installed!
-# Cat is sad if ruby is in the path, but lolcat gem not installed
-# Cat is dead if ruby is not installed in the path
+test_cat

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-dir=$(echo $1|cut -f1 -d '/')
-cfg_file=$(echo $1|cut -f2 -d '/')
-
-mkdir $HOME/.io/config/$dir -pv
-vi $HOME/.io/config/$dir/$cfg_file
