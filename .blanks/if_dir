@@ -1,12 +1,8 @@
 #!/bin/bash
 
-DIR=$1
-Exists=$2
-dne=$3
-if [ -d $DIR ]
-then
-    $Exists
-else
-    $dne
-fi
+if_dir() {
+  [[ $# -lt 3 ]]|| printf "Usage: if_dir <directory> <exists_do> <dne_do>\n" && return 1
+  [[ -d "$1" ]]&& ( eval "$2" ) || ( eval "$3" )
+}
 
+if_dir "$@"
