@@ -20,13 +20,85 @@ export WHITE='\033[1;37m'
 export YELLOW='\033[1;33m'
 export NC='\033[0m'
 
+# Expand bg
+  export xBG="\e[K"
+
+# Regular Colors
+  export Bla="\e[0;30m"
+  export Red="\e[0;31m"
+  export Gre="\e[0;32m"
+  export Yel="\e[0;33m"
+  export Blu="\e[0;34m"
+  export Pur="\e[0;35m"
+  export Cya="\e[0;36m"
+  export Whi="\e[0;37m"
+
+# Bold Colors
+  export dGra="\e[1m"
+  export bBla="\e[1;30m"
+  export bRed="\e[1;31m"
+  export bGre="\e[1;32m"
+  export bYel="\e[1;33m"
+  export bBlu="\e[1;34m"
+  export bPur="\e[1;35m"
+  export bCya="\e[1;36m"
+  export bWhi="\e[1;37m"
+
+# Underlined Colors
+  export uBla="\e[4;30m"
+  export uRed="\e[4;31m"
+  export uGre="\e[4;32m"
+  export uYel="\e[4;33m"
+  export uBlu="\e[4;34m"
+  export uPur="\e[4;35m"
+  export uCya="\e[4;36m"
+  export uWhi="\e[4;37m"
+  export uNoC="\e[4m"
+
+# Colored Backgrounds
+  export bgBla="\e[40m"
+  export bgRed="\e[41m"
+  export bgGre="\e[42m"
+  export bgYel="\e[43m"
+  export bgBlu="\e[44m"
+  export bgPur="\e[45m"
+  export bgCya="\e[46m"
+  export bgWhi="\e[47m"
+
+# High Intensity
+  export hiBla="\e[0;90m"
+  export hiRed="\e[0;91m"
+  export hiGre="\e[0;92m"
+  export hiYel="\e[0;93m"
+  export hiBlu="\e[0;94m"
+  export hiPur="\e[0;95m"
+  export hiCya="\e[0;96m"
+  export hiWhi="\e[0;97m"
+
+# Bold High Intensity
+  export bhiBla="\e[1;90m"
+  export bhiRed="\e[1;91m"
+  export bhiGre="\e[1;92m"
+  export bhiYel="\e[1;93m"
+  export bhiBlu="\e[1;94m"
+  export bhiPur="\e[1;95m"
+  export bhiCya="\e[1;96m"
+  export bhiWhi="\e[1;97m"
+
+# High Intensty backgrounds
+  export hibgBla="\e[0;100m"
+  export hibgRed="\e[0;101m"
+  export hibgGre="\e[0;102m"
+  export hibgYel="\e[0;103m"
+  export hibgBlu="\e[0;104m"
+  export hibgPur="\e[0;105m"
+  export hibgCya="\e[0;106m"
+  export hibgWhi="\e[0;107m"
+
 #alias echo='echo -e'
 #echo $GREEN"COLOR?"$NC
 
 function color_usg() {
-#    case
-#
-#    esac
     printf "${YELLOW} USAGE:\n"
     printf '    printf ${RED}'"${RED}Red Text${YELLOW}"'${NC}\n '"${NC}\n"
     printf "${YELLOW}"
