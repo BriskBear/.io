@@ -1,13 +1,15 @@
 # .io
-_Linux Dotfiles for my profile and aliases._ - I'm keeping this here because it's so cute
- and naiive how this idea got started.
-
 I'll release the Full Description when its a little closer to reality.  
+Uses a detection script to see which distro you're using so that `Setup` uses your apropriate
+package manager. Now you can bootstrap .io and use `setup`, `purge`, and `Query` to install,
+remove, and search for local packages respectively.
 
-Don't ask for a Gentu/suse/REL etc branch, there are too many branches, the point of this
- is to have crossover functions which allow dynamic OSes.  
-These will remap based on what neofetch says your distro is.  
-_That's just not set up yet. Soon-coming!_
+Currently only `[apt, pacman]` are supported (Debian/Ubuntu, Archlinux/Manjaro)
+I'd be happy to help you integrate your package manager, as there are many other useful commands also.
+
+.io is primarily POSIX compliant and BASH-based so it should run mostly well on macOS.
+Setup, purge Query will not work however, as I am so-far the only contributer and I don't have a mac
+to play with homebrew on.
 
 # Installation
 
