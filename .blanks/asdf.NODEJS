@@ -1,13 +1,18 @@
 #!/bin/bash
 
-dirmngr --help || Setup dirmngr
-gpg --version || Setup gpg
-curl ifconfig.me && prinf "\n" || Setup curl
+asdf_node() {
+  dirmngr --help || Setup dirmngr
+  gpg --version  || Setup gpg
+  
+  curl ifconfig.me && printf "\n" || Setup curl
+  
+  asdf update && asdf plugin-add nodejs || \
+    printf "You might need asdf-vm\n"
+  
+  bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+  bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-previous-release-team-keyring'
+  
+  asdf list-all nodejs
+}
 
-asdf update && asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git || \
-  printf "You might need asdf-vm\n"
-
-bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
-bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-previous-release-team-keyring'
-
-asdf list-all nodejs
+asdf_node

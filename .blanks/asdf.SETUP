@@ -1,8 +1,13 @@
 #!/bin/bash
 
-. ~/.io/blanks/check_asdf
+asdf_setup() {
+  . ~/.io/.blanks/check_asdf
+  
+  [[ check_asdf == 'true' ]]&& (echo 'asdf installed') \
+    || (git clone https://github.com/asdf-vm/asdf.git ~/.asdf)
+  
+  . ~/.bashrc
+  echo 'you may want to source ~/.bashrc again'
+}
 
-[[ check_asdf == 'true' ]]&& (echo 'asdf installed') \
-  || (git clone https://github.com/asdf-vm/asdf.git ~/.asdf)
-
-echo 'you may want to source ~/.bashrc again'
+asdf_setup
