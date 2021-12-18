@@ -5,8 +5,8 @@ apt_purge() {
   declare -a queue
   
   # Prep for logging, declare constants
-  LOG="$HOME/.io/logs/apt_PURGE"
-  keyLOG="$HOME/.io/logs/queue"
+  LOG="tmp/io/log/apt_PURGE"
+  keyLOG="/tmp/io/log/queue"
   MSG=( \
       [start]="# apt.PURGE : " \
       [stop]="# " \

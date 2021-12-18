@@ -5,8 +5,8 @@ apt_install() {
   declare -a queue
   
   # Prep for logging, declare constants
-  LOG="$HOME/.io/logs/apt_install"
-  keyLOG="$HOME/.io/logs/queue"
+  LOG="/tmp/io/log/apt_install"
+  keyLOG="/tmp/io/log/queue"
   MSG=( \
       [start]="# apt.INSTALL : " \
       [stop]="# " \

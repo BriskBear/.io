@@ -4,7 +4,7 @@ ssh_generate() {
   # Instantiate Log Store
   [[ -f $HOME/.config/io/iorc ]] \
     && source ~/.config/io/iorc \
-    || LOG=/tmp/generate.log
+    || LOG=/tmp/io/log/generate.log
   
   # Set sshKey Username
   [[ "$#" -gt 0 ]] \

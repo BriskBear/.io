@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG='/dev/null'
+LOG='/tmp/io/log/set.FONTS'
 INFORM_NAME='ioFonts'
 LINK='/usr/share/fonts/io'
 STATIC_DIR="$HOME/.io/fonts"

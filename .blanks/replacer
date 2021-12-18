@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 def replacer(chain = {})
-  log = '/tmp/.10'
+  log = '/tmp/io/log/replacer'
   src = chain[:source]
   dst = chain[:dest]
   chain = chain.except(:source)

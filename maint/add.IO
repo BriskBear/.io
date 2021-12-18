@@ -2,7 +2,7 @@
 
 . "$HOME/.io/.blanks/color"
 
-LOG="/tmp/.0"
+LOG="/tmp/io/log/add.IO"
 MESSAGES=( \
   "Setting ${LIGHT_CYAN}$HOME/.io${NC}${YELLOW} executables${NC}\n" \
   "Setting ${LIGHT_CYAN}$HOME/.io/.blanks${NC}${YELLOW} executables${NC}\n" \

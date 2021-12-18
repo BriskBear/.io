@@ -2,7 +2,7 @@
 
 setup_list() {
   # Define constants
-  LOG="$HOME/.io/logs/Setup"
+  LOG="/tmp/io/log/Setup"
   key_dir="$HOME/.io/blanks/keys"
   
   # Build the queue

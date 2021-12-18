@@ -1,7 +1,7 @@
 #!/bin/bash
 
 repo="$1"
-LOG='/tmp/.0'
+LOG='/tmp/io/log/gComPsh'
 
 declare -A REPOS
 source ~/.config/io/repos

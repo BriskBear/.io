@@ -27,7 +27,7 @@ __N/a__
 declare -A locations
 declare -A RAMDisks
 
-ERRLOG="$HOME/.io/logs/Prepdot.md"
+ERRLOG="/tmp/io/log/Prepdot.md"
 
 source $HOME/.io/config/.Locations
 source $HOME/.io/config/.RAMDisks

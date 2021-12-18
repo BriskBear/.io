@@ -4,8 +4,8 @@
 declare -a queue
 
 # Prep for logging, declare constants
-LOG="$HOME/.io/logs/pacman_purge"
-keyLOG="$HOME/.io/logs/queue"
+LOG="/tmp/io/log/pacman_purge"
+keyLOG="io/log/queue"
 MSG=( \
     [start]="# pacman.PURGE : " \
     [stop]="# " \

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 purge_list() {
-  LOG="$HOME/.io/logs/Purge"
+  LOG="/tmp/io/log/Purge"
   key_dir="$HOME/.io/blanks/keys"
   
   # Build the queue
