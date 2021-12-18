@@ -1,7 +1,7 @@
 #!/bin/bash
 
 gcpsh() {
-  [[ $1 =~ '-h' ]] && ( printf "Usage gcpsh <message> [options]\n" && exit)
+  [[ $1 =~ '-h' ]] && ( printf "Usage gcpsh <message> [options]\n" && return 3)
   declare \
    authorization='N'
   declare \
