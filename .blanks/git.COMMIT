@@ -1,19 +1,20 @@
 #!/bin/bash
 
 gcpsh() {
-  [[ $1 =~ '-h' ]] && ( printf "Usage gcpsh <message> [options]\n" && return 3)
-  declare \
-   authorization='N'
-  declare \
-   rm_file='$null'
-  declare \
-   message="$@"
-  
-  git add .
-  git commit -m "$message"
-  git pull
-  git status -s
-  git push
+  [[ $1 =~ '-h' ]] &&  printf "Usage gcpsh <message> [options]\n" && return 3 || (
+    declare \
+     authorization='N'
+    declare \
+     rm_file='$null'
+    declare \
+     message="$@"
+    
+    git add .
+    git commit -m "$message"
+    git pull
+    git status -s
+    git push
+  )
 }
 
 gcpsh "$@"
