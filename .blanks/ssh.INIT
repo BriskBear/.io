@@ -1,12 +1,16 @@
 #!/bin/bash
 
-[[ -d $HOME/.ssh ]] \
-  && (printf "${PINK}ssh tree exists, exiting${NC}\n") \
-  || (
-    mkdir -m 700 -p $HOME/.ssh/{.pk,config.d} \
-    && echo 'Include config.d/*' > .ssh/config \
-    && printf "" > $HOME/.ssh/authorized_keys \
-    && chmod 600 $HOME/.ssh/authorized_keys \
-    && printf "${LIGHT_GREEN}ssh tree initialized${NC}\n" \
-    && (. ssh.GENERATE)
-  )
+ssh_init() {
+  [[ -d $HOME/.ssh ]] \
+    && (printf "${PINK}ssh tree exists, exiting${NC}\n") \
+    || (
+      mkdir -m 700 -p $HOME/.ssh/{.pk,config.d} \
+      && echo 'Include config.d/*' > .ssh/config \
+      && printf "" > $HOME/.ssh/authorized_keys \
+      && chmod 600 $HOME/.ssh/authorized_keys \
+      && printf "${LIGHT_GREEN}ssh tree initialized${NC}\n" \
+      && (. ssh.GENERATE)
+    )
+}
+
+ssh_init

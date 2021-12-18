@@ -1,4 +1,0 @@
-#!/usr/bin/env ruby
-
-SCRIPT_PATH = Dir.pwd
-puts SCRIPT_PATH+$0.split('.')[1]

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-mkdir /tmp/dwn
-ln  \
-  -s \
-    /tmp/dwn \
-    $HOME/Downloads

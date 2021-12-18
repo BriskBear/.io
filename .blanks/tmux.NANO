@@ -1,1 +1,0 @@
-unset TMUX && tmux -L nano -f ~/.config/tmux/tmux_nano.conf new-session nano "$@" 

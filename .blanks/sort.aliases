@@ -1,4 +1,8 @@
 #!/bin/bash
 
-sort ~/.io/config/.aliases > ~/.io/AKA
-mv ~/.io/AKA ~/.io/config/.aliases -f
+sort_aliases() {
+  sort ~/.io/config/.aliases > ~/.io/AKA
+  mv ~/.io/AKA ~/.io/config/.aliases -f
+}
+
+sort_aliases

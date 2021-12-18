@@ -1,5 +1,9 @@
 #!/bin/bash
 
-session="$1"
+tmux_attach() {
+  session="$1"
+  
+  tmux attach -t "$session" || tmux new-session -s "$session"
+}
 
-tmux attach -t "$session" || tmux new-session -s "$session"
+tmux_attach "$1"

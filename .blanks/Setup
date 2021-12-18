@@ -1,11 +1,15 @@
 #!/bin/bash
 
-# Define constants
-LOG="$HOME/.io/logs/Setup"
-key_dir="$HOME/.io/blanks/keys"
+setup_list() {
+  # Define constants
+  LOG="$HOME/.io/logs/Setup"
+  key_dir="$HOME/.io/blanks/keys"
+  
+  # Build the queue
+  add.QUEUE "$@"
+  
+  # Switch chooses the correct installer to read the queue
+  $(switch $key_dir/Setup)
+}
 
-# Build the queue
-add.QUEUE "$@"
-
-# Switch chooses the correct installer to read the queue
-$(switch $key_dir/Setup)
+setup_list

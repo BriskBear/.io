@@ -1,1 +1,9 @@
-sudo apt update -y && apt list --upgradeable && sudo apt upgrade -y | lolcat -a
+#!/bin/bash
+
+apt_update() {
+  sudo apt update -y && \
+  apt list --upgradeable && \
+  sudo apt upgrade -y | lolcat -a -d 1
+}
+
+apt_update

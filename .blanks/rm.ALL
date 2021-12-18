@@ -1,9 +1,10 @@
 #!/bin/bash
 
-list=($(
-  printf '%s\n' $(whereis $1)|
-    grep -v ':\|/tmp/blks'
-))
+rm_all() {
+  roots=($( ls -al / |grep -v '\->' ))
+  rm_list=($(printf '%s\n' ${roots[@]}|xargs -I % sudo find /%|grep $1))
+  
+  printf '%s\n' ${rm_list[@]}|xargs -I % sudo rm -rf % &>> /tmp/rm_all &
+}
 
-rm -rvf ${list[@]} || \
-  sudo rm -rvf ${list[@]}
+rm_all "$@"

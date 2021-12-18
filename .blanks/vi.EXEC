@@ -1,35 +1,38 @@
 #!/bin/bash
 
-EXEC="$1"
-SHEBANG="#!/usr/bin/env $2"
+vi_exec() {
+  EXEC="$1"
+  SHEBANG="#!/usr/bin/env $2"
+  
+  null_EXEC='Enter a name for the executable file: '
+  null_SHEBANG='#!/bin/bash'
+  
+  # Prompt for a filename if none given
+  if [ ! $EXEC ]
+  then
+      printf "$null_EXEC"
+      read EXEC
+  fi
+  
+  EXEC=$HOME/.local/bin/$EXEC
+  
+  # Use bash shebang if interpreter is not given
+  if [ ! $2 ]
+  then
+      SHEBANG="$null_SHEBANG"
+  fi
+  
+  # Create the file with shebang
+  printf "$SHEBANG\n\n" >> $EXEC
+  
+  # Use a simple editor if no environment variable 
+  [[ $EDITOR ]]|| EDITOR=/tmp/blks/set.EDITOR
+  
+  # Make the file Executable
+  chmod u+x $EXEC
+  
+  # Edit the file with line-break after the shebang
+  $EDITOR +3 $EXEC
+}
 
-null_EXEC='Enter a name for the executable file: '
-null_SHEBANG='#!/bin/bash'
-
-# Prompt for a filename if none given
-if [ ! $EXEC ]
-then
-    printf "$null_EXEC"
-    read EXEC
-fi
-
-EXEC=$HOME/.local/bin/$EXEC
-
-# Use bash shebang if interpreter is not given
-if [ ! $2 ]
-then
-    SHEBANG="$null_SHEBANG"
-fi
-
-# Create the file with shebang
-printf "$SHEBANG\n\n" >> $EXEC
-
-# Use a simple editor if no environment variable 
-[[ $EDITOR ]]|| EDITOR=/tmp/blks/set.EDITOR
-
-# Make the file Executable
-chmod u+x $EXEC
-
-# Edit the file with line-break after the shebang
-$EDITOR +3 $EXEC
-
+vi.EXEC "$@"

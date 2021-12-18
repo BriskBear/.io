@@ -1,17 +1,21 @@
 #!/bin/bash
 
-# Keys need declared before definition
-declare -a queue
+apt_query() {
+  # Keys need declared before definition
+  declare -a queue
+  
+  # Populate the package queue
+  source /tmp/queue
+  
+  # Query for each package in the queue
+  for p in ${queue[@]}
+  do
+      sudo dpkg -l | grep $p
+  done
+  
+  # Cleanup
+  rm -vf /tmp/queue &>> /tmp/.0
+  unset queue
+}
 
-# Populate the package queue
-source /tmp/queue
-
-# Query for each package in the queue
-for p in ${queue[@]}
-do
-    sudo dpkg -l | grep $p
-done
-
-# Cleanup
-rm -vf /tmp/queue &>> /tmp/.0
-unset queue
+apt_query "$@"

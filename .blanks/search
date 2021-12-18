@@ -1,12 +1,9 @@
 #!/bin/bash
 
 search() {
-  list=($( ls / | grep -v '\->' ))
+  list=($( ls -al / | grep -v '\->' ))
   printf '%s\n' ${list[@]}|
    xargs -I % sudo find /%| grep --color "$@"
 }
 
 search "$@"
-###
-# echo "~/$1" | cut -f1 -d ' ' 
-# find / | grep "$1" >> $(echo "~/$1" | cut -f1 -d ' ')

@@ -1,33 +1,37 @@
 #!/bin/bash
 
-# Keys require declaration before key_file-definition
-declare -A switchKEY
+key_switch() {
+  # Keys require declaration before key_file-definition
+  declare -A switchKEY
+  
+  [[ $1 ]] && key_file="$1" #|| (printf 'Specify switchKEY file: ' && read key_file)
+  MSG=( \
+    [RNG]="You're ${YELLOW}running${NC} " \
+  )
+  OS=$(source OS)
+  
+  source "$key_file"
+  #printf "${MSG[RNG]}"
+  case "$OS" in
+    \"Arch\ Linux*)
+      ${switchKEY[arch]}
+  #   printf "${LIGHT_CYAN}Arch${NC}\n"
+      ;;
+  #  \"Arch\ Linux\ ARM*)
+  #    ${switchKEY[arch]}
+  #   printf "${LIGHT_CYAN}Arch ARM${NC}\n"
+  #    ;;
+    \"Ubuntu*)
+      ${switchKEY[ubuntu]}
+  #    printf "${RUST}Ubuntu${NC}\n"
+      ;;
+    \"Debian*)
+      ${switchKEY[debian]}
+      ;;
+    *)
+      printf "${MSG[RNG]}${LIGHT_BLUE}Something Else?${NC}\n"
+      ;;
+  esac
+}
 
-[[ $1 ]] && key_file="$1" #|| (printf 'Specify switchKEY file: ' && read key_file)
-MSG=( \
-  [RNG]="You're ${YELLOW}running${NC} " \
-)
-OS=$(source OS)
-
-source "$key_file"
-#printf "${MSG[RNG]}"
-case "$OS" in
-  \"Arch\ Linux*)
-    ${switchKEY[arch]}
-#   printf "${LIGHT_CYAN}Arch${NC}\n"
-    ;;
-#  \"Arch\ Linux\ ARM*)
-#    ${switchKEY[arch]}
-#   printf "${LIGHT_CYAN}Arch ARM${NC}\n"
-#    ;;
-  \"Ubuntu*)
-    ${switchKEY[ubuntu]}
-#    printf "${RUST}Ubuntu${NC}\n"
-    ;;
-  \"Debian*)
-    ${switchKEY[debian]}
-    ;;
-  *)
-    printf "${MSG[RNG]}${LIGHT_BLUE}Something Else?${NC}\n"
-    ;;
-esac
+key_switch "$@"

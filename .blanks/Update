@@ -1,7 +1,11 @@
 #!/bin/bash
 
-# Define constants
-key_dir="$HOME/.io/blanks/keys"
+update_mgr() {
+  # Define constants
+  key_dir="$HOME/.io/blanks/keys"
+  
+  # Switch chooses the correct installer to read the queue
+  $(switch $key_dir/Update)
+}
 
-# Switch chooses the correct installer to read the queue
-$(switch $key_dir/Update)
+update_mgr
