@@ -4,8 +4,8 @@
 declare -a queue
 
 # Prep for logging, declare constants
-LOG="$HOME/.io/logs/pacman_purge"
-keyLOG="$HOME/.io/logs/queue"
+LOG="/tmp/io/log/pacman_purge"
+keyLOG="/tmp/io/log/queue"
 MSG=( \
     [start]="# pacman.PURGE : " \
     [stop]="# " \
@@ -48,7 +48,7 @@ esac
 
 # Log and Cleanup
 printf ${MSG[start]}$(date)"\n" >> $keyLOG
-cat /tmp/queue >> $keyLOG && \
- rm -vf /tmp/queue &>> $LOG
+cat /tmp/io/log/queue >> $keyLOG && \
+ rm -vf /tmp/io/log/queue &>> $LOG
 printf ${MSG[stop]}$(date)"\n" >> $keyLOG
 unset queue
