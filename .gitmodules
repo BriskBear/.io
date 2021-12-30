@@ -4,12 +4,3 @@
 [submodule "config/PSV"]
 	path = config/PSV
 	url = https://github.com/briskbear/cfg_ps1
-[submodule "config/ruby"]
-	path = config/ruby
-	url = https://github.com/briskbear/cfg_ruby
-[submodule "config/nvim"]
-	path = config/nvim
-	url = https://github.com/briskbear/cfg_nvim
-[submodule "config/config/nvim"]
-	path = config/config/nvim
-	url = https://github.com/briskbear/cfg_nvim
