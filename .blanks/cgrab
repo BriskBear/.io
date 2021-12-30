@@ -2,4 +2,5 @@
 
 eval "$(/tmp/blks/set.VARS CGRAB `grabc`)"
 echo $CGRAB|xclip -i -selection clipboard
-dunstify 'Color Grab' "$CGRAB"
+result=`dunstify -A $CGRAB,default -h string:fgcolor:"#f3ebdc" -h string:bgcolor:"$CGRAB" 'Color Grab' "$CGRAB"`
+printf $result|xclip -selection clipboard

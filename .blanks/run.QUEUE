@@ -4,15 +4,16 @@
 declare -a queue
 
 # Prep for logging, declare constants
-LOG="$HOME/.io/logs/apt_install"
-keyLOG="$HOME/.io/logs/queue"
+leaf=/tmp/io/queue
+LOG="/tmp/io/log/apt_install"
+keyLOG="/tmp/io/log/queue"
 MSG=( \
     [start]="# apt.INSTALL : " \
     [stop]="# " \
 )
 
 # Populate the apt queue
-source /tmp/queue
+source $leaf
 
 # Check for lolcat, install if ruby, and install all queued
 if [[ $(lolcat?) = 'lolcat']]
@@ -42,7 +43,7 @@ fi
 
 # Save a copy of the queue to log and wipe the queue for the next iteration
 printf ${MSG[start]}$(date)"\n" >> $keyLOG
-cat /tmp/queue >> $keyLOG && \
- rm -vf /tmp/queue &>> $LOG
+cat $leaf >> $keyLOG && \
+ rm -vf $leaf &>> $LOG
 printf ${MSG[stop]}$(date)"\n" >> $keyLOG
 unset queue

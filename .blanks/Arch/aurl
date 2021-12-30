@@ -1,0 +1,13 @@
+#!/bin/bash
+
+aurl() {
+  uri="https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz"
+  echo "$uri"
+  curl -o /tmp/$1.tar.gz -L $uri
+  pushd $HOME/code/src/
+  tar -xvf /tmp/$1.tar.gz
+  pushd $1
+  makepkg -sric --noconfirm
+}
+
+aurl "$1"

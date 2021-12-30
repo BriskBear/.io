@@ -2,9 +2,10 @@
 
 # Keys need declared before definition
 declare -a queue
+leaf=/tmp/io/queue
 
 # Populate the package queue
-source /tmp/queue
+source $leaf
 
 # Query for each package in the queue
 for p in ${queue[@]}
@@ -13,5 +14,5 @@ do
 done
 
 # Cleanup
-rm -vf /tmp/queue &>> /tmp/.0
+rm -vf $leaf &>> /tmp/io/log/apt.QUERY
 unset queue
