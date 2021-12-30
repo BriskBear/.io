@@ -4,8 +4,8 @@
 declare -a queue
 
 # Prep for logging, declare constants
-LOG="$HOME/.io/logs/pacman_install"
-keyLOG="$HOME/.io/logs/queue"
+LOG="/tmp/io/log/pacman_install"
+keyLOG="/tmp/io/log/queue"
 MSG=( \
     [start]="# pacman.INSTALL : " \
     [stop]="# " \
