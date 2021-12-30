@@ -1,9 +1,10 @@
 #!/bin/bash
 
-printf "#!/bin/bash\n\n" >> /tmp/queue
+leaf=/tmp/io/log/queue
+printf "#!/bin/bash\n\n" >> $leaf
 for e in "$@"
 do
-    echo "queue+=(\"$e\")" >> /tmp/queue
+    echo "queue+=(\"$e\")" >> $leaf
 done
 
-chmod +x /tmp/queue
+chmod +x $leaf
