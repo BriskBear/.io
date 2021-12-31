@@ -156,6 +156,4 @@ alias x='$HOME/.io/.sec/.x'                                                     
 alias +x='chmod -v +x'                                                                                                             #  Whoops
 alias xdt='vi.EXEC'                                                                                                                #  Create executable with your editor
 alias ns='dunstify' # 
-alias gatsk='echo alias\ gatsk\ called' # 
-alias gatss='echo gatss\ alias\ called' # 
 alias ga='git add' # ga <git_add_args>
