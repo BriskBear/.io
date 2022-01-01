@@ -7,3 +7,6 @@
 [submodule "config/nvim"]
 	path = config/nvim
 	url = https://github.com/briskbear/cfg_nvim
+[submodule "config/ruby"]
+	path = config/ruby
+	url = https://github.com/briskbear/cfg_ruby
