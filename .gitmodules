@@ -4,6 +4,12 @@
 [submodule "config/nvim"]
 	path = config/nvim
 	url = https://github.com/briskbear/cfg_nvim
+  branch = nodejs
 [submodule "config/ruby"]
 	path = config/ruby
 	url = https://github.com/briskbear/cfg_ruby
+  branch = light
+[submodule "config/i3"]
+	path = config/i3
+	url = https://github.com/briskbear/cfg_i3
+	branch = 0.2.3
