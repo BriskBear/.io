@@ -1,6 +1,3 @@
-[submodule "config/i3"]
-	path = config/i3
-	url = https://github.com/briskbear/cfg_i3
 [submodule "config/PSV"]
 	path = config/PSV
 	url = https://github.com/briskbear/cfg_ps1
