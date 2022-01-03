@@ -12,4 +12,4 @@
 [submodule "config/i3"]
 	path = config/i3
 	url = https://github.com/briskbear/cfg_i3
-	branch = 0.2.3
+	branch = master
