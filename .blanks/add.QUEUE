@@ -1,6 +1,6 @@
 #!/bin/bash
 
-leaf=/tmp/io/log/queue
+leaf=/tmp/io/queue
 printf "#!/bin/bash\n\n" >> $leaf
 for e in "$@"
 do
