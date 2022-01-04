@@ -1,8 +1,18 @@
 #!/bin/bash
 
-REPO="$1"
-CP_PATH="$2"
-
 # Clone from github via https, but just type the repo and clonelocation
-git clone https://github.com/$REPO --depth 1 $CP_PATH
+# git clone https://github.com/$REPO --depth 1 $CP_PATH
 
+case "$1" in 
+  -h)
+     export host=github
+    ;;
+  -l)
+     export host=gitlab
+    ;;
+   *)
+     export host=github
+    ;;
+esac
+
+git clone $host:$2 ${@:3}
