@@ -20,6 +20,7 @@ then
 fi
 
 # set PATH so it includes user's private bin if it exists
+[[ -f "$HOME"/.bin/fns ]] && ( . "$HOME/.bin/fns" )
 if [ -d "$HOME/.bin" ]
 then
     PATH="$HOME/.local/bin:$PATH"
