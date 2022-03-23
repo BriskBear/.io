@@ -1,22 +1,25 @@
 #!/bin/bash
 
 aliases=(
-    ~/.io/config/.aliases
-    ~/.config/io/local_aliases
+  ~/.io/config/.aliases
+  ~/.config/io/local_aliases
 )
 
 query() {
-    for f in ${aliases[@]}
-    do
-        grep -n " $1" $f --color=auto | sed -e 's/\s\+/ /' | sed -e 's/\#/\n\#/'
-    done
-    exit
+  for f in ${aliases[@]}
+  do
+    grep -n " $1" $f --color=auto|
+     sed -e 's/\s\+/ /g'|
+      sed -e 's/\#/\n\#/g'|
+      grep "$1\|\#" --color=auto
+  done
+  exit
 }
 
 
 if [ $1 ]
 then
-    query $1
+  query $1
 fi
 
 nl ~/.io/config/.aliases | less
