@@ -1,7 +1,16 @@
 [user]
-	name = MicrowavableMuffin
-	email = fakeone@briskbear.rocks
+	name  = # Set Git User
+	email = # Set Git email
 [pull]
 	rebase = false
 [core]
-	editor = nano
+	editor = nvim # Set your prefered editor
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
