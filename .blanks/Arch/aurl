@@ -7,7 +7,7 @@ aurl() {
   pushd $HOME/code/src/
   tar -xvf /tmp/$1.tar.gz
   pushd $1
-  makepkg -sric --noconfirm
+  makepkg -sric --needed --noconfirm
 }
 
 aurl "$1"

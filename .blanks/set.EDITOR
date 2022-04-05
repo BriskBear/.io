@@ -18,4 +18,4 @@ set_edit() {
 
 [[ -z $EDITOR ]] \
   && set_edit \
-  || echo "$EDITOR is already the editor!"
+  || echo -e "\033[0;92m$(echo $EDITOR|awk -F '/' '{print $NF}')\033[0m is already the editor!"

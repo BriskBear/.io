@@ -1,0 +1,13 @@
+#!/bin/bash
+
+fix_name() {
+  bad_name="$1"
+  downcase=${bad_name,,}
+  no_space=${downcase// /_}
+  open_brack=${no_space//\[/\-}
+  close_brack=${open_brack//\]/\-}
+
+  mv "$bad_name" ./$close_brack
+}
+
+fix_name "$1"

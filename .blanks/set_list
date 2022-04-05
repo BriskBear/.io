@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+unset list
+declare -a list
+
+printf "${GREEN}list${NC}=(\n"
+read -p '> ' list_in
+while [[ ! $list_in =~ ')' ]]
+do
+  export list=(${list[@]} $list_in)
+  unset  list_in
+  read -p '> ' list_in
+done
