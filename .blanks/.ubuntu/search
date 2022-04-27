@@ -11,6 +11,3 @@ function search () {
 
 search "$1" &&\
 echo searched || search ${1[@]}
-###
-# echo "~/$1" | cut -f1 -d ' ' 
-# find / | grep "$1" >> $(echo "~/$1" | cut -f1 -d ' ')
