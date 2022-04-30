@@ -161,3 +161,5 @@ alias pil='podman image list' # List container images
 alias pexec='podman exec -it' # execute in active container
 alias prun='podman run -it' # start and execute a container
 alias pcl='podman ps' # List containers
+alias hosts='sudo nvim -u $HOME/.config/nvim/init.vim' # 
+alias setl='. set_list' # 

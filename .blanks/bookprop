@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xprop | grep 'https://' >> ~/data/docs/bookmarks

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+dir=$(mktemp -d)
+pkg=$1
+
+function aur_get() {
+  URL="https://aur.archlinux.org/cgit/aur.git/snapshot/$pkg.tar.gz"
+  
+  curl -o $dir/$pkg.tar.gz -L $URL || echo -e "${RUST}Not found in AUR${NC}"
+}
+
+function install() {
+  pushd $dir/$pkg
+  makepkg -sric --needed
+  popd
+}
+
+function unpack() {
+  pushd $dir
+  tar -xvf $pkg.tar.gz
+  popd
+}
+
+aur_get
+unpack
+install

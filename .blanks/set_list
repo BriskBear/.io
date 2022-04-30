@@ -1,0 +1,15 @@
+#!/bin/bash
+
+unset list
+unset inlist_
+declare -a list
+
+echo -e "${GREEN}list${NC}=("
+read -p '> ' inlist_                # Wait for User input, starting here simplifies conditional
+while [[ ! $inlist_ =~ ^.*\)$ ]]     # Execute loop unless the User input ends with )
+do
+  export list=(${list[@]} $inlist_) # Update list with latest input
+
+  unset inlist_                     # Clear the input variable
+  read -p '> ' inlist_              # Wait for User input
+done
