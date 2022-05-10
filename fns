@@ -1,0 +1,141 @@
+#!/bin/bash
+
+bcrypt() {
+  [[ $# == 2 ]]|| return 1
+
+  tar -cjvf - "$1" | gpg -se -r eeccher-2022 
+}
+
+cdmk() {
+  path="$1"
+
+  # Create path unless exists
+  [[ -d $path ]] || mkdir -vp $path
+  
+  cd $path
+}
+
+cp_all() {
+  [[ $# -eq 2 ]]|| (printf "Usage: cp. <source_dir> <dest_dir>\n" ; return 1)
+  list=($( ls -a "$1"|ag -v '\.git'|ag -v '\.$' ))
+  printf '%s\n' "${list[@]}"| xargs -I % cp -v "$1"/% "$2"
+}
+
+dec() {
+  out=$(mktemp)
+  gpg -d --yes -o $out $1
+  echo "Decrypted $1 -> $out"
+}
+
+dev_notes() {
+  [[ $# -lt 2 ]] && echo -e "${RUST}Usage:\n dev_notes <project> <environment>${NC}" && return 1
+  export dev_root=/tmp/dev_notes
+  project="$1"
+  echo $project
+  prj_env="$2"
+  echo $prj_env
+  link=$dev_root/$project/$prj_env
+  
+  [[ -d /tmp/$project ]] || git clone gitlab:4winds/$project /tmp/$project
+  [[ -d $dev_root     ]] || git clone gitlab:eeccher/dev_notes $dev_root
+  pushd /tmp/$project
+  ln -sf $link .envrc    || echo -e "${RED}project not provided${NC}"
+  direnv allow
+  bundle && yarn && packer && env_webpacker
+  pushd
+}
+
+download() {
+  short_name=$(echo "$1"|awk -F '/' '{print $NF}')
+  curl -o /tmp/$short_name -L "$1"
+}
+
+fix_names() {
+  leaves=("$( ls )")
+  printf '%s\n' "${leaves[@]}"|xargs -I % fix_name "%"
+}
+
+get() {
+  export dir=$(mktemp -d)
+  pushd $dir
+    git clone gitlab:$1 ${@:2} 2>> /tmp/get_log|| git clone gitclaw:$1 ${@:2}
+    pushd $(echo $1|awk -F '/' '{print $2}')
+      git fetch --all
+      git branch
+    popd
+
+  short=$(echo $1|awk -F '/' '{print $2}')
+  echo "Cloned to $dir/$short"
+}
+
+gits() {
+  printf "${CYAN} Pulled at: ${NC}"
+  stat -c %y .git/FETCH_HEAD
+  git status -sb 2> /dev/null
+  export gits=($(git status -sb 2>/dev/null|awk '{print $2}'))
+}
+
+GP.init() {
+  git push --set-upstream origin master
+}
+
+locenv() {
+  project=$(pwd|awk -F '/' '{print $NF}')
+  mine="$HOME/data/my4winds/$project"
+
+  [[ -d $mine ]] \
+    && ( cp $mine/envrc ./.envrc && direnv allow ) \
+    || ( mkdir -v $mine )
+}
+
+p2t() {
+  [[ -f $1.pdf ]]    || return 1
+  [[ ! -f $1.tiff ]] || return 3
+
+  convert \
+   -density 300 $1.pdf \
+   -background white \
+   -alpha background \
+   -compress Group4 $1.tiff \
+  && tesseract $1.tiff $1
+}
+
+pil() {
+  podman image list
+  pods=($(podman image list|ag -v IMAGE|awk '{print $3}'))
+}
+
+# Pretty envar definition
+pset() {
+  [[ $# -lt 1 ]] \
+    && printf "${GREEN}list${NC}=(\n" \
+    || printf "${light_green}$@${NC}=(\n"
+}
+
+println() {
+  [[ $# -lt 1 ]] \
+    && printf '%s\n' "${list[@]}" \
+    || printf '%s\n' "$@"
+}
+
+rm_all() {
+  list=($(whereis $1))
+  println ${list[@]:1} |xrg sudo rm -rvf %
+}
+
+redunst() {
+  killall dunst
+  dunst &
+}
+
+unzimp() {
+  out_dir=$(mktemp -d)
+  archive=$(realpath "$1")
+  pushd $out_dir
+  bsdtar -xf "$archive" -s'|[^/]*/||'|
+  pushd $HOME
+}
+
+xrg() {
+  xargs -I % "$@"
+}
