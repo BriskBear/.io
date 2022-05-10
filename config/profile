@@ -8,7 +8,7 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
- "$HOME/.io/maint/io.CONFIG" &
+. $HOME/.io/maint/io.CONFIG
 sleep 0.1
 # if running bash
 if [ -n "$BASH_VERSION" ]

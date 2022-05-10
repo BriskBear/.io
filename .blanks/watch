@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+require 'active_support/core_ext/hash/indifferent_access'
+require 'open3'
+require 'rb-inotify'
+
+# Assign Variables
+dwn            = INotify::Notifier.new
+@scan_icon     = '/usr/share/icons/Adwaita/48x48/devices/scanner-symbolic.symbolic.png'
+@download_icon = '/usr/share/icons/Adwaita/48x48/places/folder-download-symbolic.symbolic.png'
+
+# Scan a specific file, notify the user the scan has started, and capture the results
+def scan(target)
+  Open3.capture3("dunstify -i #{@scan_icon} 'Scanning:' \'#{target}...\'")
+  @stdout, @stderr, @status = Open3.capture3("clamscan /tmp/dwn/#{target}")
+end
+
+# Scan only completed downloads, then notify the user
+dwn.watch('/tmp/dwn', :create) do |add|
+  if add.name.end_with?('.crdownload') then
+    puts 'Waiting to complete download...'
+  else
+    scan add.name
+  
+    result = {}.with_indifferent_access
+    result.merge!({
+        :action => add.flags,
+        :filename => add.name,
+        :filetype => add.name.split('.').last,
+        :scan => @stdout.split(' ')[1..2].join(' ').chomp
+    })
+  
+    Open3.capture3("dunstify -i #{@download_icon} 'Download:' \' #{result.to_a.map{|p| p.join(': ')}.join("\n ")}\'")
+  end
+end
+
+dwn.run

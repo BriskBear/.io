@@ -17,6 +17,7 @@ cp -v $HOME/.io/config/PSV/$PSV /tmp/ps1 &>> $LOG
 
 # Downloads folder to RAMDisk
 mkdir -v /tmp/dwn &>> $LOG
+cp -fv /tmp/blks/watch /tmp/dwn/.watch &>> $LOG
 
 # Create the .io/blanks link if it does not exist
 [[ -s $HOME/.io/blanks ]]&& printf "${LIGHT_CYAN}blanks${NC} exist\n" \

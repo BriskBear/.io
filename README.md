@@ -61,3 +61,5 @@ Logs Consistant:
  - "LOG=blah" ~> ". ~/.io/config/envar"  
  - "/tmp/.0" ~> ". ~/.io/config/envar"  
  - Do not forget to copy announce/denounce statements!  
+
+_This branch is the primary on delta-eofce_

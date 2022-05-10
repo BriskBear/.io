@@ -2,7 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-shopt -s autocd
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -48,11 +47,6 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
 if [ -n "$force_color_prompt" ]
 then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null
@@ -74,25 +68,7 @@ GIT_PS1_SHOWDIRTYSTATE='true'
 GIT_PS1_SHOWUPSTREAM='verbose'
 GIT_PS1_SHOWCOLORHINTS='true'
 
-#[[ -f "$HOME/git/bash-git-prompt/gitprompt.sh" ]] && \
-#  ( export GIT_PROMPT_ONLY_IN_REPO=1 && source "~/.bash-git-prompt/gitprompt.sh" ) || \
-#  printf "Err.. check git prompt\n"
-
-#if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]
-#then
-#    GIT_PROMPT_ONLY_IN_REPO=1
-#    GIT_PROMPT_THEME=Single_line_Dark
-#    source $HOME/.bash-git-prompt/gitprompt.sh
-#fi
-
-#if [ "$color_prompt" = yes ]
-#then
-#    PS1=$(cat $HOME/.io/config/PS1)
-#else
-#  	PS1=$(cat $HOME/.io/config/PS1)
-#fi
-#unset color_prompt force_color_prompt
-
+# If custom ps1 is not detected use a basic one
 if [ -f /tmp/ps1 ]
 then
     source /tmp/ps1
@@ -109,6 +85,7 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Add git prompt to PS1 when a repository is detected
 [[ -s $HOME/.io/blanks/bash-git-prompt/gitprompt.sh ]]&& \
   GIT_PROMPT_ONLY_IN_REPO=1 && \
   git_ps1_colorize_gitstring=1 && \
@@ -126,9 +103,6 @@ then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -170,11 +144,6 @@ then
   fi
 fi
 
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-export GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye >/dev/null
-gpgconf --launch gpg-agent
-
 # Hotkeys
 source ~/.io/config/keybinds
 
@@ -202,14 +171,10 @@ do
 done
 
 # NeoFetch
-[[ $(which neofetch 2> /dev/null) ]]&& /usr/bin/neofetch --color_blocks off &> /tmp/neofile & disown;
+[[ $(which neofetch 2> /dev/null) ]] && /usr/bin/neofetch --color_blocks off &> /tmp/neofile & disown;
 
 # Figlet
-
-source $HOME/.io/.blanks/color
-
-figlet -f smslant -w 130 '@'"$HOSTNAME"| lolcat -a -d 1
-
+[[ $(which figlet) ]] && figlet -f smslant -w 130 '@'"$HOSTNAME"| lolcat -a -d 1
 tail -n +1 /tmp/neofile
 
 # Add .io/config/envar`s
@@ -221,17 +186,8 @@ fi
 [[ $(which direnv 2>> /dev/null) ]]&& eval "$(direnv hook bash)"
 export PATH
 
-# For some stupid git reason, adding git-sh-prompt made xterm default to /
-#  So this stupid thing is here to start us back in $HOME
-#cd
-
-
 source /tmp/ps1
 export http_proxy=''
 export https_proxy=''
 export ftp_proxy=''
 export socks_proxy=''
-unset SSH_AGENT_PID
-export SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh
-export GPG_TTY=/dev/pts/10
-gpg-connect-agent updatestartuptty /bye > /dev/null

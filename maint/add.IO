@@ -32,6 +32,3 @@ do
     sudo chmod -v u+x "$b" &>> "$LOG"
 #    printf "$b\n"
 done
-
-#sudo chmod u+x ~/.io/* -R
-#find . -maxdepth 1 -type f

@@ -1,4 +1,14 @@
 #!/bin/bash
 
-[[ -d $HOME/.config/io ]]|| ( cp -vr $HOME/.io/config/io $HOME/.config/ >> /dev/null )
-[[ ! -f $HOME/.ssh/config ]]&& (cp -v ~/.config/io/.stubs/ssh ~/.ssh/config)
+# Copy io config if it does not exist in ~/.config
+[[ ! -d $HOME/.config/io ]]  && ( cp -vr $HOME/.io/config/io $HOME/.config/ >> /dev/null )
+[[ ! -f $HOME/.ssh/config ]] && (cp -v $HOME/.config/io/.stubs/ssh $HOME/.ssh/config)
+# Also create the ssh config for reading .ssh/config.d if that does not exist
+
+[[ $SSH_AGENT_PID ]] && unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]
+then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/tmp/io/gpg_status
