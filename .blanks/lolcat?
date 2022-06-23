@@ -3,8 +3,8 @@
 # Check if lolcat is installed
 if [[ $(ruby -v 2>> /tmp/.0) ]]
 then
-    [[ "$(gem list -i lolcat)" = "true" ]] && \
-        echo lolcat|lolcat -a \
+    [[ $(which lolcat) ]] && \
+        echo lolcat|lolcat \
       || echo sadcat
 else
     echo deadcat

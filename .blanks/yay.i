@@ -1,3 +1,3 @@
 #!/bin/bash
 
-yay -Sy --noconfirm $1 | lolcat -a
+yay -Sy --noconfirm $1 | lolcat

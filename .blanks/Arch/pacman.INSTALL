@@ -1,15 +1,17 @@
 #!/bin/bash
 
 # Keys need declared before definition
+declare -A MSG
 declare -a queue
 
 # Prep for logging, declare constants
 leaf=/tmp/io/queue
-LOG="/tmp/io/log/pacman_install"
+now=$(date -u +%s)
+LOG="/tmp/io/log/install_${now: -4}"
 keyLOG="/tmp/io/log/queue"
 MSG=( \
-    [start]="# pacman.INSTALL : " \
-    [stop]="# " \
+    ['start']="# pacman.INSTALL : " \
+    ['stop']="# " \
 )
 
 # Populate the apt queue
@@ -18,19 +20,11 @@ source $leaf
 function with_cat() {
   if [[ $1 ]]
   then
-      # Install all items in the queue
-      sudo pacman -Syu --needed --noconfirm ${queue[@]} | tee -a $LOG|lolcat -a -d 1
-#       for p in ${queue[@]}
-#       do
-#           (sudo pacman -Syu --needed --noconfirm $p | tee -a $LOG|lolcat -a -d 1) \
-#            || (yay --needed --noconfirm $p | tee -a $LOG |lolcat -a)
-#       done
+    # Install all items in the queue
+    sudo pacman -Syu --needed --noconfirm ${queue[@]} | tee -a $LOG|lolcat
   else
-      # Install all items in the queue
-      for p in ${queue[@]}
-      do
-          sudo pacman -Sy --needed --noconfirm $p | tee -a $LOG
-      done
+    # Install all items in the queue
+    sudo pacman -Syu --needed --noconfirm ${queue[@]} | tee -a $LOG
   fi
 }
 

@@ -172,9 +172,10 @@ done
 
 # NeoFetch
 [[ $(which neofetch 2> /dev/null) ]] && /usr/bin/neofetch --color_blocks off &> /tmp/neofile & disown;
+sleep 0.2
 
 # Figlet
-[[ $(which figlet) ]] && figlet -f smslant -w 130 '@'"$HOSTNAME"| lolcat -a -d 1
+[[ $(which figlet) ]] && figlet -f smslant -w 130 '@'"$HOSTNAME"| lolcat -r -b
 tail -n +1 /tmp/neofile
 
 # Add .io/config/envar`s

@@ -22,10 +22,10 @@ case $state in
     echo $pts|figlet -f slant
     ;;
   2)
-    echo $pts|lolcat -a -d 9
+    echo $pts|lolcat
     ;;
   3)
-    echo $pts|figlet -f slant|lolcat -a -d 1
+    echo $pts|figlet -f slant|lolcat
     ;;
   *)
     echo Counter\ Error!
