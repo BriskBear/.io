@@ -1,1 +1,20 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
 
+require 'fileutils'
+
+gemname = ARGV[0] || ENV['PRJ']
+FileUtils.mkdir_p("#{gemname}/lib")
+spec = File.read("#{ENV['HOME']}/.io/samples/gemspec")
+subs = {
+  'NAME'    => "\'#{gemname}\'",
+  'AUTHORS' => "[\'#{ENV['USER']}\']",
+  'EMAIL'   => "[\'#{ENV['EMAIL']}\']",
+  'FILES'   => "[\'lib/#{gemname}.rb\']"
+}
+
+subs.each do |g, sub|
+  spec.gsub!(g, sub)
+end
+File.write("#{gemname}/#{gemname}.gemspec", spec, mode: 'wb')
+File.write("#{gemname}/lib/#{gemname}.rb", "#!/usr/bin/env ruby\n# frozen_string_literal: true\n\n", mode: 'wb')
