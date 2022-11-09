@@ -1,0 +1,13 @@
+sync_remote() {
+  [[ $# < 2 ]] && return 1
+  [[ -d $1 ]]  || return 2
+
+  rsync -avz \
+    --partial \
+    --partial-dir=.rsync-partial/ \
+    --exclude={'node_modules','public/packs'} \
+    --delay-updates \
+    --delete \
+    --info=progress2 \
+    $1/* eofce:$2
+}

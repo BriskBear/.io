@@ -1,10 +1,14 @@
 #!/bin/bash
 
-leaf=/tmp/io/log/queue
-printf "#!/bin/bash\n\n" >> $leaf
+# Guard clause, ensure path exists
+[[ -d /tmp/io ]] || mkdir -fp /tmp/io/log
+
+
+leaf=/tmp/io/queue                  # ln:7 - declare a permanent place to keep the package-list
+printf " # !/bin/bash\n\n" >> $leaf # add a shebang, queue uses bash-keys
 for e in "$@"
 do
-    echo "queue+=(\"$e\")" >> $leaf
+    echo "queue+=(\"$e\")" >> $leaf # ln:11 - add each package to the queue-key
 done
 
-chmod +x $leaf
+chmod +x $leaf                      # ln:14 - allow execution TODO: is this necessary?

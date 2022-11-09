@@ -1,1 +1,3 @@
-sudo apt update -y && apt list --upgradeable && sudo apt upgrade -y | lolcat -a
+[[ -f /tmp/io/upgrade ]] && rm -v /tmp/io/upgrade &>> /tmp/io/upgrade
+sudo apt update -y && apt list --upgradeable && sudo apt upgrade -y >> /tmp/io/upgrade
+tail -f -n +1 /tmp/io/upgrade

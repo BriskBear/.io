@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Break if a name was not supplied
+[[ $# == 1 ]] || exit 1
+
+# New Local Test
+nlt() {
+  [[ -d ~/.local/bin/tests ]] || mkdir -vp ~/.local/bin/tests
+  . set.EDITOR && $EDITOR ~/.local/bin/tests/$1
+}
+
+nlt $1

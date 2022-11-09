@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[[ $(which --version) ]]|| ( printf "${hiRed}dependency 'which' missing!${NC}\n"; return 1 )
+[[ $(which which) ]]|| ( printf "${hiRed}dependency 'which' missing!${NC}\n"; return 1 )
 
 order=(
   'nano'
@@ -18,4 +18,4 @@ set_edit() {
 
 [[ -z $EDITOR ]] \
   && set_edit \
-  || echo "$EDITOR is already the editor!"
+  || echo -e "\033[0;92m$EDITOR\033[0m is already the editor!"
