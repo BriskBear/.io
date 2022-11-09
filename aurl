@@ -1,0 +1,16 @@
+#!/bin/bash
+
+url="https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz"
+wrkdir=$(mktemp -d)
+
+then_make() {
+  pushd $1
+  makepkg --needed --noconfirm -sric
+  popd
+}
+
+curl -o /tmp/$1.tar.gz -L $url
+tar -xf /tmp/$1.tar.gz -C $wrkdir
+
+
+[[ -d $wrkdir ]]&& then_make $wrkdir/$1 || exit 1
